@@ -28,9 +28,9 @@
     },
     {
       "name": "Annotation scale-up",
-      "state": "blocked",
-      "note": "Target is roughly 200 items, plus a second annotator on the existing 48 so the gold itself carries an agreement figure. This is human work; no amount of compute substitutes for it.",
-      "evidence": "CONTRIBUTING.md"
+      "state": "partial",
+      "note": "Target is roughly 200 items plus a second annotator, and that part is still human work. But the judge that would carry a scale-up now has a measured agreement of kappa 0.662 on the protocol it would scale, and a rectified estimator is implemented. It refuses its own data today: the doubly-labelled pairs are 2.46x enriched in positives. The remaining blocker is compute, not annotation.",
+      "evidence": "docs/12"
     },
     {
       "name": "Bibliography",
@@ -43,6 +43,12 @@
       "state": "todo",
       "note": "The author list is deliberately unfilled in main.tex and CITATION.cff. Venue is undecided: the running header currently reads as a preprint, and the title was rewritten to name the method rather than the deployment.",
       "evidence": "paper/README.md"
+    },
+    {
+      "name": "Judge-scaled estimation",
+      "state": "partial",
+      "note": "A prediction-powered estimator that lets judge labels stand in for annotation without inheriting the judge's bias — if the judge is useless it degrades to human-only rather than going wrong. Implemented, gated, and currently refusing to report on its own data.",
+      "evidence": "bench/ppi-eval.ts"
     }
   ],
   "notes": [

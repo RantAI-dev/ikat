@@ -14,6 +14,7 @@ produced the original claim is still visible.
 | `09-mramg-sota.md` | external validation, including a near-miss misattribution |
 | `10-improvement-experiments.md` | eight experiments, two of which failed because of us |
 | `11-vlm-gate-deployment.md` | shipping the gate, and its zero executions |
+| `12-prediction-powered-selection.md` | judge κ=0.662, and an estimator that refuses its own data |
 
 Two entries worth reading for the method rather than the result:
 
@@ -26,3 +27,10 @@ correctness.
 unreproducible and a whole paragraph written about contended GPUs; the actual
 cause was an environment variable we had not recorded alongside the result. The
 withdrawal is itself withdrawn, in place, with the reasoning left intact.
+
+**`12`** is the newest and the least conclusive on purpose. A rectified estimator
+would let judge labels stand in for annotation without inheriting the judge's
+bias — but it is valid only if the doubly-labelled pairs are a random subsample,
+and ours are enriched 2.46x because every gold figure lands in both candidate
+pools by construction. The script measures that and refuses to report. What it
+buys is a better problem: the remaining work is compute, not annotation.

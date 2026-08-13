@@ -40,6 +40,8 @@ need no human labels and no judge model.
 | §V κ validation | judge-vs-human agreement, used to establish the gold is not self-serving | `bun bench/judge-figures.ts validate` | annotation set |
 | §V, VLM selector / composed pipeline rows | the same judge in its other two roles | `bun bench/judge-figures.ts select` / `… pipeline` | as above |
 | §V significance | McNemar exact over paired selection decisions | `bun bench/selection-significance.ts` | a scored run |
+| docs/12 | judge κ on the scale-up protocol, representativeness gate, rectified estimator | `bun bench/ppi-eval.ts` | both annotation exports |
+| docs/12 | the scale-up judge pass itself | `bun bench/judge-scale.ts --dry` | figure crops (currently missing) |
 
 **`IKAT_JUDGE_PROMPT` is part of the configuration, not a detail.** `strict` and
 `loose` differ by roughly 12 precision points on the same model and the same
@@ -65,6 +67,17 @@ prints its own silent-rate, which is how you confirm it reached 0%.
 The configuration was frozen before the dataset was downloaded. If you tune
 against MRAMG and then report it, the comparison means nothing — that is the
 whole reason the freeze is stated in the paper.
+
+### Scaling it without more annotation
+
+`ppi-eval.ts` implements a prediction-powered estimator: a judge supplies cheap
+labels, and its bias is measured on the human-labelled subset and subtracted, so
+a useless judge degrades the estimate to human-only rather than corrupting it.
+
+It currently **refuses to report**, because the doubly-labelled pairs are 2.46x
+enriched in positives and the correction would inherit that. Read the refusal —
+it names the exact input that would make the data eligible. See
+[`docs/12-prediction-powered-selection.md`](docs/12-prediction-powered-selection.md).
 
 ## What limits the headline number
 
