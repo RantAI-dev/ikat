@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" width="260" height="64"
+     role="img" aria-label="IKAT">
+  <title>IKAT</title>
+
+  <g>
+    <g fill="currentColor" opacity=".38">
+      <rect x="6"  y="13" width="52" height="5" rx="2.5"/>
+      <rect x="6"  y="24" width="52" height="5" rx="2.5"/>
+      <rect x="6"  y="35" width="52" height="5" rx="2.5"/>
+      <rect x="6"  y="46" width="34" height="5" rx="2.5"/>
+    </g>
+    <g fill="#E4572E">
+      <rect x="42" y="6"  width="5" height="9"  rx="2.5"/>
+      <rect x="42" y="17" width="5" height="20" rx="2.5"/>
+      <rect x="42" y="39" width="5" height="6"  rx="2.5"/>
+    </g>
+    <rect x="38" y="45" width="14" height="13" rx="3.5" fill="#E4572E"/>
+    <circle cx="42.4" cy="49.6" r="1.5" fill="#fff" opacity=".92"/>
+    <path d="M39.6 56.2 L43.4 51.6 L46.2 54.6 L48.4 52.4 L50.4 56.2 Z"
+          fill="#fff" opacity=".92"/>
+  </g>
+
+  <text x="76" y="41" font-family="Georgia, 'Times New Roman', serif"
+        font-size="34" letter-spacing="6" fill="currentColor">IKAT</text>
+  <text x="78" y="55" font-family="system-ui, -apple-system, sans-serif"
+        font-size="9.5" letter-spacing="1.6" fill="currentColor" opacity=".55">
+    PLACEMENT IS PROVENANCE
+  </text>
+</svg>

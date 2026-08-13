@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64"
+     role="img" aria-label="IKAT">
+  <title>IKAT</title>
+  <desc>Four threads of prose with one binding thread passing over and under
+        them, tying a figure into the weave.</desc>
+
+  <!-- The prose. Four threads of running text, evenly spaced, unremarkable —
+       this is what conventional ingestion keeps. -->
+  <g fill="currentColor" opacity=".38">
+    <rect x="6"  y="13" width="52" height="5" rx="2.5"/>
+    <rect x="6"  y="24" width="52" height="5" rx="2.5"/>
+    <rect x="6"  y="35" width="52" height="5" rx="2.5"/>
+    <rect x="6"  y="46" width="34" height="5" rx="2.5"/>
+  </g>
+
+  <!-- The binding thread. It passes UNDER the first and third rows and OVER the
+       second — the over/under of a real ikat weave — then terminates in the
+       figure. The gaps are what make it read as woven rather than drawn on top. -->
+  <g fill="#E4572E">
+    <rect x="42" y="6"  width="5" height="9"  rx="2.5"/>
+    <rect x="42" y="17" width="5" height="20" rx="2.5"/>
+    <rect x="42" y="39" width="5" height="6"  rx="2.5"/>
+  </g>
+
+  <!-- The figure, tied into the flow at the point the thread reaches. Rounded,
+       solid, and deliberately the only closed shape in the mark. -->
+  <rect x="38" y="45" width="14" height="13" rx="3.5" fill="#E4572E"/>
+  <circle cx="42.4" cy="49.6" r="1.5" fill="#fff" opacity=".92"/>
+  <path d="M39.6 56.2 L43.4 51.6 L46.2 54.6 L48.4 52.4 L50.4 56.2 Z"
+        fill="#fff" opacity=".92"/>
+</svg>

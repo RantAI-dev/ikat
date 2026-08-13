@@ -1,0 +1,688 @@
+%% Placement Is Provenance — IEEE journal manuscript
+%%
+%% Build:  tectonic main.tex
+%%
+%% Every number in this file is traceable to docs/paper/*.md, which record the
+%% run that produced it. Where a claim would flatter the method beyond what the
+%% data supports, the weaker claim is made instead; Section IX states results
+%% that argue against our own approach.
+\documentclass[journal]{IEEEtran}
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+
+\begin{document}
+
+\title{Placement Is Provenance: Anchor-Preserving Ingestion for\\
+Figure-Grounded Tutoring over Curriculum Textbooks}
+
+\author{\IEEEauthorblockN{Author Names Withheld}%
+\thanks{Manuscript prepared 13 August 2026. Corresponding author: \texttt{author@example.org}.}}
+
+\markboth{IEEE Transactions on Learning Technologies (draft)}%
+{Placement Is Provenance: Anchor-Preserving Ingestion for Figure-Grounded Tutoring}
+
+\maketitle
+
+\begin{abstract}
+Multimodal retrieval-augmented generation is evaluated almost entirely on
+\emph{which} evidence is retrieved. A tutoring system that shows figures from a
+textbook is judged on a second axis as well: \emph{where} the figure lands in the
+explanation. We show that this axis is separable, that it is cheap to measure, and
+that the information determining it is produced by every layout parser and
+routinely discarded before serving.
+
+We release IKAT-Bench, a multimodal tutoring RAG benchmark over Indonesian K--12
+curriculum textbooks: 13 government titles, 2{,}816 pages, extracted through two
+independent pipelines, with 486 adversarially filtered questions. We introduce a
+\emph{layout-gold placement metric} that derives placement ground truth from the
+source document's own typesetting at no per-item annotation cost, and a headline
+\emph{Grounded Figure F1} that credits a figure only when it is both the right
+figure and in the right place.
+
+Two findings require no model and replicate across both extraction pipelines. Only
+19.3\,\%/34.3\,\% of figures carry a printed caption, while \textbf{100\,\%} carry
+a recoverable reading-order anchor. And under perfect retrieval \emph{and} a
+perfect answer, caption-based placement is still off by 2.08/4.69 sentences.
+Placement is not implied by retrieval. Notably, the corpus with nearly twice the
+caption coverage places \emph{worse}, because its share of lexically
+indistinguishable figures also doubles: caption availability is not caption
+discriminability.
+
+On MRAMG-Bench's Academic subset, a 568M-parameter cross-encoder over
+anchor-derived context reaches Image Precision \textbf{69.63}, and \textbf{67.50}
+under forced emission, against 65.28 for the best published system (GPT-4o); the
+configuration was frozen before the dataset was obtained. On our own corpus,
+composing a vision-language filter with that cross-encoder raises figure-selection
+precision from 0.028 to \textbf{0.542} against human annotation.
+
+We also report a deployment study. The composed selector was installed on an
+air-gapped 8B-class deployment and, despite every component check passing,
+executed \emph{zero} times in production: an admission threshold tuned on a
+different text representation discarded every candidate before it. We argue that
+component-level verification is structurally unable to catch this class of fault.
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+Multimodal retrieval-augmented generation, document layout analysis, figure
+grounding, educational technology, low-resource languages, deployment evaluation.
+\end{IEEEkeywords}
+
+\section{Introduction}
+
+\IEEEPARstart{A}{n} AI study assistant grounded in school textbooks must do more
+than quote the right paragraph. Curriculum books teach substantially through
+pictures: a labelled water-cycle diagram, a food-chain chart, a worked geometric
+construction. When such a system answers a child's question, showing the right
+figure at the right point in the explanation is part of the answer, not decoration
+around it.
+
+Two distinct things can go wrong. The system can show the \textbf{wrong figure}, or
+it can show the \textbf{right figure in the wrong place} --- after the explanation
+has moved on, or bundled at the end where the reader must reconstruct which
+sentence it belongs to. The first failure is measured everywhere. The second is
+measured almost nowhere.
+
+This paper makes four claims, each falsifiable by the experiments reported here.
+
+\begin{itemize}
+\item[\textbf{C1}] Figures in curriculum textbooks carry content absent from the
+prose, so text-only retrieval has a ceiling that better text retrieval cannot
+raise.
+\item[\textbf{C2}] Placement is a failure mode distinct from retrieval. It can be
+made to fail while retrieval and generation are both perfect.
+\item[\textbf{C3}] The signal that fixes it --- the figure's position in the
+parser's reading-order block sequence --- is produced by every layout parser, is
+recoverable for 100\,\% of figures, and is discarded by conventional ingestion.
+\item[\textbf{C4}] Selection, not placement, is where the practical gain lies, and
+the gain requires a stage that looks at the image rather than at text about the
+image.
+\end{itemize}
+
+Section~\ref{sec:deploy} adds a claim of a different kind: that the pipeline stage
+most likely to be silently disabled in production is precisely the one whose
+absence produces no error.
+
+\subsection{Setting}
+
+The deployment motivating this work is an on-premise study assistant for an
+Indonesian university partner, serving national curriculum textbooks on an
+air-gapped NVIDIA GB10 host. Every model in the serving path is 8B-class or
+smaller and runs locally. This constrains the design --- no frontier model is
+available at answer time --- and makes the efficiency results in
+Section~\ref{sec:select} load-bearing rather than incidental.
+
+\section{Related Work}
+
+\subsection{Multimodal RAG benchmarks}
+
+Recent benchmarks evaluate document-centric multimodal RAG along retrieval and
+answer quality. UniDoc-Bench~\cite{unidoc} unifies document-centric evaluation;
+REAL-MM-RAG~\cite{realmmrag} targets retrieval robustness under query rephrasing;
+ColPali~\cite{colpali} introduces late-interaction visual retrieval and the ViDoRe
+benchmark. MIRACL-VISION~\cite{miraclvision} extends visual retrieval to 18
+languages and reports substantial degradation outside English.
+
+These evaluate \emph{which} evidence is found. None scores where a figure is
+placed within a generated answer, which is the axis this paper isolates.
+
+\subsection{Figure placement in generated answers}
+
+MRAMG-Bench~\cite{mramg} is the closest prior work: it scores inserted images and
+supplies a bipartite sentence--image assignment rule, which we implement as a
+comparator. MMDocRAG~\cite{mmdocrag} reports image-quote selection F1 separately
+from text. VinQA~\cite{vinqa} defines a visual citation measure with a
+citation-order placement rule, implemented here as a second comparator.
+ImageRef-VL~\cite{imageref} addresses contextual image referencing in
+vision-language models.
+
+Our contribution relative to these is (i) a placement ground truth obtained from
+the document's own typesetting rather than from annotation, and (ii) the
+observation that the ingestion step, not the ranking step, is where the necessary
+signal is lost.
+
+\subsection{Indonesian and low-resource multimodal resources}
+
+Indonesian K--12 curriculum material is, to our knowledge, unrepresented in
+published multimodal RAG benchmarks. The corpus released here is intended partly
+to close that gap, and partly because its properties --- sparse captions, dense
+decorative imagery --- expose failure modes that caption-rich corpora hide.
+
+\section{Method}
+
+\subsection{The anchor, and where it is lost}
+
+A layout parser emits, for each page, an ordered sequence of blocks: headings,
+paragraphs, captions, figures. A figure's position in that sequence is a precise
+statement of where in the reading flow it belongs. Conventional ingestion then
+stores the prose as chunks and the figures as a separate array, and the ordering
+relation between them is dropped.
+
+We define the \emph{anchor} of a figure as the index of the text chunk containing
+the prose block that immediately precedes it in reading order. Anchoring requires
+no model: it is a join over data the parser already produced. We recover it by
+matching a word-prefix of the preceding block against chunk text, shortening the
+probe from ten words to four until a match is found.
+
+Anchors are preserved through ingestion into chunk metadata, and consumed at
+retrieval time: a figure whose anchor chunk was retrieved is admitted as a
+candidate before any caption test is applied. This ordering matters, because a
+caption test cannot admit the 66--81\,\% of figures that carry no printed caption.
+
+\subsection{Layout-gold: the document annotates itself}
+
+Placement ground truth normally requires a human to say where a figure belongs in
+a generated answer. We avoid this. Take a figure's own anchor chunk as the answer
+text. Retrieval is then perfect by construction, the answer is perfect, and the
+correct insertion slot is known exactly from the block sequence. Any residual
+error is intrinsic to the placement mechanism, because both the retriever and the
+generator have been removed.
+
+This yields placement ground truth for every figure in the corpus at zero
+per-item annotation cost, and it is what makes the model-free results of
+Section~\ref{sec:structural} possible.
+
+\subsection{Metrics}
+
+\textbf{Placement displacement} (PD) is the signed distance, in sentences, between
+where a figure was placed and its layout-gold slot; we report $|\mathrm{PD}|$ and
+the exact-placement rate. \textbf{Selection precision/recall/F1} score the figure
+set. \textbf{Grounded Figure F1} credits a figure only when it is both selected
+correctly and placed within tolerance.
+
+\subsection{LLM-as-judge, and its limits}
+
+Human annotation at scale was not affordable, so a vision-language judge was
+calibrated against the human annotation that was. We report Cohen's $\kappa$
+against a human annotator before using any judge output: our
+model-generated harness gold agrees with a human at $\kappa = 0.092$ --- chance
+--- while a frontier VLM judge reaches $\kappa = 0.552$. Every scaled number
+carries the $\kappa$ of the instrument that produced it.
+
+\section{Experimental Setup}
+
+\subsection{Corpus}
+
+Thirteen Indonesian government curriculum titles, 2{,}816 pages, spanning grades
+1, 4 and 8. Each book was extracted through two independent pipelines: a hosted
+OCR service and an on-premise MinerU sidecar. These use different models,
+different figure detectors and different noise filtering, and neither corpus was
+derived from the other. Agreement between them is therefore replication, not
+re-reporting.
+
+
+\subsection{What is released}
+
+We release the harness, the metric implementations, the question sets and the
+derived per-figure measurements. We do not redistribute the textbooks: they are
+Indonesian government publications carrying their own terms, and every structural
+measure in Section~\ref{sec:structural} is reproducible from the cached extraction
+we do release without re-obtaining them.
+
+\subsection{Questions}
+
+486 questions, adversarially filtered to remove items answerable from the question
+alone, from front matter, or from pedagogical apparatus. A 48-item subset carries
+human figure annotation (19 positive figure--question links); this subset is the
+only non-circular gold available and is used for every headline selection number.
+
+\subsection{Systems}
+
+Ten configurations, including implementations of the MRAMG bipartite placement
+rule and the VinQA citation-order rule. Retrieval is hybrid dense/sparse with
+\texttt{bge-m3} embeddings at dimension 1024; reranking uses
+\texttt{bge-reranker-v2-m3} (568M parameters) served locally. Generation uses an
+8B-class SEA-LION vision-language model.
+
+\section{Structural Results}
+\label{sec:structural}
+
+These come from the corpus alone: deterministic, reproducible offline, and
+impossible to tune. Table~\ref{tab:structural} reports both extraction paths.
+
+\begin{table}[t]
+\caption{Model-free corpus measures, computed independently on two extraction
+pipelines. Agreement is replication, not re-reporting.}
+\label{tab:structural}
+\centering
+\begin{tabular}{@{}llrr@{}}
+\toprule
+& Measure & Hosted & On-prem \\
+\midrule
+--- & Usable figures & 1{,}552 & 1{,}226 \\
+A1 & With a printed caption & 19.3\,\% & 34.3\,\% \\
+A2 & Lexically indistinguishable & 20.7\,\% & 34.1\,\% \\
+A3 & Shares a page with another figure & 49.9\,\% & 54.2\,\% \\
+A3b & Anchor vs.\ page resolution & 1.49$\times$ & 1.56$\times$ \\
+--- & \textbf{With a reading-order anchor} & \textbf{100\,\%} & \textbf{100\,\%} \\
+A4 & Caption selection F1, oracle retrieval & 0.254 & 0.232 \\
+A5 & Caption $|\mathrm{PD}|$, oracle answer & 2.08 & 4.69 \\
+A5b & End-of-answer $|\mathrm{PD}|$ & 8.71 & 12.13 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Four consequences follow without running any system.
+
+\textbf{The caption signal is mostly absent (A1).} Four figures in five carry no
+printed caption on the hosted path, so a caption-based mechanism must fall back on
+page prose --- which is shared by every figure on that page.
+
+\textbf{A fifth of the corpus is unsolvable by caption matching in principle
+(A2).} For 20.7\,\% of figures, another figure in the same book has an effectively
+identical index text. No matcher can distinguish them. This is an upper bound on a
+competing approach, derived without running it.
+
+\textbf{Page-level provenance cannot resolve half the corpus (A3).} Half of all
+figures share a page with another, so page-level attribution is ambiguous for
+49.9\,\% of cases. Anchoring provides 1.49$\times$ the positional resolution, and
+that gain is concentrated exactly where page-level methods fail.
+
+\textbf{Placement fails when nothing else does (A5) --- this is C2, established
+without a model.} Under oracle retrieval and an oracle answer, caption matching
+still lands 2.08 sentences away and is exactly right only 43.0\,\% of the time; a
+design with no positional signal at all sits 8.71 sentences away and is never
+exactly right.
+
+\textbf{More captions did not help.} The on-premise path has nearly twice the
+caption coverage (34.3\,\% vs.\ 19.3\,\%) yet places \emph{worse} (4.69 vs.\ 2.08
+sentences). The reason is visible in A2: its share of lexically indistinguishable
+figures also nearly doubles. Caption \emph{availability} is not caption
+\emph{discriminability}, and only the latter could help. This would have been
+invisible on a single corpus.
+
+\emph{Fairness note.} A first implementation of A4 scored the caption mechanism at
+F1 0.025 by taking the first three keyword matches in document order. Ranking by
+keyword-overlap count instead --- the charitable reading --- raised it tenfold to
+0.254. The reported figure is the charitable one.
+
+\emph{Tautology note.} Under both oracle setups the anchor mechanism scores
+perfectly by construction, because its selection rule and the gold set coincide.
+That number is \textbf{not evidence} and is stated only to make the circularity
+explicit.
+
+\section{External Validation on MRAMG-Bench}
+
+Every result above is measured on a corpus we assembled against a gold standard we
+defined. 80\,\% of our gold figure links are derived from the anchor itself, and on
+those links our harness gold agrees with a human annotator at chance
+($\kappa = 0.092$). Internal care cannot repair that; only measurement on data we
+did not author can.
+
+MRAMG-Bench~\cite{mramg} provides it. Candidates are the images of the question's
+provenance document, each represented by the prose immediately preceding its
+placeholder --- the same anchor our method uses, and the same information
+available to their placeholder-based baseline. \textbf{The configuration was fixed
+on our own data before this dataset was obtained}; no parameter was tuned on
+MRAMG.
+
+\begin{table}[t]
+\caption{MRAMG-Bench Academic subset, Image Precision ($n = 200$). Published
+figures for comparators.}
+\label{tab:mramg}
+\centering
+\begin{tabular}{@{}lr@{}}
+\toprule
+System & Image Precision \\
+\midrule
+\textbf{Ours (cross-encoder, 568M params)} & \textbf{69.63} \\
+\textbf{Ours, forced emission (0\,\% silent)} & \textbf{67.50} \\
+GPT-4o, LLM-based & 65.28 \\
+Claude-3.5-Sonnet, LLM-based & 62.17 \\
+GPT-4o, MLLM-based & 60.39 \\
+Gemini-1.5-Pro, LLM-based & 59.85 \\
+DeepSeek-V3, rule-based & 56.12 \\
+Llama-3.3-70B (best open-weight) & 38.78 \\
+Qwen2-VL-7B, MLLM-based & 1.63 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{The abstention objection, and its test.} Image Precision counts only
+emitted images, so a system that declines on hard questions could purchase its
+score; ours abstains on 49\,\%. Removing that advantage entirely --- emitting
+exactly one image on \emph{every} question --- yields precision 67.50, recall
+61.64, F1 64.44. Still ahead of every published configuration, with recall rising
+from 41.59. The margin is not an artefact of selective answering.
+
+\textbf{Scope.} This is a \emph{selection} result placed beside end-to-end systems
+that also generate the surrounding answer; Image Precision is computed over the
+same quantity, but the tasks are not identical. On MRAMG's Lifestyle domain we
+reach $\approx$55 against 62.23 for Gemini-1.5-Pro --- third overall, first among
+open-weight systems.
+
+\textbf{What it does not license.} The same configuration reaches $\approx$30\,\%
+precision on the Indonesian textbooks. That corpus is harder: a third of its
+figures carry no caption, most are decorative, and a dozen illustrations per book
+depict children learning. A benchmark number must not be quoted as a product
+capability.
+
+\section{Selection: Composing Sight with Discrimination}
+\label{sec:select}
+
+Our judge looks at the picture and agrees with a human at $\kappa = 0.552$; our
+selector reads a 300-character description and never sees the image. That
+asymmetry motivated a direct comparison, on the 48 human-annotated items ---
+the only gold no model produced (Table~\ref{tab:select}).
+
+\begin{table}[t]
+\caption{Figure selection against human annotation ($n = 48$, 19 positive links).}
+\label{tab:select}
+\centering
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+System & P & R & F1 \\
+\midrule
+\textbf{VLM filter $\to$ rerank $\to$ top-1} & \textbf{0.542} & 0.684 & \textbf{0.605} \\
+VLM selector alone & 0.283 & \textbf{0.789} & 0.417 \\
+Cross-encoder alone & 0.304 & 0.368 & 0.333 \\
+Deployed production system & 0.028 & 0.211 & 0.049 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The gain from sight is \textbf{recall}, not precision: the VLM finds four of every
+five figures a person chose, the cross-encoder about a third. Descriptions discard
+enough to lose half the correct figures --- but seeing the image does not make a
+model better at rejecting wrong ones. Composing the two therefore beats either:
+sight decides what is \emph{possible}, discrimination decides what is
+\emph{best}. Precision nearly doubles over the best single method and is
+19$\times$ the deployed system.
+
+\subsection{Showing the model fewer images}
+
+The composed pipeline costs one vision call per candidate. Because prefill scales
+with images rather than calls, shrinking the model is the wrong lever: a 4B model
+saves 3.7\,s and loses half its recall. Cutting images is the right one. Letting
+the cross-encoder discard the obvious losers first (Table~\ref{tab:prefilter})
+costs 0.010--0.021 F1 for a two-thirds latency reduction.
+
+\begin{table}[t]
+\caption{Candidate prefilter, 165 questions. $N$ is how many of the ranked
+candidates the vision model is allowed to see. Latency below $N=$~all is projected
+from measured per-pair cost.}
+\label{tab:prefilter}
+\centering
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+$N$ seen & 4B F1 & 4B lat. & 8B F1 & 8B lat. \\
+\midrule
+1 & 0.721 & 0.7\,s & 0.735 & 1.0\,s \\
+\textbf{2} & \textbf{0.736} & \textbf{1.3\,s} & \textbf{0.753} & \textbf{2.0\,s} \\
+3 & 0.736 & 2.0\,s & 0.757 & 3.0\,s \\
+all (6) & 0.735 & 3.9\,s & 0.763 & 5.9\,s \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two candidates are the whole pipeline. The four the model never sees were ones it
+would have rejected anyway: it was spending 80\,\% of its time confirming the
+bottom of the cross-encoder's list. The prefilter's own ceiling explains where
+this stops being safe --- the correct figure survives a cut to the top 2 for
+86.8\,\% of links, but only 76.5\,\% at $N=1$, and recall follows it down.
+
+\subsection{The judge prompt is the largest single gain}
+
+Replacing a permissive judging prompt with a strict one --- same model, same call,
+different words --- moves precision from 0.690 to 0.806 (F1 0.763 $\to$ 0.800) on
+165 questions. This is the largest improvement in the study and costs nothing at
+serving time.
+
+We attach a caveat that a reader should weigh heavily. That comparison is scored
+against a gold standard built by a frontier VLM, which is circular for a pipeline
+containing a VLM. On the 48-item human gold the strict and permissive prompts
+differ by 0.014 F1 against measured run-to-run noise of 0.014 --- they are
+\emph{indistinguishable}. The honest reading is that the strict prompt reliably
+makes our selector agree with the reference model more often; whether it makes the
+selector agree with a \emph{person} more often is untested at this sample size.
+
+\section{Negative Results}
+
+We report these because they were run, not because they worked.
+
+\textbf{Reranking against the generated answer} instead of the question is
+substantially worse (F1 0.183 vs.\ 0.288), and concatenating the two also hurts
+(0.205). The likely mechanism is dilution: five sentences of tutor prose carry
+connective material matching almost any figure, while the question is short and
+discriminating.
+
+\textbf{Adding surrounding context to the figure's index text} is worse than the
+description alone (0.248 vs.\ 0.270); context alone collapses to 0.119. This kills
+a hypothesis we had carried for some time --- that the gap between MRAMG (67\,\%)
+and our textbooks (30\,\%) was one of text representation. Had it been, context
+mode would have closed it. It is the worst of the four representations.
+
+\textbf{A newer reranker is worse here.} \texttt{Qwen3-Reranker} (2025) ranks our
+figure descriptions at gold-first 0.288 (MRR 0.481) against 0.788 (MRR 0.859) for
+the 2024 \texttt{bge-reranker-v2-m3}; \texttt{jina-reranker-v2} could not be
+served by our inference stack at all. Being newer and stronger on public
+multilingual benchmarks did not transfer to ranking short Indonesian figure
+captions.
+
+We initially reported a far larger gap (F1 0.034 vs.\ 0.260) and withdrew it: that
+comparison applied one absolute score threshold to two models whose score
+distributions differ by an order of magnitude, so it measured calibration rather
+than ranking quality.
+
+
+\section{Statistical Treatment}
+
+Selection differences are tested with an exact McNemar test on per-question hit
+(a paired binary outcome), and precision differences with a paired bootstrap over
+questions ($10^4$ resamples). Two conventions matter for reproducibility.
+
+\emph{Vacuity.} A question on which a system emitted nothing contributes no
+precision term for that system. Counting silence as precision~0 would penalise
+abstention twice --- once in recall, once in precision --- and abstention is a
+design goal here, not a defect.
+
+\emph{Pairing.} Precision is compared only on questions where \emph{both} systems
+emitted, so the comparison is paired rather than aggregate.
+
+On the 165-question set the composed selector's precision advantage is significant
+against every comparator we ran ($p < 0.005$). We decline to report significance
+for the 48-item human gold: with 19 positive links, the test has too little power
+to distinguish the effects we care about, and reporting a $p$-value there would
+imply a resolution the data does not have.
+
+\emph{Withdrawn claims.} Three differences we initially reported did not survive
+testing and are retracted here rather than quietly dropped: a chunking gain
+($p = 0.096$), anchor over co-embedding ($p = 0.670$), and a hybrid-over-anchor
+improvement ($p = 0.468$).
+
+
+\section{Ingestion Cost}
+
+Anchoring adds no inference: it is a join over parser output. The cost of the
+pipeline is therefore the layout parse itself. On the partner's GB10 host, sharing
+the GPU with a serving language model and two embedding services, extraction runs
+at \textbf{1.22\,s per page} (192-page book in 3\,min 55\,s), plus 76\,s to chunk,
+embed and store 585 chunks.
+
+Fifteen textbooks (149\,MB, Kurikulum Merdeka grade 7) ingested in
+\textbf{84 minutes} with no failures, yielding 1{,}254 anchored figures where the
+previous pipeline had produced none.
+
+Rendering resolution is a weak lever: dropping from 300 to 180\,dpi cuts pixels to
+36\,\% but extraction time by only 17\,\% (235\,s $\to$ 194\,s), because the cost
+is dominated by the number of \emph{blocks} --- 2{,}890 across 192 pages, each
+requiring its own recognition pass --- rather than by page resolution. Increasing
+the KV-cache budget does nothing: the engine already reports capacity for 258
+concurrent sequences against a 192-page batch.
+
+\section{Deployment Study}
+\label{sec:deploy}
+
+The composed selector was installed on the partner deployment. Every component
+check passed --- environment variables present, the application could reach the
+vision endpoint, the model answered a probe correctly, the container reported
+healthy --- and the stage \textbf{executed zero times}.
+
+An admission threshold upstream of it discarded every candidate. The threshold was
+0.2, chosen when the reranker scored \emph{descriptions}, where relevant figures
+score 0.5--0.8. Production ranks the printed \emph{caption}: on a live question
+about the human digestive system, the correct figure scored 0.016 and everything
+else fell below it. Nothing survived, so the gate was skipped, so no log line was
+ever written. \emph{The absence of a line was the only symptom.}
+
+Two properties made this invisible:
+
+\begin{itemize}
+\item The default was tuned on a different text representation than the one
+production uses.
+\item The log printed the raw environment variable, so an unset threshold rendered
+as \texttt{floor=off} while a 0.2 floor silently dropped everything.
+\end{itemize}
+
+After correcting both, the first production gate decision was:
+
+\begin{quote}\small\ttfamily
+figure gate (4B-VL, topN=2): YA:Gambar 1.15 Posisi usus $|$ YA:Gambar 1.14
+Struktur d $\to$ 1/5
+\end{quote}
+
+Five candidates admitted, cut to two, both approved, one shown --- the correct
+one. On a second question, about the parts of a microscope, the gate rejected both
+top candidates and emitted nothing. Investigation confirmed the book contains no
+figure of microscope parts; the nearest anchored figures were a micrograph of a
+nerve cell, a sea creature and an orangutan. The gate had correctly refused a
+\emph{micrograph} for a question about a \emph{microscope} --- a one-word lexical
+distance that caption matching would plausibly have crossed.
+
+\textbf{The generalisable lesson concerns verification, not the threshold.} Every
+component was checked in isolation and every check passed. What was never checked
+was whether the stage ran at all on a real question. A pipeline stage that fails
+by not executing produces no error, no exception and no degraded output --- only
+a missing log line, and absence is what nobody notices. We recommend that
+selective stages emit a survivor count unconditionally, so that
+\texttt{kept 0/108} is visible on the first query rather than after weeks.
+
+Two further faults surfaced only under real use: uploads above 1\,MB were silently
+discarded by a framework body limit that returned HTTP 200 with an empty body,
+making a failed ingest indistinguishable from a successful one; and a hot-patched
+extractor had reverted to an image without reading-order output, so re-ingestion
+would have produced zero anchors regardless of the rest of the system.
+
+\section{Discussion and Threats to Validity}
+\label{sec:threats}
+
+\textbf{What the evidence supports.} C2 and C3 are established model-free and
+replicated across two extraction pipelines; they do not depend on any system run.
+C4 is supported by the human-gold comparison and, independently, by the MRAMG
+result. C1 is the weakest of the four: on questions answerable only from a figure,
+no configuration recovered the content, and the system that most exceeded a
+text-only baseline did so with a significant loss of faithfulness.
+
+\textbf{The sample size is the principal threat.} The headline precision of 0.542
+rests on 48 items and 19 positive links. Measured run-to-run variation at that size
+is $\pm$0.014 F1, so differences smaller than that are not resolvable, and we
+decline to claim any. The MRAMG result carries the generalisation weight precisely
+because it is external, larger ($n = 200$) and authored by others.
+
+\textbf{Circular gold.} Our 165-question scaled gold was built by a frontier VLM.
+For any pipeline containing a VLM stage this inflates results --- measured
+directly: the same selector scores 0.521 against that gold and 0.283 against
+human annotation. Numbers from the scaled gold are reported as consistency checks,
+never as effect sizes.
+
+\textbf{Single corpus, single language.} All internal results are Indonesian K--12
+material. The external benchmark is English. We make no claim about intermediate
+settings.
+
+\textbf{No online evaluation.} At the time of writing, field observation consists
+of a handful of real queries. The 0.542 is an offline number.
+
+\section{Limitations}
+
+Retrieval surfaces the chunk holding the relevant figure for only 51.8\,\% of
+figure-bearing questions, which bounds every system reported here. Anchoring
+\emph{alone} does not beat similarity-based selection; the win requires a
+competent placement rule, and in our comparison the best such rule is not ours but
+MRAMG's. 37\,\% of anchored figures in the deployed corpus carry a caption with no
+usable description --- a photo credit or a synthetic placeholder --- so the
+caption-ranked stage cannot order them by content. We identified this as a
+structural risk but did \emph{not} demonstrate that it costs a correct figure in
+practice; an investigation intended to confirm it instead falsified the specific
+case, and we report it as an open risk rather than a finding.
+
+\section{Conclusion}
+
+Where a figure belongs is decided at ingestion, not at ranking. Every layout
+parser knows it; conventional pipelines throw it away and then attempt to
+reconstruct it from captions that four figures in five do not have. Preserving the
+reading-order anchor is a join, not a model, and it is recoverable for 100\,\% of
+figures.
+
+The practical gain, however, comes from selection rather than placement, and it
+requires a stage that looks at the image. Composing a vision-language filter with
+a small cross-encoder --- sight for recall, discrimination for precision --- raises
+figure-selection precision from 0.028 to 0.542 against human annotation, and the
+same design reaches state-of-the-art Image Precision on MRAMG-Bench's Academic
+subset with a 568M-parameter ranker and no tuning on that dataset.
+
+Finally, we report that this stage ran zero times in production while every
+component test passed. We suspect that class of fault is common and
+under-reported, because a stage that fails by not running leaves nothing behind to
+find.
+
+\section*{Acknowledgment}
+
+The authors thank the partner institution for access to the on-premise
+deployment.
+
+\begin{thebibliography}{10}
+\small
+% NOTE FOR SUBMISSION: entries [1]-[10] carry metadata verified 2026-08-09
+% against listing pages. Items marked "verify" below must be confirmed against
+% full text before camera-ready.
+\bibitem{unidoc}
+X.~Peng, C.~Qin, Z.~Chen, R.~Xu, C.~Xiong, and C.-S. Wu, ``UniDoc-Bench: A unified
+benchmark for document-centric multimodal RAG,'' \emph{arXiv:2510.03663}, 2026.
+
+\bibitem{realmmrag}
+N.~Wasserman \emph{et al.}, ``REAL-MM-RAG: A real-world multi-modal retrieval
+benchmark,'' \emph{arXiv:2502.12342}, 2025.
+
+\bibitem{chartrag}
+``Benchmarking multimodal RAG through a chart-based document question-answering
+generation framework,'' \emph{arXiv:2502.14864}, 2025. % verify authors
+
+\bibitem{imageref}
+``ImageRef-VL: Enabling contextual image referencing in vision-language models,''
+\emph{arXiv:2501.12418}, 2025. % verify authors
+
+\bibitem{colpali}
+M.~Faysse \emph{et al.}, ``ColPali: Efficient document retrieval with vision
+language models,'' \emph{arXiv:2407.01449}, 2024.
+
+\bibitem{mramg}
+Q.~Yu, Z.~Xiao, B.~Li, Z.~Wang, C.~Chen, and W.~Zhang, ``MRAMG-Bench: A
+comprehensive benchmark for advancing multimodal retrieval-augmented multimodal
+generation,'' \emph{arXiv:2502.04176}, 2025.
+
+\bibitem{mmdocrag}
+K.~Dong, Y.~Chang, S.~Huang, Y.~Wang, R.~Tang, and Y.~Liu, ``Benchmarking
+retrieval-augmented multimodal generation for document question answering,''
+\emph{arXiv:2505.16470}, 2025.
+
+\bibitem{vinqa}
+Y.~R. Jang, H.~Kong, K.~An, J.~S. Huh, G.~Kim, and S.~J. Choi, ``VinQA: Visual
+elements interleaved long-form answer generation for real-world multimodal
+document QA,'' \emph{arXiv:2606.16092}, 2026.
+
+\bibitem{miraclvision}
+R.~Osmulski, G.~de S.~P. Moreira, R.~Ak, M.~Xu, B.~Schifferer, and E.~Oldridge,
+``MIRACL-VISION: A large, multilingual, visual document retrieval benchmark,''
+\emph{arXiv:2505.11651}, 2025.
+
+\bibitem{docling}
+C.~Auer \emph{et al.}, ``Docling technical report,'' IBM Research, 2024. % verify
+
+\end{thebibliography}
+
+\end{document}
