@@ -9,15 +9,10 @@
 import * as fs from "node:fs"
 import * as path from "node:path"
 
-/**
- * Outer repo root (agents-cloud), six levels up from
- * packages/rantai-agents/tests/bench-kb/src/ikat. Note this deliberately climbs
- * OUT of the rantai-agents submodule: the env files and the PDF corpus live in
- * the outer repo, not in the package.
- */
-const REPO_ROOT = path.resolve(import.meta.dirname, "../../../../../..")
+/** Repo root, one level up from bench/. */
+const REPO_ROOT = path.resolve(import.meta.dirname, "..")
 
-const ENV_FILES = ["apps/cloud/.env.local", ".env"]
+const ENV_FILES = [".env"]
 
 let loaded = false
 

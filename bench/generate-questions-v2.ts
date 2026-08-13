@@ -23,7 +23,7 @@
  *
  * Usage:
  *   IKAT_PROVIDER=ugm IKAT_CORPUS=ugm3-built \
- *     bun tests/bench-kb/src/ikat/generate-questions-v2.ts [perDoc] [docs]
+ *     bun bench/generate-questions-v2.ts [perDoc] [docs]
  */
 import * as fs from "node:fs"
 import * as path from "node:path"

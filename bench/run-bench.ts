@@ -10,7 +10,7 @@
  * table it is because the run did not produce it, not because it was omitted.
  *
  * Usage:
- *   bun tests/bench-kb/src/ikat/run-bench.ts [--limit N] [--systems a,b] [--judge N] [--run NAME]
+ *   bun bench/run-bench.ts [--limit N] [--systems a,b] [--judge N] [--run NAME]
  */
 import * as fs from "node:fs"
 import * as path from "node:path"

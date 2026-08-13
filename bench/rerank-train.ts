@@ -26,7 +26,7 @@
  *
  * Usage:
  *   IKAT_PROVIDER=ugm IKAT_CORPUS=ugm3-built \
- *     bun tests/bench-kb/src/ikat/rerank-train.ts
+ *     bun bench/rerank-train.ts
  */
 import * as fs from "node:fs"
 import * as path from "node:path"

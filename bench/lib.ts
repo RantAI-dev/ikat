@@ -63,8 +63,8 @@ export function cosine(a: number[], b: number[]): number {
   return dot / (Math.sqrt(na) * Math.sqrt(nb));
 }
 
-// Resolve paths relative to the bench-kb root (two levels up from this file)
-// so scripts work whether invoked from repo root or tests/bench-kb.
+// Resolve paths relative to the repo root (one level up from bench/) so a
+// script behaves the same whichever directory it is invoked from.
 const BENCH_ROOT = path.resolve(import.meta.dirname, "..");
 export function benchPath(p: string): string {
   if (path.isAbsolute(p)) return p;

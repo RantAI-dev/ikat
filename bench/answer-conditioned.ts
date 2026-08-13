@@ -20,8 +20,8 @@
  *            three side by side
  *
  * Usage:
- *   IKAT_PROVIDER=ugm bun tests/bench-kb/src/ikat/answer-conditioned.ts answers
- *   IKAT_PROVIDER=ugm bun tests/bench-kb/src/ikat/answer-conditioned.ts score
+ *   IKAT_PROVIDER=ugm bun bench/answer-conditioned.ts answers
+ *   IKAT_PROVIDER=ugm bun bench/answer-conditioned.ts score
  */
 import * as fs from "node:fs"
 import * as path from "node:path"

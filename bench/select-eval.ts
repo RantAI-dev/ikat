@@ -17,7 +17,7 @@
  *                 Every one of these is guaranteed wrong.
  *
  * Usage:
- *   IKAT_CORPUS=ugm3-built bun tests/bench-kb/src/ikat/select-eval.ts \
+ *   IKAT_CORPUS=ugm3-built bun bench/select-eval.ts \
  *     anchor anchor_mramg_place sel_wide sel_ranked sel_gated
  */
 import * as fs from "node:fs"

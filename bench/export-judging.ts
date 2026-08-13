@@ -21,8 +21,8 @@
  *               test whether layout-gold agrees with a competent reader.
  *
  * Usage:
- *   bun tests/bench-kb/src/ikat/export-judging.ts <run> quality [--fig-dep] [--limit N]
- *   bun tests/bench-kb/src/ikat/export-judging.ts <run> placement [--limit N]
+ *   bun bench/export-judging.ts <run> quality [--fig-dep] [--limit N]
+ *   bun bench/export-judging.ts <run> placement [--limit N]
  */
 import * as fs from "node:fs"
 import * as path from "node:path"

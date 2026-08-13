@@ -32,8 +32,8 @@
  *   matter how well it agrees on average.
  *
  * Usage:
- *   validate: bun tests/bench-kb/src/ikat/judge-figures.ts validate [repeats]
- *   scale:    bun tests/bench-kb/src/ikat/judge-figures.ts scale <questions.json> [limit]
+ *   validate: bun bench/judge-figures.ts validate [repeats]
+ *   scale:    bun bench/judge-figures.ts scale <questions.json> [limit]
  */
 import * as fs from "node:fs"
 import * as path from "node:path"

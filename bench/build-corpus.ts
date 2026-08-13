@@ -14,7 +14,7 @@
  * on block boundaries only — never mid-block — so a chunk's span is always an
  * exact, contiguous run of blocks and an anchor can never fall "between" chunks.
  *
- * Usage: bun tests/bench-kb/src/ikat/build-corpus.ts
+ * Usage: bun bench/build-corpus.ts
  */
 import * as fs from "node:fs"
 import * as path from "node:path"

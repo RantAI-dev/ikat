@@ -13,7 +13,7 @@
  * Usage:
  *   IKAT_PROVIDER=ugm IKAT_CORPUS=ugm3-built \
  *   IKAT_DESCRIBE_MODE=purpose IKAT_DESCRIPTIONS=descriptions-purpose \
- *   IKAT_GEN_MODEL=... bun tests/bench-kb/src/ikat/build-descriptions.ts
+ *   IKAT_GEN_MODEL=... bun bench/build-descriptions.ts
  */
 import * as fs from "node:fs"
 import * as path from "node:path"

@@ -20,7 +20,7 @@
  * "human judgement" by more than humans disagree with each other.
  *
  * Usage:
- *   bun tests/bench-kb/src/ikat/score-annotation.ts <answers.json...>
+ *   bun bench/score-annotation.ts <answers.json...>
  */
 import * as fs from "node:fs"
 import * as path from "node:path"

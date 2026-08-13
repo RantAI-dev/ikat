@@ -20,7 +20,7 @@
  * interrupted overnight run continues where it stopped.
  *
  * Usage:
- *   bun tests/bench-kb/src/ikat/extract-corpus.ts [--limit N] [--src DIR]
+ *   bun bench/extract-corpus.ts [--limit N] [--src DIR]
  */
 import * as fs from "node:fs"
 import * as path from "node:path"

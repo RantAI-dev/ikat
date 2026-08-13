@@ -19,7 +19,7 @@
  * own; they cannot flatter us by construction, which is exactly why they are
  * worth reporting.
  *
- * Usage: bun tests/bench-kb/src/ikat/structural-analysis.ts
+ * Usage: bun bench/structural-analysis.ts
  */
 import * as fs from "node:fs"
 import * as path from "node:path"

@@ -32,7 +32,7 @@
  * glossed.
  *
  * Usage:
- *   IKAT_PROVIDER=ugm bun tests/bench-kb/src/ikat/mramg-eval.ts [limit]
+ *   IKAT_PROVIDER=ugm bun bench/mramg-eval.ts [limit]
  */
 import * as fs from "node:fs"
 import * as path from "node:path"

@@ -18,8 +18,8 @@
  *     cannot.
  *
  * Usage:
- *   bun tests/bench-kb/src/ikat/score-judging.ts placement <run> <verdicts.json...>
- *   bun tests/bench-kb/src/ikat/score-judging.ts quality   <run> <verdicts.json>
+ *   bun bench/score-judging.ts placement <run> <verdicts.json...>
+ *   bun bench/score-judging.ts quality   <run> <verdicts.json>
  */
 import * as fs from "node:fs"
 import * as path from "node:path"

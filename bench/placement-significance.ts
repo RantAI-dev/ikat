@@ -19,7 +19,7 @@
  * the vacuity rule in placement-metrics: a missing gold is not a zero.
  *
  * Usage:
- *   bun tests/bench-kb/src/ikat/placement-significance.ts <run>
+ *   bun bench/placement-significance.ts <run>
  */
 import * as fs from "node:fs"
 import * as path from "node:path"

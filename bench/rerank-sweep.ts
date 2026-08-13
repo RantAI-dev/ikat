@@ -20,7 +20,7 @@
  *
  * Usage:
  *   IKAT_QUESTIONS=questions-human-gold.json \
- *     bun tests/bench-kb/src/ikat/rerank-sweep.ts
+ *     bun bench/rerank-sweep.ts
  */
 import * as fs from "node:fs"
 import * as path from "node:path"

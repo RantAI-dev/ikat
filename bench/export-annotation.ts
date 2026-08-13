@@ -27,7 +27,7 @@
  * at the end; score-annotation reads that back.
  *
  * Usage:
- *   IKAT_CORPUS=ugm3-built bun tests/bench-kb/src/ikat/export-annotation.ts [items] [candidates]
+ *   IKAT_CORPUS=ugm3-built bun bench/export-annotation.ts [items] [candidates]
  */
 import * as fs from "node:fs"
 import * as path from "node:path"

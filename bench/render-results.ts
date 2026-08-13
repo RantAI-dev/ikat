@@ -10,7 +10,7 @@
  * scoreable evidence is absent data, and must not read as a measured zero.
  *
  * Usage:
- *   bun tests/bench-kb/src/ikat/render-results.ts <run-name>
+ *   bun bench/render-results.ts <run-name>
  */
 import * as fs from "node:fs"
 import * as path from "node:path"

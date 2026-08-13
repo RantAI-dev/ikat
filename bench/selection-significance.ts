@@ -20,7 +20,7 @@
  * trade is a product decision — the numbers should show it, not hide it.
  *
  * Usage:
- *   bun tests/bench-kb/src/ikat/selection-significance.ts <select-eval json>
+ *   bun bench/selection-significance.ts <select-eval json>
  */
 import * as fs from "node:fs"
 

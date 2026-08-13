@@ -16,7 +16,7 @@
  *    untestable. The filter is the instrument, not a nicety.
  *
  * Usage:
- *   bun tests/bench-kb/src/ikat/generate-questions.ts [--per-doc N] [--docs slug,slug]
+ *   bun bench/generate-questions.ts [--per-doc N] [--docs slug,slug]
  */
 import * as fs from "node:fs"
 import * as path from "node:path"
