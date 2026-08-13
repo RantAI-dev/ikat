@@ -36,13 +36,24 @@ explanation. We show that this axis is separable, that it is cheap to measure, a
 that the information determining it is produced by every layout parser and
 routinely discarded before serving.
 
-We release IKAT-Bench, a multimodal tutoring RAG benchmark over Indonesian K--12
-curriculum textbooks: 13 government titles, 2{,}816 pages, extracted through two
-independent pipelines, with 486 adversarially filtered questions. We introduce a
-\emph{layout-gold placement metric} that derives placement ground truth from the
-source document's own typesetting at no per-item annotation cost, and a headline
-\emph{Grounded Figure F1} that credits a figure only when it is both the right
-figure and in the right place.
+The method is a join over data the parser already produced, not a model: it is
+independent of language and of document genre. We evaluate it on both. On
+MRAMG-Bench's Academic subset --- English arXiv documents, gold image lists
+authored by others --- a 568M-parameter cross-encoder over anchor-derived context
+reaches Image Precision \textbf{69.63}, and \textbf{67.50} under forced emission,
+against 65.28 for the best published system (GPT-4o). The configuration was frozen
+before that dataset was obtained.
+
+For development and stress testing we release IKAT-Bench, a multimodal tutoring
+RAG benchmark over Indonesian K--12 curriculum textbooks: 13 government titles,
+2{,}816 pages, extracted through two independent pipelines, with 486 adversarially
+filtered questions. This corpus is not the scope of the claim but its hardest
+case: only a fifth of its figures carry a printed caption, so the failure this
+paper is about is visible there and largely hidden in caption-rich corpora. We
+introduce a \emph{layout-gold placement metric} that derives placement ground
+truth from the source document's own typesetting at no per-item annotation cost,
+and a headline \emph{Grounded Figure F1} that credits a figure only when it is
+both the right figure and in the right place.
 
 Two findings require no model and replicate across both extraction pipelines. Only
 19.3\,\%/34.3\,\% of figures carry a printed caption, while \textbf{100\,\%} carry
@@ -53,12 +64,9 @@ caption coverage places \emph{worse}, because its share of lexically
 indistinguishable figures also doubles: caption availability is not caption
 discriminability.
 
-On MRAMG-Bench's Academic subset, a 568M-parameter cross-encoder over
-anchor-derived context reaches Image Precision \textbf{69.63}, and \textbf{67.50}
-under forced emission, against 65.28 for the best published system (GPT-4o); the
-configuration was frozen before the dataset was obtained. On our own corpus,
-composing a vision-language filter with that cross-encoder raises figure-selection
-precision from 0.028 to \textbf{0.542} against human annotation.
+On the textbook corpus, composing a vision-language filter with that same
+cross-encoder raises figure-selection precision from 0.028 to \textbf{0.542}
+against human annotation --- sight for recall, discrimination for precision.
 
 We also report a deployment study. The composed selector was installed on an
 air-gapped 8B-class deployment and, despite every component check passing,
@@ -70,7 +78,7 @@ component-level verification is structurally unable to catch this class of fault
 
 \begin{IEEEkeywords}
 Multimodal retrieval-augmented generation, document layout analysis, figure
-grounding, educational technology, low-resource languages, deployment evaluation.
+grounding, document ingestion, educational technology, deployment evaluation.
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -110,7 +118,8 @@ absence produces no error.
 
 \subsection{Setting}
 
-The deployment motivating this work is an on-premise study assistant for an
+The method is corpus-agnostic; the deployment that motivated it is not. It is an
+on-premise study assistant for an
 Indonesian university partner, serving national curriculum textbooks on an
 air-gapped NVIDIA GB10 host. Every model in the serving path is 8B-class or
 smaller and runs locally. This constrains the design --- no frontier model is

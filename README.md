@@ -17,6 +17,20 @@ threads are tied before the loom so the pattern lands where it should. That is
 what this does: it ties each figure to its place in the reading flow, at the one
 moment the information still exists.
 
+**The method is not language- or domain-specific.** Anchoring is a join over data
+the layout parser already produced — no model, no training, nothing tuned per
+corpus. It is evaluated here on two very different bodies of text:
+
+| | what it is | whose gold |
+|---|---|---|
+| **MRAMG-Bench, Academic** | English arXiv documents | the benchmark authors' |
+| **IKAT-Bench** | Indonesian K–12 textbooks | ours (+ human annotation) |
+
+The state-of-the-art result below is on the **English** one. The Indonesian corpus
+is not the scope of the claim — it is the hard case that made the problem visible:
+only a fifth of its figures carry a printed caption, so a caption-based pipeline
+fails there in a way that caption-rich corpora hide.
+
 ## The problem
 
 A layout parser reads a page and emits an ordered sequence of blocks — heading,
@@ -27,8 +41,7 @@ Conventional ingestion then stores prose as chunks and figures as a separate
 array, and **throws the ordering away**. Everything downstream tries to
 reconstruct it from captions.
 
-On Indonesian curriculum textbooks, that reconstruction is attempting the
-impossible:
+On the textbook corpus, that reconstruction is attempting the impossible:
 
 | | hosted OCR | on-prem parser |
 |---|---:|---:|
