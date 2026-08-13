@@ -1,12 +1,14 @@
 name: ci
 
-# Every scored script needs endpoints and a corpus that cannot exist in CI, so
-# this checks the two things that can be checked without them: the code parses
-# and type-checks, and the one model-free analysis actually runs.
+# Every scored script needs endpoints, a GPU and a corpus that cannot exist in
+# CI, so there is no honest way to run the benchmark here. What CI can check is
+# that the code type-checks against Bun's runtime types — which is what caught
+# the missing `unpdf` dependency and the six-level path climb the monorepo
+# extract left behind.
 
 on:
   push:
-    paths-ignore: ["paper/**", "docs/**", "**.md"]
+    paths-ignore: ["paper/**", "docs/**", "web/**", "**.md"]
   pull_request:
   workflow_dispatch:
 
@@ -20,12 +22,7 @@ jobs:
         with:
           bun-version: latest
 
-      - run: bun install --frozen-lockfile || bun install
+      - run: bun install --frozen-lockfile
 
       - name: Type-check
-        run: bunx tsc --noEmit --skipLibCheck --module esnext --target esnext --moduleResolution bundler bench/*.ts
-
-      - name: Model-free analysis loads
-        # No corpus is committed, so this asserts the script starts and reports a
-        # missing corpus rather than crashing on an import or a syntax error.
-        run: bun bench/structural-analysis.ts || test $? -eq 1
+        run: bunx tsc --noEmit

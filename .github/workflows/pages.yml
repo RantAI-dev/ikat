@@ -1,0 +1,61 @@
+name: pages
+
+# Publishes the landing page with the manuscript compiled fresh from source, so
+# the PDF a visitor downloads is always the one in the current commit. Replaces
+# the separate paper-build workflow: this both proves the LaTeX still compiles
+# and ships the result.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a run finish rather than cancelling it — a half-deployed site is worse
+# than a slightly stale one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Tectonic
+        uses: wtfjoke/setup-tectonic@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Compile manuscript
+        working-directory: paper
+        run: tectonic -X compile main.tex
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          cp web/index.html web/progress.json _site/
+          cp assets/wordmark.svg assets/logo.svg _site/
+          cp paper/main.pdf _site/paper.pdf
+          # Stamp the commit and build time into the page.
+          BUILD="${GITHUB_SHA::7}|$(date -u '+%Y-%m-%d %H:%M UTC')"
+          sed -i "s|<title>|<meta name=\"build\" content=\"$BUILD\">\n<title>|" _site/index.html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

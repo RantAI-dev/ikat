@@ -1,0 +1,52 @@
+{
+  "_comment": "Rendered by web/index.html. Edit this, not the HTML. Keep 'blocked' honest — a page that is all green is a page nobody believes.",
+  "target": "Q2 journal submission",
+  "milestones": [
+    {
+      "name": "Corpus measures",
+      "state": "done",
+      "note": "Caption coverage, anchor coverage, sibling ambiguity and page sharing, computed on two extraction pipelines that share no code and no models. Model-free, so it reproduces anywhere.",
+      "evidence": "Table I"
+    },
+    {
+      "name": "Placement metric",
+      "state": "done",
+      "note": "Ground truth derived from the source typesetting rather than annotation. Retriever and generator both removed, so what is measured is the placement mechanism alone.",
+      "evidence": "§IV"
+    },
+    {
+      "name": "External validation",
+      "state": "done",
+      "note": "MRAMG-Bench Academic subset, n=200, gold authored by that benchmark's authors. Configuration frozen before the dataset was downloaded. Leads the published comparators, and still leads when forced to emit an image on every question.",
+      "evidence": "Table II"
+    },
+    {
+      "name": "Selection result",
+      "state": "partial",
+      "note": "The composed selector reaches F1 0.605 against human annotation — but on 48 items carrying 19 positive links. This is the number a reviewer will push hardest on, and the sample is the binding constraint on it.",
+      "evidence": "Table III"
+    },
+    {
+      "name": "Annotation scale-up",
+      "state": "blocked",
+      "note": "Target is roughly 200 items, plus a second annotator on the existing 48 so the gold itself carries an agreement figure. This is human work; no amount of compute substitutes for it.",
+      "evidence": "CONTRIBUTING.md"
+    },
+    {
+      "name": "Bibliography",
+      "state": "done",
+      "note": "Every entry checked against its arXiv or publisher listing page. No entry remains marked unverified.",
+      "evidence": "paper/main.tex"
+    },
+    {
+      "name": "Authorship and venue",
+      "state": "todo",
+      "note": "The author list is deliberately unfilled in main.tex and CITATION.cff. Venue is undecided: the running header currently reads as a preprint, and the title was rewritten to name the method rather than the deployment.",
+      "evidence": "paper/README.md"
+    }
+  ],
+  "notes": [
+    "The method is a join over data the layout parser already produced. No model, no training, nothing tuned per corpus — so the claim is not scoped to a language or a document genre.",
+    "The Indonesian textbook corpus is the stress case, not the scope: only a fifth of its figures carry a printed caption, so a caption-matching pipeline fails there in a way caption-rich corpora hide."
+  ]
+}

@@ -1,6 +1,7 @@
-.env
-node_modules/
-data/
 corpus/
+data/
+.env
 *.log
+node_modules/
 *.pdf.bak
+_site/

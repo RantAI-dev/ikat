@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IKAT — placement is provenance</title>
+<meta name="description" content="Anchor-preserving ingestion for figure-grounded retrieval-augmented generation. Manuscript, results, and current status.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<style>
+  :root {
+    --bg: #fbfaf8;
+    --fg: #16130f;
+    --muted: #6c6459;
+    --rule: #e2ddd4;
+    --card: #ffffff;
+    --accent: #e4572e;
+    --done: #2f7a4d;
+    --partial: #b8860b;
+    --blocked: #b1442a;
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14120f; --fg: #ece7df; --muted: #9a9188; --rule: #2e2a25;
+      --card: #1b1815; --done: #5fbf87; --partial: #d8ab3f; --blocked: #e07a5f;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font-family: var(--sans); font-size: 16px; line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 3.5rem 1.25rem 5rem; }
+  header { border-bottom: 1px solid var(--rule); padding-bottom: 2rem; margin-bottom: 2.5rem; }
+  .mark { display: block; width: 20rem; max-width: 100%; color: var(--fg); }
+  h1 {
+    font-family: var(--serif); font-weight: normal; font-size: 1.75rem;
+    line-height: 1.3; margin: 1.75rem 0 0.75rem; letter-spacing: -0.01em;
+  }
+  .lede { color: var(--muted); margin: 0; font-size: 1.05rem; }
+  h2 {
+    font-family: var(--sans); font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+    margin: 3rem 0 1rem;
+  }
+  a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--accent); }
+
+  .actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.75rem; }
+  .btn {
+    display: inline-block; padding: 0.5rem 0.95rem; border: 1px solid var(--rule);
+    border-radius: 6px; background: var(--card); font-size: 0.9rem;
+    text-decoration: none; color: inherit;
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.primary:hover { color: #fff; opacity: 0.9; }
+
+  .m { border-top: 1px solid var(--rule); padding: 1.15rem 0; }
+  .m:last-child { border-bottom: 1px solid var(--rule); }
+  .m-head { display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; }
+  .m-name { font-weight: 600; }
+  .state {
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 0.1rem 0.45rem; border-radius: 3px;
+    border: 1px solid currentColor; white-space: nowrap;
+  }
+  .state.done { color: var(--done); }
+  .state.partial { color: var(--partial); }
+  .state.blocked { color: var(--blocked); }
+  .state.todo { color: var(--muted); }
+  .m-ev { margin-left: auto; font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
+  .m-note { margin: 0.5rem 0 0; color: var(--muted); font-size: 0.95rem; }
+
+  .note { border-left: 2px solid var(--accent); padding-left: 1rem; margin: 1.25rem 0; color: var(--muted); }
+
+  .viewer { margin-top: 1rem; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--card); }
+  .viewer object, .viewer iframe { display: block; width: 100%; height: 34rem; border: 0; }
+  @media (max-width: 40rem) { .viewer { display: none; } }
+
+  footer {
+    margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--rule);
+    font-size: 0.85rem; color: var(--muted);
+  }
+  code { font-family: var(--mono); font-size: 0.85em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img src="wordmark.svg" alt="IKAT" class="mark">
+  <h1>Placement Is Provenance: Anchor-Preserving Ingestion for Figure-Grounded Retrieval-Augmented Generation</h1>
+  <p class="lede">
+    A layout parser already knows where every figure belongs — its position in the
+    block sequence says so exactly. Conventional ingestion throws that ordering
+    away and spends the rest of the pipeline trying to reconstruct it from
+    captions. This binds it instead, at the one moment the information still
+    exists.
+  </p>
+  <div class="actions">
+    <a class="btn primary" href="paper.pdf">Read the manuscript (PDF)</a>
+    <a class="btn" href="https://github.com/RantAI-dev/ikat">Code</a>
+    <a class="btn" href="https://github.com/RantAI-dev/ikat/blob/main/RESULTS.md">Reproduce every number</a>
+  </div>
+</header>
+
+<h2>Status</h2>
+<p class="lede" style="font-size:0.95rem">
+  Target: <span id="target">—</span>. This list is generated from
+  <a href="https://github.com/RantAI-dev/ikat/blob/main/web/progress.json"><code>web/progress.json</code></a>
+  and is meant to show what is <em>not</em> finished as plainly as what is.
+</p>
+<div id="milestones"></div>
+
+<h2>What the claim is, and is not</h2>
+<div id="notes"></div>
+
+<h2>Manuscript</h2>
+<div class="viewer">
+  <object data="paper.pdf" type="application/pdf">
+    <iframe src="paper.pdf" title="Manuscript"></iframe>
+  </object>
+</div>
+
+<footer>
+  <p id="buildline" hidden>
+    Built from <code id="commit"></code> on <span id="built"></span>.
+    The PDF on this page is compiled by CI from <code>paper/main.tex</code> on
+    every push, so it cannot drift from the source.
+  </p>
+  <p id="buildline-fallback">
+    The PDF on this page is compiled by CI from <code>paper/main.tex</code> on
+    every push, so it cannot drift from the source.
+  </p>
+  <p>
+    Apache-2.0. The corpus is Indonesian government curriculum material
+    distributed under its own terms; this project holds code and derived
+    measurements, not the books.
+  </p>
+</footer>
+
+</div>
+
+<script>
+// The page is static; only the status list is data-driven, so that updating
+// progress is editing one JSON file rather than hand-editing markup.
+fetch('progress.json')
+  .then(r => r.json())
+  .then(d => {
+    document.getElementById('target').textContent = d.target;
+
+    document.getElementById('milestones').innerHTML = d.milestones.map(m => `
+      <div class="m">
+        <div class="m-head">
+          <span class="m-name"></span>
+          <span class="state ${m.state}">${m.state}</span>
+          <span class="m-ev"></span>
+        </div>
+        <p class="m-note"></p>
+      </div>`).join('');
+
+    // Text via textContent, never innerHTML — the note fields are prose and
+    // must not be able to inject markup into the page.
+    document.querySelectorAll('#milestones .m').forEach((el, i) => {
+      const m = d.milestones[i];
+      el.querySelector('.m-name').textContent = m.name;
+      el.querySelector('.m-ev').textContent = m.evidence || '';
+      el.querySelector('.m-note').textContent = m.note;
+    });
+
+    const notes = document.getElementById('notes');
+    d.notes.forEach(t => {
+      const p = document.createElement('p');
+      p.className = 'note';
+      p.textContent = t;
+      notes.appendChild(p);
+    });
+  })
+  .catch(() => {
+    document.getElementById('milestones').textContent =
+      'Status could not be loaded. See progress.json in the repository.';
+  });
+
+// Stamped by the Pages workflow. Opened straight from disk there is no stamp,
+// so show the sentence that is true either way rather than an empty dash.
+const meta = document.querySelector('meta[name="build"]');
+if (meta) {
+  const [sha, when] = meta.content.split('|');
+  document.getElementById('commit').textContent = sha;
+  document.getElementById('built').textContent = when;
+  document.getElementById('buildline').hidden = false;
+  document.getElementById('buildline-fallback').hidden = true;
+}
+</script>
+</body>
+</html>
