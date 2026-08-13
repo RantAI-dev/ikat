@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+title: "IKAT: anchor-preserving ingestion for figure-grounded RAG"
+message: "If you use this software or its measurements, please cite the paper in paper/."
+type: software
+license: Apache-2.0
+version: 0.2.0
+abstract: >-
+  Layout parsers emit an ordered block sequence in which a figure's position
+  states where it belongs. Conventional ingestion discards that ordering and
+  reconstructs placement from captions. IKAT preserves the reading-order anchor
+  at ingestion instead, and composes a vision-language filter with a
+  cross-encoder ranker for selection.
+keywords:
+  - retrieval-augmented generation
+  - multimodal retrieval
+  - document layout analysis
+  - figure grounding
+authors:
+  # TODO(camera-ready): replace with the real author list before release.
+  # Left unfilled deliberately — an author list is a claim of authorship and is
+  # not something to guess at.
+  - name: "Author list withheld pending submission"
+preferred-citation:
+  type: article
+  title: "Placement is provenance: anchor-preserving ingestion for figure-grounded retrieval-augmented generation"
+  year: 2026
+  authors:
+    - name: "Author list withheld pending submission"

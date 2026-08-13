@@ -17,14 +17,22 @@
 
 \begin{document}
 
+% The title scopes the claim. The method is a join over parser output with
+% nothing language- or genre-specific in it, and the headline result is on an
+% external English benchmark, so the title must not name the deployment.
 \title{Placement Is Provenance: Anchor-Preserving Ingestion for\\
-Figure-Grounded Tutoring over Curriculum Textbooks}
+Figure-Grounded Retrieval-Augmented Generation}
 
-\author{\IEEEauthorblockN{Author Names Withheld}%
+% TODO(camera-ready): the author list is deliberately unfilled. Replace both
+% blocks below, and the matching fields in ../CITATION.cff.
+\author{\IEEEauthorblockN{Author list withheld pending submission}%
 \thanks{Manuscript prepared 13 August 2026. Corresponding author: \texttt{author@example.org}.}}
 
-\markboth{IEEE Transactions on Learning Technologies (draft)}%
-{Placement Is Provenance: Anchor-Preserving Ingestion for Figure-Grounded Tutoring}
+% TODO(camera-ready): venue. This header names a learning-technologies journal,
+% which fits the deployment but not the claim; a multimedia / data-engineering
+% venue matches the contribution better.
+\markboth{Preprint (draft)}%
+{Placement Is Provenance: Anchor-Preserving Ingestion for Figure-Grounded RAG}
 
 \maketitle
 
@@ -646,9 +654,7 @@ deployment.
 
 \begin{thebibliography}{10}
 \small
-% NOTE FOR SUBMISSION: entries [1]-[10] carry metadata verified 2026-08-09
-% against listing pages. Items marked "verify" below must be confirmed against
-% full text before camera-ready.
+% All entries verified against arXiv listing pages, 2026-08-13.
 \bibitem{unidoc}
 X.~Peng, C.~Qin, Z.~Chen, R.~Xu, C.~Xiong, and C.-S. Wu, ``UniDoc-Bench: A unified
 benchmark for document-centric multimodal RAG,'' \emph{arXiv:2510.03663}, 2026.
@@ -658,12 +664,14 @@ N.~Wasserman \emph{et al.}, ``REAL-MM-RAG: A real-world multi-modal retrieval
 benchmark,'' \emph{arXiv:2502.12342}, 2025.
 
 \bibitem{chartrag}
-``Benchmarking multimodal RAG through a chart-based document question-answering
-generation framework,'' \emph{arXiv:2502.14864}, 2025. % verify authors
+Y.~Yang, J.~Zhong, L.~Jin, J.~Huang, J.~Gao, Q.~Liu, Y.~Bai, J.~Zhang, R.~Jiang,
+and K.~Wei, ``Benchmarking multimodal RAG through a chart-based document
+question-answering generation framework,'' \emph{arXiv:2502.14864}, 2025.
 
 \bibitem{imageref}
-``ImageRef-VL: Enabling contextual image referencing in vision-language models,''
-\emph{arXiv:2501.12418}, 2025. % verify authors
+J.~Yi, J.~Yin, J.~Xu, P.~Bao, Y.~Wang, W.~Fan, and H.~Wang, ``ImageRef-VL:
+Enabling contextual image referencing in vision-language models,''
+\emph{arXiv:2501.12418}, 2025.
 
 \bibitem{colpali}
 M.~Faysse \emph{et al.}, ``ColPali: Efficient document retrieval with vision
@@ -690,7 +698,10 @@ R.~Osmulski, G.~de S.~P. Moreira, R.~Ak, M.~Xu, B.~Schifferer, and E.~Oldridge,
 \emph{arXiv:2505.11651}, 2025.
 
 \bibitem{docling}
-C.~Auer \emph{et al.}, ``Docling technical report,'' IBM Research, 2024. % verify
+C.~Auer, M.~Lysak, A.~Nassar, M.~Dolfi, N.~Livathinos, P.~Vagenas, C.~Berrospi
+Ramis, M.~Omenetti, F.~Lindlbauer, K.~Dinkla, L.~Mishra, Y.~Kim, S.~Gupta,
+R.~Teixeira de Lima, V.~Weber, L.~Morin, I.~Meijer, V.~Kuropiatnyk, and
+P.~W.~J. Staar, ``Docling technical report,'' \emph{arXiv:2408.09869}, 2024.
 
 \end{thebibliography}
 

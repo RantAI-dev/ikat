@@ -142,7 +142,8 @@ bun bench/mramg-eval.ts              # external benchmark
 
 `bench/structural-analysis.ts` is the one to run first: it needs no model, no API
 key and no GPU, and it reproduces the caption/anchor table above from a cached
-extraction.
+extraction. [`RESULTS.md`](RESULTS.md) maps every other table in the paper to the
+command and the environment that produce it.
 
 ## What's here
 
@@ -155,8 +156,10 @@ extraction.
 | `bench/prefilter-pipeline.ts` | the candidate-cut curve and its ceiling |
 | `bench/mramg-eval.ts` | MRAMG-Bench evaluation |
 | `bench/*-significance.ts` | McNemar exact + paired bootstrap |
-| `paper/` | IEEEtran manuscript |
+| `paper/` | IEEEtran manuscript — `cd paper && make` |
 | `docs/` | method notes, metric definitions, deployment write-up |
+| [`RESULTS.md`](RESULTS.md) | every number in the paper → the command that produces it |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | ground rules for anything numeric, and the contribution that would help most |
 
 ## Results that argue against the method
 

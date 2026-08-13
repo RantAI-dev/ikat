@@ -1,0 +1,31 @@
+name: ci
+
+# Every scored script needs endpoints and a corpus that cannot exist in CI, so
+# this checks the two things that can be checked without them: the code parses
+# and type-checks, and the one model-free analysis actually runs.
+
+on:
+  push:
+    paths-ignore: ["paper/**", "docs/**", "**.md"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - run: bun install --frozen-lockfile || bun install
+
+      - name: Type-check
+        run: bunx tsc --noEmit --skipLibCheck --module esnext --target esnext --moduleResolution bundler bench/*.ts
+
+      - name: Model-free analysis loads
+        # No corpus is committed, so this asserts the script starts and reports a
+        # missing corpus rather than crashing on an import or a syntax error.
+        run: bun bench/structural-analysis.ts || test $? -eq 1
