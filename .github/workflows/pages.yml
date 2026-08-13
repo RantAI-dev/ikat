@@ -42,9 +42,12 @@ jobs:
           cp web/index.html web/progress.json _site/
           cp assets/wordmark.svg assets/logo.svg _site/
           cp paper/main.pdf _site/paper.pdf
-          # Stamp the commit and build time into the page.
+          # Stamp the commit and build time into the page. The delimiter is '#'
+          # because the stamp itself contains '|', which is what the separator
+          # in the page's own parser expects.
           BUILD="${GITHUB_SHA::7}|$(date -u '+%Y-%m-%d %H:%M UTC')"
-          sed -i "s|<title>|<meta name=\"build\" content=\"$BUILD\">\n<title>|" _site/index.html
+          sed -i "s#<title>#<meta name=\"build\" content=\"$BUILD\">\n<title>#" _site/index.html
+          grep -q 'name="build"' _site/index.html
 
       - uses: actions/upload-pages-artifact@v3
         with:
