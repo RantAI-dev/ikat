@@ -52,8 +52,8 @@ reaches Image Precision \textbf{69.63}, and \textbf{67.50} under forced emission
 against 65.28 for the best published system (GPT-4o). The configuration was frozen
 before that dataset was obtained.
 
-For development and stress testing we release IKAT-Bench, a multimodal tutoring
-RAG benchmark over Indonesian K--12 curriculum textbooks: 13 government titles,
+For development and stress testing we release a caption-scarce stress corpus of
+Indonesian K--12 curriculum textbooks: 13 government titles,
 2{,}816 pages, extracted through two independent pipelines, with 486 adversarially
 filtered questions. This corpus is not the scope of the claim but its hardest
 case: only a fifth of its figures carry a printed caption, so the failure this
@@ -163,12 +163,14 @@ the document's own typesetting rather than from annotation, and (ii) the
 observation that the ingestion step, not the ranking step, is where the necessary
 signal is lost.
 
-\subsection{Indonesian and low-resource multimodal resources}
+\subsection{Caption-scarce document regimes}
 
-Indonesian K--12 curriculum material is, to our knowledge, unrepresented in
-published multimodal RAG benchmarks. The corpus released here is intended partly
-to close that gap, and partly because its properties --- sparse captions, dense
-decorative imagery --- expose failure modes that caption-rich corpora hide.
+The benchmarks above are caption-rich: their figures overwhelmingly carry printed
+captions, and a caption-matching pipeline is therefore never tested where it
+actually breaks. We are not aware of a published multimodal RAG evaluation in
+which most figures have no caption at all. The corpus released here is selected
+for that property --- 19.3\% caption coverage, alongside dense decorative imagery
+--- and not for its language, which is incidental to every claim we make.
 
 \section{Method}
 
