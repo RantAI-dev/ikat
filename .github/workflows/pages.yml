@@ -40,8 +40,10 @@ jobs:
         run: |
           mkdir -p _site
           cp web/index.html web/progress.json _site/
-          cp assets/wordmark.svg assets/logo.svg _site/
+          cp assets/*.svg _site/
           cp paper/main.pdf _site/paper.pdf
+          # Fail loudly if the page references an asset the deploy did not carry.
+          for a in $(grep -o 'src="[a-z-]*\.svg"' _site/index.html | sed 's/src="//;s/"//' | sort -u); do test -f "_site/$a" || { echo "missing asset: $a"; exit 1; }; done
           # Stamp the commit and build time into the page. The delimiter is '#'
           # because the stamp itself contains '|', which is what the separator
           # in the page's own parser expects.
