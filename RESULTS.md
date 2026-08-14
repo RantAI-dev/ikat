@@ -41,7 +41,8 @@ need no human labels and no judge model.
 | §V, VLM selector / composed pipeline rows | the same judge in its other two roles | `bun bench/judge-figures.ts select` / `… pipeline` | as above |
 | §V significance | McNemar exact over paired selection decisions | `bun bench/selection-significance.ts` | a scored run |
 | docs/12 | judge κ on the scale-up protocol, representativeness gate, rectified estimator | `bun bench/ppi-eval.ts` | both annotation exports |
-| docs/12 | the scale-up judge pass itself | `bun bench/judge-scale.ts --dry` | figure crops (currently missing) |
+| docs/12 | the scale-up judge pass itself | `bun bench/judge-scale.ts` | figure crops, VLM endpoint |
+| docs/12 | rebuilding deleted figure crops from the PDFs | `IKAT_PDF_DIRS=/path bun run crops -- --verify` | source PDFs |
 
 **`IKAT_JUDGE_PROMPT` is part of the configuration, not a detail.** `strict` and
 `loose` differ by roughly 12 precision points on the same model and the same
@@ -58,6 +59,17 @@ annotation for any headline number.
 |---|---|---|---|
 | Table II | MRAMG-Bench Academic, Image Precision, against published comparators | `MRAMG_SUBSET=arxiv bun bench/mramg-eval.ts 200` | `MRAMG_DIR` |
 | Table II, forced-emission row | same, emitting exactly one image on every question | `MRAMG_SUBSET=arxiv IKAT_RERANK_TOP_K=1 IKAT_RERANK_MIN=-1 bun bench/mramg-eval.ts 200` | `MRAMG_DIR` |
+| all six subsets | every subset, pooled into the three domains the published table uses | `MRAMG_SUBSET=all bun bench/mramg-eval.ts 99999` | `MRAMG_DIR` |
+
+Only the `.jsonl` files are needed — 18 MB. `IMAGE.zip` (1.5 GB) is not used by
+this path, which scores the text standing in for each image.
+
+`MRAMG_SUBSET=all` is the honest form. Reporting one subset out of six reads as
+selection whether or not it was, and the only answer is to run the rest and
+publish them together. Note that the published comparators are reported **per
+domain**, not per subset: Web pools wit+wiki+web and Lifestyle pools
+recipe+manual, so the script sums raw tp/fp before computing pooled precision.
+Averaging per-subset precision is a different quantity and would be wrong.
 
 The positional argument is the question limit. Forced emission is not a flag: it
 is `TOP_K=1` with the admission floor pushed below any attainable score, so the

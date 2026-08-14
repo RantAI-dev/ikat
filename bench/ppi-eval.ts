@@ -99,23 +99,51 @@ function quantile(xs: number[], q: number): number {
   return lo === hi ? a[lo]! : a[lo]! * (hi - i) + a[hi]! * (i - lo)
 }
 
-function main() {
+/**
+ * Judge labels, preferring the pass that reused the annotator's pools verbatim.
+ *
+ * Which file this reads decides whether the estimator is usable at all. The
+ * annotation-big pass drew its own six-candidate pools, so its overlap with the
+ * human labels is enriched in positives and the correction is invalid. The
+ * judge-scale pass reuses the annotator's eight-candidate pool unchanged
+ * wherever one exists, so the human labels cover every candidate and the
+ * enrichment disappears by construction rather than by luck.
+ */
+function loadJudge(): { source: string; labels: Map<string, { pool: string[]; pos: Set<string> }> } {
+  const scaled = path.join(C, "annotation-scale", "judge-labels.json")
+  const out = new Map<string, { pool: string[]; pos: Set<string> }>()
+  if (fs.existsSync(scaled)) {
+    const d = JSON.parse(fs.readFileSync(scaled, "utf-8")) as {
+      model: string
+      labels: Array<{ questionId: string; shownFigureIds: string[]; picked: string[] }>
+    }
+    for (const r of d.labels) out.set(r.questionId, { pool: r.shownFigureIds, pos: new Set(r.picked) })
+    return { source: `annotation-scale (${d.model}), pools reused verbatim`, labels: out }
+  }
   const bigKey = JSON.parse(fs.readFileSync(path.join(C, "annotation-big", "annotation.KEY.json"), "utf-8")) as KeyRow[]
   const bigAns = JSON.parse(fs.readFileSync(path.join(C, "annotation-big", "sonnet-answers.json"), "utf-8")) as BigAns[]
+  const byItem = new Map(bigKey.map((k) => [k.item, k]))
+  for (const a of bigAns) {
+    const k = byItem.get(a.item)
+    if (!k) continue
+    const ids = k.shownFigureIds
+    out.set(k.questionId, {
+      pool: ids,
+      pos: new Set((a.picked ?? []).filter((i) => i >= 0 && i < ids.length).map((i) => ids[i]!)),
+    })
+  }
+  return { source: "annotation-big (six-candidate pools, NOT the annotator's)", labels: out }
+}
+
+function main() {
   const humanRows = JSON.parse(fs.readFileSync(path.join(C, "annotation", "human-gold.json"), "utf-8")) as Array<{ questionId: string; humanGold: string[] }>
   const smallKey = JSON.parse(fs.readFileSync(path.join(C, "annotation", "annotation.KEY.json"), "utf-8")) as KeyRow[]
   const sel = JSON.parse(fs.readFileSync(path.join(C, "results", "select-eval-ugm3-built.json"), "utf-8")) as {
     perQuestion: Array<Record<string, unknown>>
   }
 
-  const byItem = new Map(bigKey.map((k) => [k.item, k]))
-  const judge = new Map<string, { pool: string[]; pos: Set<string> }>()
-  for (const a of bigAns) {
-    const k = byItem.get(a.item)
-    if (!k) continue
-    const ids = k.shownFigureIds
-    judge.set(k.questionId, { pool: ids, pos: new Set((a.picked ?? []).filter((i) => i >= 0 && i < ids.length).map((i) => ids[i]!)) })
-  }
+  const { source: judgeSource, labels: judge } = loadJudge()
+  console.log(`judge labels: ${judgeSource}`)
   const human = new Map(humanRows.map((h) => [h.questionId, new Set(h.humanGold)]))
   // What the annotator was actually shown. A candidate outside this set has no
   // human label and must not be silently counted as a rejection.
