@@ -77,6 +77,29 @@
 
   .note { border-left: 2px solid var(--accent); padding-left: 1rem; margin: 1.25rem 0; color: var(--muted); }
 
+  .stage { display: grid; grid-template-columns: 1.6rem 1fr; gap: 0.85rem; padding: 0.7rem 0; border-top: 1px solid var(--rule); }
+  .stage:first-of-type { border-top: 0; }
+  .stage b { display: block; }
+  .num {
+    font-family: var(--mono); font-size: 0.75rem; color: var(--accent);
+    border: 1px solid var(--rule); border-radius: 4px; text-align: center;
+    height: 1.6rem; line-height: 1.5rem;
+  }
+  .stage p { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.93rem; }
+  .phase { font-family: var(--mono); font-size: 0.72rem; letter-spacing: .1em; text-transform: uppercase;
+           color: var(--muted); margin: 1.75rem 0 .35rem; }
+  .free { color: var(--done); font-family: var(--mono); font-size: .7rem; border: 1px solid currentColor;
+          border-radius: 3px; padding: 0 .3rem; margin-left: .4rem; white-space: nowrap; }
+
+  .tbl { width: 100%; overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+  th, td { text-align: left; padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+  th { font-weight: 600; font-size: 0.78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  td.n, th.n { text-align: right; font-family: var(--mono); }
+  tr.us td { font-weight: 600; }
+  tr.us td.n { color: var(--accent); }
+  tr.loss td { color: var(--muted); }
+
   .viewer { margin-top: 1rem; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--card); }
   .viewer object, .viewer iframe { display: block; width: 100%; height: 34rem; border: 0; }
   @media (max-width: 40rem) { .viewer { display: none; } }
@@ -107,6 +130,54 @@
     <a class="btn" href="https://github.com/RantAI-dev/ikat/blob/main/RESULTS.md">Reproduce every number</a>
   </div>
 </header>
+
+<h2>How it works</h2>
+<p class="lede" style="font-size:0.95rem">
+  Two halves. Ingestion runs once per document and invokes no model at all.
+  Serving adds two ranking stages per query.
+</p>
+
+<div class="phase">Ingestion — once per document <span class="free">no model</span></div>
+<div class="stage"><span class="num">1</span><div><b>Parse</b><p>The layout parser returns an ordered sequence of typed blocks per page: heading, paragraph, caption, figure, table. This ordering is the only input the method needs, and every layout parser already produces it.</p></div></div>
+<div class="stage"><span class="num">2</span><div><b>Chunk</b><p>Prose blocks are segmented into retrieval chunks, each recording which block indices it spans.</p></div></div>
+<div class="stage"><span class="num">3</span><div><b>Anchor</b><p>For each figure, find the nearest preceding prose block; the anchor is the index of the chunk containing it. Resolved by word-prefix match — first ten words, shortened to four until unique. One pass over blocks.</p></div></div>
+<div class="stage"><span class="num">4</span><div><b>Persist</b><p>The anchor is written to the figure record and mirrored into chunk metadata, so retrieving the chunk recovers the figure by lookup instead of by search.</p></div></div>
+
+<div class="phase">Serving — per query</div>
+<div class="stage"><span class="num">5</span><div><b>Retrieve</b><p>Hybrid retrieval returns the top-k chunks for the query.</p></div></div>
+<div class="stage"><span class="num">6</span><div><b>Admit</b><p>Every figure whose anchor chunk is in that set becomes a candidate. This is a join, not a caption test — which is the only reason the 66–81% of figures with no caption are reachable at all. No candidate enters by any other route.</p></div></div>
+<div class="stage"><span class="num">7</span><div><b>Prefilter</b><p>A cross-encoder scores query against figure text and keeps the top 2. Two candidates match the full candidate set at a third of the latency.</p></div></div>
+<div class="stage"><span class="num">8</span><div><b>Gate</b><p>Each survivor is shown <em>as an image</em> to a vision-language model under a strict yes/no prompt. The gate can only remove, never add or reorder, so its worst case is the prefilter's output.</p></div></div>
+<div class="stage"><span class="num">9</span><div><b>Emit</b><p>Survivors are ordered by the stage-7 score and the top one is returned. Emitting nothing is valid and frequent.</p></div></div>
+<div class="stage"><span class="num">10</span><div><b>Place</b><p>The figure is inserted at the sentence boundary its anchor points to, not at a position inferred from its caption.</p></div></div>
+
+<p class="note">Steps 3 and 6 are the contribution. Steps 7–9 compose existing components; the tables below report what each one adds.</p>
+
+<h2>Compared with</h2>
+<div class="tbl">
+<table>
+  <thead><tr><th>Setting</th><th>Gold by</th><th class="n">Ours</th><th class="n">Best other</th><th class="n">&Delta;</th></tr></thead>
+  <tbody>
+    <tr class="us"><td>MRAMG Academic, Image Precision</td><td>benchmark authors</td><td class="n">69.63</td><td class="n">65.28</td><td class="n">+4.35</td></tr>
+    <tr class="us"><td>&nbsp;&nbsp;same, forced emission</td><td>benchmark authors</td><td class="n">67.50</td><td class="n">65.28</td><td class="n">+2.22</td></tr>
+    <tr class="us"><td>Figure selection F1</td><td>human, n=48</td><td class="n">0.605</td><td class="n">0.417</td><td class="n">+0.188</td></tr>
+    <tr class="us"><td>Figure selection precision</td><td>human, n=48</td><td class="n">0.542</td><td class="n">0.304</td><td class="n">+0.238</td></tr>
+    <tr class="us"><td>&nbsp;&nbsp;vs. the deployed system</td><td>human, n=48</td><td class="n">0.605</td><td class="n">0.049</td><td class="n">+0.556</td></tr>
+    <tr class="loss"><td>Placement rule</td><td>layout</td><td class="n">—</td><td class="n">MRAMG</td><td class="n">loses</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="lede" style="font-size:0.93rem;margin-top:1rem">
+  Image Precision counts only emitted images, so abstaining could buy the score —
+  ours abstains on 49% of questions. Forcing exactly one image on every question
+  still leads, with recall rising 41.59 → 61.64.
+</p>
+<p class="lede" style="font-size:0.93rem;margin-top:.75rem">
+  The last row is a loss and is reported as one. Anchoring alone does not beat
+  similarity-based placement; the best placement rule in our comparison is
+  MRAMG's. What anchoring contributes is <em>candidate admission</em> — making
+  uncaptioned figures reachable — and the practical gain then comes from selection.
+</p>
 
 <h2>Status</h2>
 <p class="lede" style="font-size:0.95rem">

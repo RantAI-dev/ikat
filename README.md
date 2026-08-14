@@ -57,6 +57,53 @@ separate them. And half share a page, so page-level provenance is ambiguous too.
 Both columns were measured independently, on two extraction pipelines that share
 no code and no models. Agreement between them is replication.
 
+## How it works
+
+Two halves. Ingestion runs once per document and invokes **no model at all**.
+Serving adds two ranking stages per query.
+
+**Ingestion — once per document, model-free**
+
+| | stage | |
+|---:|---|---|
+| 1 | **Parse** | The layout parser returns an ordered sequence of typed blocks per page: heading, paragraph, caption, figure, table. This ordering is the only input the method needs, and every layout parser already produces it. |
+| 2 | **Chunk** | Prose blocks are segmented into retrieval chunks, each recording which block indices it spans. |
+| 3 | **Anchor** | For each figure, take the nearest preceding prose block; the anchor is the index of the chunk containing it. Resolved by word-prefix match — first ten words, shortened to four until unique. One pass over blocks. |
+| 4 | **Persist** | The anchor goes into the figure record and into chunk metadata, so retrieving the chunk recovers the figure by lookup rather than by search. |
+
+**Serving — per query**
+
+| | stage | |
+|---:|---|---|
+| 5 | **Retrieve** | Hybrid retrieval returns the top-k chunks. |
+| 6 | **Admit** | Every figure whose anchor chunk is in that set becomes a candidate. A join, not a caption test — the only reason the 66–81% of uncaptioned figures are reachable at all. No candidate enters by another route. |
+| 7 | **Prefilter** | A cross-encoder scores query against figure text and keeps the top 2. Two candidates match the full set at a third of the latency. |
+| 8 | **Gate** | Each survivor is shown *as an image* to a VLM under a strict yes/no prompt. The gate can only remove, never add or reorder, so its worst case is the prefilter's output. |
+| 9 | **Emit** | Order survivors by the stage-7 score, return the top one. Emitting nothing is valid and frequent. |
+| 10 | **Place** | Insert at the sentence boundary the anchor points to, not at a position inferred from the caption. |
+
+Steps **3** and **6** are the contribution. Steps 7–9 compose existing components.
+
+## Compared with
+
+| setting | gold by | ours | best other | Δ |
+|---|---|---:|---:|---:|
+| MRAMG Academic, Image Precision | benchmark authors | **69.63** | 65.28 | +4.35 |
+| &nbsp;&nbsp;same, forced emission | benchmark authors | **67.50** | 65.28 | +2.22 |
+| Figure selection F1 | human, n=48 | **0.605** | 0.417 | +0.188 |
+| Figure selection precision | human, n=48 | **0.542** | 0.304 | +0.238 |
+| &nbsp;&nbsp;vs. the deployed system | human, n=48 | **0.605** | 0.049 | +0.556 |
+| Placement rule | layout | — | MRAMG | *loses* |
+
+Image Precision counts only emitted images, so abstaining could buy the score —
+ours abstains on 49%. Forcing exactly one image on every question still leads,
+with recall rising 41.59 → 61.64.
+
+The last row is a loss and is reported as one. Anchoring alone does not beat
+similarity-based placement. What it contributes is *candidate admission* —
+making uncaptioned figures reachable — and the practical gain then comes from
+selection.
+
 ## Placement is a distinct failure mode
 
 Take a figure's own anchor chunk as the answer. Retrieval is now perfect, the
@@ -179,24 +226,6 @@ Reported because they were run.
   gold-first 0.288 against 0.788 for the 2024 bge-reranker-v2-m3.
 - **On figure-only questions, nothing recovers the content.** Best completeness
   1.93/5, and the one system that beat text-only did so by losing faithfulness.
-
-## The deployment lesson
-
-The composed selector was installed on an air-gapped 8B-class deployment. Every
-component check passed — env present, endpoint reachable, model answering, container
-healthy — and the stage **ran zero times**.
-
-An admission threshold upstream discarded every candidate. It was 0.2, tuned when
-the reranker scored *descriptions*; production scores the *caption*, where the
-correct figure scored 0.016. Nothing survived, the stage was skipped, and no log
-line was ever written.
-
-**The absence of a line was the only symptom.**
-
-A stage that fails by not executing raises no exception and produces no degraded
-output. Component-level verification cannot catch it. If you build one, make it
-log a survivor count unconditionally, so `kept 0/108` shows up on the first query
-instead of after weeks.
 
 ## Citing
 

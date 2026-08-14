@@ -76,17 +76,11 @@ On the textbook corpus, composing a vision-language filter with that same
 cross-encoder raises figure-selection precision from 0.028 to \textbf{0.542}
 against human annotation --- sight for recall, discrimination for precision.
 
-We also report a deployment study. The composed selector was installed on an
-air-gapped 8B-class deployment and, despite every component check passing,
-executed \emph{zero} times in production: an admission threshold tuned on a
-different text representation discarded every candidate before it. We argue that
-component-level verification is structurally unable to catch this class of fault.
-
 \end{abstract}
 
 \begin{IEEEkeywords}
 Multimodal retrieval-augmented generation, document layout analysis, figure
-grounding, document ingestion, educational technology, deployment evaluation.
+grounding, document ingestion, cross-encoder reranking.
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -119,10 +113,6 @@ recoverable for 100\,\% of figures, and is discarded by conventional ingestion.
 the gain requires a stage that looks at the image rather than at text about the
 image.
 \end{itemize}
-
-Section~\ref{sec:deploy} adds a claim of a different kind: that the pipeline stage
-most likely to be silently disabled in production is precisely the one whose
-absence produces no error.
 
 \subsection{Setting}
 
@@ -192,6 +182,56 @@ Anchors are preserved through ingestion into chunk metadata, and consumed at
 retrieval time: a figure whose anchor chunk was retrieved is admitted as a
 candidate before any caption test is applied. This ordering matters, because a
 caption test cannot admit the 66--81\,\% of figures that carry no printed caption.
+
+\subsection{The pipeline, stage by stage}
+\label{sec:pipeline}
+
+The method has two halves. Ingestion runs once per document and is model-free.
+Serving runs per query and adds two ranking stages. Inputs and outputs are stated
+for each stage so that any of them can be replaced independently.
+
+\textbf{Ingestion (once per document).}
+\begin{enumerate}
+\item \emph{Parse.} A layout parser returns, per page, an ordered sequence of
+typed blocks $B = \langle b_1, \dots, b_n \rangle$ with $b_i \in \{\text{heading},
+\text{paragraph}, \text{caption}, \text{figure}, \text{table}\}$. This ordering is
+the only input the method needs and every layout parser produces it.
+\item \emph{Chunk.} Prose blocks are segmented into retrieval chunks
+$C = \langle c_1, \dots, c_m \rangle$, each recording the block indices it spans.
+\item \emph{Anchor.} For each figure block $b_f$, let $b_p$ be the nearest
+preceding non-figure prose block. The anchor $a(f)$ is the index of the chunk
+containing $b_p$. Resolution is by word-prefix match: the first ten words of $b_p$
+are matched against chunk text, shortening the probe to four words until a unique
+match is found. Cost is one pass over blocks; no model is invoked.
+\item \emph{Persist.} $a(f)$ is written to the figure record and mirrored into the
+chunk's metadata, so retrieval of $c_{a(f)}$ recovers $f$ by lookup rather than
+by search.
+\end{enumerate}
+
+\textbf{Serving (per query).}
+\begin{enumerate}\setcounter{enumi}{4}
+\item \emph{Retrieve.} Hybrid retrieval returns the top-$k$ chunks for query $q$.
+\item \emph{Admit.} Every figure whose anchor chunk is in that set becomes a
+candidate. Admission is a join on $a(f)$, so it is independent of whether $f$ has
+a caption --- which is what allows the 66--81\,\% of uncaptioned figures to be
+reachable at all. No candidate is admitted by any other route.
+\item \emph{Prefilter.} A cross-encoder scores $(q, t(f))$ for each candidate,
+where $t(f)$ is the figure's index text. Candidates are ranked and truncated to
+the top $N$. We use $N = 2$; Section~\ref{sec:select} shows this matches the full
+candidate set at a third of the latency.
+\item \emph{Gate.} Each surviving candidate is shown \emph{as an image} to a
+vision-language model with a strict yes/no prompt: does this figure help answer
+$q$? Rejected candidates are dropped. The gate can only remove, never add or
+reorder, so its worst case is the prefilter's output.
+\item \emph{Rank and emit.} Survivors are ordered by their stage-7 score and the
+top one is emitted. Emitting nothing is a valid and frequent outcome.
+\item \emph{Place.} The emitted figure is inserted at the sentence boundary
+corresponding to $a(f)$ in the generated answer, rather than at a position
+inferred from its caption.
+\end{enumerate}
+
+Stages 3 and 6 are the contribution. Stages 7--9 are a composition of existing
+components, and Section~\ref{sec:select} reports what each contributes.
 
 \subsection{Layout-gold: the document annotates itself}
 
@@ -533,58 +573,56 @@ requiring its own recognition pass --- rather than by page resolution. Increasin
 the KV-cache budget does nothing: the engine already reports capacity for 258
 concurrent sequences against a 192-page batch.
 
-\section{Deployment Study}
-\label{sec:deploy}
+\section{Summary of Comparisons}
+\label{sec:summary}
 
-The composed selector was installed on the partner deployment. Every component
-check passed --- environment variables present, the application could reach the
-vision endpoint, the model answered a probe correctly, the container reported
-healthy --- and the stage \textbf{executed zero times}.
+Table~\ref{tab:summary} collects every comparison in which this method is placed
+against an alternative, including the one it loses. Each row names the gold
+standard, because the comparisons are not equally strong: the first two are scored
+against a gold authored by other people, the rest against our own annotation.
 
-An admission threshold upstream of it discarded every candidate. The threshold was
-0.2, chosen when the reranker scored \emph{descriptions}, where relevant figures
-score 0.5--0.8. Production ranks the printed \emph{caption}: on a live question
-about the human digestive system, the correct figure scored 0.016 and everything
-else fell below it. Nothing survived, so the gate was skipped, so no log line was
-ever written. \emph{The absence of a line was the only symptom.}
+\begin{table}[t]
+\centering
+\caption{Every head-to-head comparison in the paper, including the loss.}
+\label{tab:summary}
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Setting & Gold & Ours & Best other & $\Delta$ \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{External --- gold authored by the benchmark's authors}} \\
+MRAMG Acad., IP & theirs & \textbf{69.63} & 65.28 & $+4.35$ \\
+\quad forced emission & theirs & \textbf{67.50} & 65.28 & $+2.22$ \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{Internal --- gold from human annotation, $n = 48$}} \\
+Selection F1 & human & \textbf{0.605} & 0.417 & $+0.188$ \\
+Selection precision & human & \textbf{0.542} & 0.304 & $+0.238$ \\
+\quad vs.\ deployed system & human & \textbf{0.605} & 0.049 & $+0.556$ \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{Where the method loses}} \\
+Placement rule & layout & --- & MRAMG & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-Two properties made this invisible:
+On MRAMG-Bench's Academic subset a 568M-parameter cross-encoder over
+anchor-derived context reaches Image Precision 69.63, ahead of GPT-4o at 65.28,
+Claude-3.5-Sonnet at 62.17 and Gemini-1.5-Pro at 59.85. Because Image Precision
+counts only emitted images, abstention could buy the score; ours abstains on
+49\,\% of questions. Forcing exactly one image on every question still leads, at
+67.50, with recall rising from 41.59 to 61.64. The margin is therefore not an
+artefact of selective answering.
 
-\begin{itemize}
-\item The default was tuned on a different text representation than the one
-production uses.
-\item The log printed the raw environment variable, so an unset threshold rendered
-as \texttt{floor=off} while a 0.2 floor silently dropped everything.
-\end{itemize}
+On the textbook corpus, against human annotation, composing the vision-language
+gate with the cross-encoder reaches F1 0.605. The two stages alone reach 0.417 and
+0.333. The decomposition is the finding: the vision stage supplies recall
+(0.789 alone, against 0.368 for the cross-encoder) and the cross-encoder supplies
+precision. Neither ordering of a single stage reaches the composition.
 
-After correcting both, the first production gate decision was:
-
-\begin{quote}\small\ttfamily
-figure gate (4B-VL, topN=2): YA:Gambar 1.15 Posisi usus $|$ YA:Gambar 1.14
-Struktur d $\to$ 1/5
-\end{quote}
-
-Five candidates admitted, cut to two, both approved, one shown --- the correct
-one. On a second question, about the parts of a microscope, the gate rejected both
-top candidates and emitted nothing. Investigation confirmed the book contains no
-figure of microscope parts; the nearest anchored figures were a micrograph of a
-nerve cell, a sea creature and an orangutan. The gate had correctly refused a
-\emph{micrograph} for a question about a \emph{microscope} --- a one-word lexical
-distance that caption matching would plausibly have crossed.
-
-\textbf{The generalisable lesson concerns verification, not the threshold.} Every
-component was checked in isolation and every check passed. What was never checked
-was whether the stage ran at all on a real question. A pipeline stage that fails
-by not executing produces no error, no exception and no degraded output --- only
-a missing log line, and absence is what nobody notices. We recommend that
-selective stages emit a survivor count unconditionally, so that
-\texttt{kept 0/108} is visible on the first query rather than after weeks.
-
-Two further faults surfaced only under real use: uploads above 1\,MB were silently
-discarded by a framework body limit that returned HTTP 200 with an empty body,
-making a failed ingest indistinguishable from a successful one; and a hot-patched
-extractor had reverted to an image without reading-order output, so re-ingestion
-would have produced zero anchors regardless of the rest of the system.
+\textbf{The row the method loses.} Anchoring alone does not beat similarity-based
+placement: the best placement rule in our comparison is MRAMG's bipartite
+assignment, not ours. The contribution of anchoring is that it makes uncaptioned
+figures \emph{reachable} at all --- a candidate-admission gain, not a ranking one
+--- and the practical improvement then comes from selection.
 
 \section{Discussion and Threats to Validity}
 \label{sec:threats}
