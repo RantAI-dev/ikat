@@ -46,8 +46,9 @@ routinely discarded before serving.
 
 The method is a join over data the parser already produced, not a model: it is
 independent of language and of document genre. We evaluate it on both. On
-MRAMG-Bench's Academic subset --- English arXiv documents, gold image lists
-authored by others --- a 568M-parameter cross-encoder over anchor-derived context
+MRAMG-Bench's Academic subset --- English arXiv documents whose gold image lists
+were written by ten graduate-student annotators in computer science, each
+assigned papers in their own field --- a 568M-parameter cross-encoder over anchor-derived context
 reaches Image Precision \textbf{69.63}, and \textbf{67.50} under forced emission,
 against 65.28 for the best published system (GPT-4o). The configuration was frozen
 before that dataset was obtained.
@@ -403,7 +404,12 @@ those links our harness gold agrees with a human annotator at chance
 ($\kappa = 0.092$). Internal care cannot repair that; only measurement on data we
 did not author can.
 
-MRAMG-Bench~\cite{mramg} provides it. Candidates are the images of the question's
+MRAMG-Bench~\cite{mramg} provides it, and its Academic subset is the strongest
+form of it available to us: those gold image lists were constructed by ten
+graduate-student annotators in computer science, each assigned papers within
+their own area, and passed through a three-stage human verification. Where our
+harness gold agrees with a person at chance, this reference is what a panel of
+domain experts chose. Candidates are the images of the question's
 provenance document, each represented by the prose immediately preceding its
 placeholder --- the same anchor our method uses, and the same information
 available to their placeholder-based baseline. \textbf{The configuration was fixed
