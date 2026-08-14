@@ -666,8 +666,15 @@ figures \emph{reachable} at all --- a candidate-admission gain, not a ranking on
 
 \textbf{What the evidence supports.} C2 and C3 are established model-free and
 replicated across two extraction pipelines; they do not depend on any system run.
-C4 is supported by the human-gold comparison and, independently, by the MRAMG
-result. C1 is the weakest of the four: on questions answerable only from a figure,
+C4 divides, and only one half is externally supported. That selection carries the
+practical gain is corroborated independently by MRAMG, where a cross-encoder over
+anchor-derived context alone beats the published systems. That the gain
+\emph{requires a stage which looks at the image} is supported only by the
+human-gold comparison: the MRAMG configuration contains no vision stage, so it
+cannot speak to that half. Nor could a caption-rich corpus test it --- the claim
+is about what happens when text about an image is absent or useless, which is the
+regime the textbook corpus is in and MRAMG is not. That half therefore rests
+entirely on 48 items annotated by one person. C1 is the weakest of the four: on questions answerable only from a figure,
 no configuration recovered the content, and the system that most exceeded a
 text-only baseline did so with a significant loss of faithfulness.
 
