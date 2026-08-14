@@ -671,19 +671,25 @@ is $\pm$0.014 F1, so differences smaller than that are not resolvable, and we
 decline to claim any. The MRAMG result carries the generalisation weight precisely
 because it is external, larger ($n = 200$) and authored by others.
 
-\textbf{Scaling the sample is compute-bound, not annotation-bound.} A judge
-cannot simply replace the annotator --- that is the circularity below --- but a
-rectified estimator can use judge labels while subtracting the judge's bias,
-measured on the human-labelled subset, in the manner of prediction-powered
-inference~\cite{ares}. If the judge were uninformative such an estimator degrades
-to the human-only estimate rather than to a wrong one. We implemented it and it is
-not yet applicable to our data: the pairs carrying both labels came from two
-annotation passes with different candidate pools, and because every gold figure
-appears in both pools by construction, that intersection is enriched 2.46$\times$
-in positives (12.1\,\% against 4.9\,\%) and is therefore not the random subsample
-the correction requires. Making it applicable needs one judge pass over pools
-drawn as the annotator's were --- inference, not annotation. We report the
-implementation and the blocked gate rather than the estimate.
+\textbf{A judge does not substitute for the annotator at this scale.} We tested
+whether judge labels could stand in for annotation without importing the judge's
+bias, using a rectified estimator in the manner of prediction-powered
+inference~\cite{ares}: the bias is measured on the human-labelled subset and
+subtracted, so an uninformative judge degrades the estimate to the human-only one
+rather than to a wrong one. A frontier VLM judged all 165 scored questions under
+the annotator's protocol, reusing the annotator's own eight-candidate pools
+verbatim for the 45 questions where one exists. Agreement was $\kappa = 0.556$
+over 360 pairs, independently replicating the 0.552 recorded earlier for the same
+model and protocol, and the labelled pairs are representative (positive rate
+4.7\,\% against 4.9\,\% across the full protocol).
+
+The estimator applies, and it buys nothing. Four of five systems show no interval
+narrowing and one widens by 19\,\%. The cause is structural: PPI variance behaves
+as $\mathrm{Var}(\text{rectifier})/n + \mathrm{Var}(\text{cheap})/N$, and the
+second term vanishes only for $N \gg n$. At $N/n = 165/45 = 3.7$ the rectifier's
+own sampling error dominates. Judging every question in the corpus would reach
+$N/n \approx 10.8$, which is the cheap experiment that remains; annotating more
+items is the expensive one that still binds.
 
 \textbf{Circular gold.} Our 165-question scaled gold was built by a frontier VLM.
 For any pipeline containing a VLM stage this inflates results --- measured

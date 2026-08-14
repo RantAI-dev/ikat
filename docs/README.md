@@ -14,7 +14,8 @@ produced the original claim is still visible.
 | `09-mramg-sota.md` | external validation, including a near-miss misattribution |
 | `10-improvement-experiments.md` | eight experiments, two of which failed because of us |
 | `11-vlm-gate-deployment.md` | shipping the gate, and its zero executions |
-| `12-prediction-powered-selection.md` | judge κ=0.662, and an estimator that refuses its own data |
+| `12-prediction-powered-selection.md` | a judge cannot replace the annotator at this scale, and why |
+| `13-mramg-all-subsets.md` | all six MRAMG subsets — one win, one loss, three that measure nothing |
 
 Two entries worth reading for the method rather than the result:
 

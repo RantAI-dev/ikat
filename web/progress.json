@@ -17,8 +17,8 @@
     {
       "name": "External validation",
       "state": "done",
-      "note": "MRAMG-Bench Academic subset, n=200, gold authored by that benchmark's authors. Configuration frozen before the dataset was downloaded. Leads the published comparators, and still leads when forced to emit an image on every question.",
-      "evidence": "Table II"
+      "note": "All six MRAMG subsets now run, pooled into the three domains the published table uses. Academic 69.12 against 65.28 for the best published system. Lifestyle 55.00 against 62.23 — a loss, reported as one. The Web domain admits no claim at all: every candidate there is already a gold image, so precision is arithmetic rather than earned.",
+      "evidence": "Table II, docs/13"
     },
     {
       "name": "Selection result",
@@ -28,8 +28,8 @@
     },
     {
       "name": "Annotation scale-up",
-      "state": "partial",
-      "note": "Target is roughly 200 items plus a second annotator, and that part is still human work. But the judge that would carry a scale-up now has a measured agreement of kappa 0.662 on the protocol it would scale, and a rectified estimator is implemented. It refuses its own data today: the doubly-labelled pairs are 2.46x enriched in positives. The remaining blocker is compute, not annotation.",
+      "state": "blocked",
+      "note": "A second annotator on the existing 48 items, and more items after that. We tested whether an automated judge could substitute and it cannot at this scale, so this is back to being the binding constraint with no shortcut available.",
       "evidence": "docs/12"
     },
     {
@@ -46,9 +46,9 @@
     },
     {
       "name": "Judge-scaled estimation",
-      "state": "partial",
-      "note": "A prediction-powered estimator that lets judge labels stand in for annotation without inheriting the judge's bias — if the judge is useless it degrades to human-only rather than going wrong. Implemented, gated, and currently refusing to report on its own data.",
-      "evidence": "bench/ppi-eval.ts"
+      "state": "blocked",
+      "note": "Built, and it does not work at this scale. The validity gate passes now (enrichment 0.95x) and the judge agrees with a person at kappa 0.556, replicating an earlier independent measurement. But four of five confidence intervals fail to narrow and one widens 19%: with 165 judged questions against 45 annotated, the ratio is far below what prediction-powered inference needs. Human annotation remains the constraint.",
+      "evidence": "docs/12"
     }
   ],
   "notes": [
