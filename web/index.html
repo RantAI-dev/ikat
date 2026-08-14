@@ -77,6 +77,12 @@
 
   .note { border-left: 2px solid var(--accent); padding-left: 1rem; margin: 1.25rem 0; color: var(--muted); }
 
+  figure { margin: 1.5rem 0 0; }
+  figure img { display: block; width: 100%; height: auto; }
+  figcaption { color: var(--muted); font-size: 0.86rem; margin-top: 0.6rem; }
+  .fig-scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 8px; background: var(--card); padding: 1rem; }
+  .fig-scroll img { min-width: 640px; }
+
   .stage { display: grid; grid-template-columns: 1.6rem 1fr; gap: 0.85rem; padding: 0.7rem 0; border-top: 1px solid var(--rule); }
   .stage:first-of-type { border-top: 0; }
   .stage b { display: block; }
@@ -137,11 +143,21 @@
   Serving adds two ranking stages per query.
 </p>
 
+<figure>
+  <div class="fig-scroll"><img src="ingestion.svg" alt="The parser emits an ordered block sequence with a figure between two paragraphs. Conventional ingestion stores chunks and figures separately and discards the ordering, so position must be reconstructed from a caption that 80.7% of figures do not have. Anchor-preserving ingestion stores the index of the chunk holding the preceding prose block, making position a lookup available for every figure."></div>
+  <figcaption>The whole idea in one picture. The ordering exists at parse time and is thrown away a step later; everything downstream is then spent trying to guess it back.</figcaption>
+</figure>
+
 <div class="phase">Ingestion — once per document <span class="free">no model</span></div>
 <div class="stage"><span class="num">1</span><div><b>Parse</b><p>The layout parser returns an ordered sequence of typed blocks per page: heading, paragraph, caption, figure, table. This ordering is the only input the method needs, and every layout parser already produces it.</p></div></div>
 <div class="stage"><span class="num">2</span><div><b>Chunk</b><p>Prose blocks are segmented into retrieval chunks, each recording which block indices it spans.</p></div></div>
 <div class="stage"><span class="num">3</span><div><b>Anchor</b><p>For each figure, find the nearest preceding prose block; the anchor is the index of the chunk containing it. Resolved by word-prefix match — first ten words, shortened to four until unique. One pass over blocks.</p></div></div>
 <div class="stage"><span class="num">4</span><div><b>Persist</b><p>The anchor is written to the figure record and mirrored into chunk metadata, so retrieving the chunk recovers the figure by lookup instead of by search.</p></div></div>
+
+<figure>
+  <div class="fig-scroll"><img src="serving.svg" alt="Per query: retrieval returns chunks; figures whose anchor chunk was retrieved are admitted by a join rather than a caption test; a cross-encoder keeps the top two; a vision-language model judges each survivor as an image and may only remove; one figure or none is emitted."></div>
+  <figcaption>Admission is the stage that decides what is even possible. Everything after it can only narrow.</figcaption>
+</figure>
 
 <div class="phase">Serving — per query</div>
 <div class="stage"><span class="num">5</span><div><b>Retrieve</b><p>Hybrid retrieval returns the top-k chunks for the query.</p></div></div>

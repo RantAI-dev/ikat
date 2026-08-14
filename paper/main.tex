@@ -164,6 +164,20 @@ for that property --- 19.3\% caption coverage, alongside dense decorative imager
 
 \section{Method}
 
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/ingestion.pdf}
+\caption{Where the reading order is lost. The parser emits an ordered block
+sequence in which the figure's position is already stated. Conventional ingestion
+stores prose as chunks and figures as a separate array and drops the relation
+between them, so placement must afterwards be reconstructed from a caption that
+80.7\,\% of figures in this corpus do not have. Anchor-preserving ingestion
+records the index of the chunk holding the preceding prose block --- one integer,
+written once, with no model invoked --- and placement becomes a lookup available
+for every figure.}
+\label{fig:ingestion}
+\end{figure*}
+
 \subsection{The anchor, and where it is lost}
 
 A layout parser emits, for each page, an ordered sequence of blocks: headings,
@@ -172,6 +186,7 @@ statement of where in the reading flow it belongs. Conventional ingestion then
 stores the prose as chunks and the figures as a separate array, and the ordering
 relation between them is dropped.
 
+Fig.~\ref{fig:ingestion} shows the loss and the alternative side by side.
 We define the \emph{anchor} of a figure as the index of the text chunk containing
 the prose block that immediately precedes it in reading order. Anchoring requires
 no model: it is a join over data the parser already produced. We recover it by
@@ -183,10 +198,22 @@ retrieval time: a figure whose anchor chunk was retrieved is admitted as a
 candidate before any caption test is applied. This ordering matters, because a
 caption test cannot admit the 66--81\,\% of figures that carry no printed caption.
 
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/serving.pdf}
+\caption{Serving. Admission (stage 6) is a join on the anchor rather than a
+caption test, and is the only route by which a candidate enters; every later stage
+can only narrow. The cross-encoder truncates to two candidates, the vision-language
+gate may remove but never add or reorder, and emitting nothing is a valid
+outcome.}
+\label{fig:serving}
+\end{figure*}
+
 \subsection{The pipeline, stage by stage}
 \label{sec:pipeline}
 
-The method has two halves. Ingestion runs once per document and is model-free.
+The method has two halves, summarised in Fig.~\ref{fig:serving}. Ingestion runs
+once per document and is model-free.
 Serving runs per query and adds two ranking stages. Inputs and outputs are stated
 for each stage so that any of them can be replaced independently.
 

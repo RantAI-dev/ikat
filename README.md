@@ -62,6 +62,11 @@ no code and no models. Agreement between them is replication.
 Two halves. Ingestion runs once per document and invokes **no model at all**.
 Serving adds two ranking stages per query.
 
+<img src="assets/ingestion.svg" alt="The parser emits an ordered block sequence in which a figure sits between two paragraphs. Conventional ingestion stores chunks and figures separately and discards the ordering, so position must be reconstructed from a caption that 80.7% of figures do not have. Anchor-preserving ingestion stores the index of the chunk holding the preceding prose block, making position a lookup available for every figure." width="100%">
+
+*The ordering exists at parse time and is thrown away one step later. Everything
+downstream is then spent guessing it back.*
+
 **Ingestion — once per document, model-free**
 
 | | stage | |
@@ -70,6 +75,10 @@ Serving adds two ranking stages per query.
 | 2 | **Chunk** | Prose blocks are segmented into retrieval chunks, each recording which block indices it spans. |
 | 3 | **Anchor** | For each figure, take the nearest preceding prose block; the anchor is the index of the chunk containing it. Resolved by word-prefix match — first ten words, shortened to four until unique. One pass over blocks. |
 | 4 | **Persist** | The anchor goes into the figure record and into chunk metadata, so retrieving the chunk recovers the figure by lookup rather than by search. |
+
+<img src="assets/serving.svg" alt="Per query: retrieval returns chunks; figures whose anchor chunk was retrieved are admitted by a join rather than a caption test; a cross-encoder keeps the top two; a vision-language model judges each survivor as an image and may only remove; one figure or none is emitted." width="100%">
+
+*Admission decides what is even possible. Every stage after it can only narrow.*
 
 **Serving — per query**
 
