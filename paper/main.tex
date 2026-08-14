@@ -285,9 +285,12 @@ correctly and placed within tolerance.
 
 Human annotation at scale was not affordable, so a vision-language judge was
 calibrated against the human annotation that was. We report Cohen's $\kappa$
-against a human annotator before using any judge output: our
-model-generated harness gold agrees with a human at $\kappa = 0.092$ --- chance
---- while a frontier VLM judge reaches $\kappa = 0.552$. Every scaled number
+against a human annotator before using any judge output. Our model-generated
+harness gold agrees with a human at $\kappa = 0.092$ --- chance. A frontier VLM
+judge reaches $\kappa = 0.552$ on the eight-candidate annotation protocol and
+$\kappa = 0.662$ on the six-candidate one, the difference being consistent with
+the smaller pool posing an easier discrimination; permissiveness is 1.38$\times$
+against 2.9$\times$ for an on-premise 8B VLM on the same task. Every scaled number
 carries the $\kappa$ of the instrument that produced it.
 
 \section{Experimental Setup}
@@ -405,7 +408,8 @@ provenance document, each represented by the prose immediately preceding its
 placeholder --- the same anchor our method uses, and the same information
 available to their placeholder-based baseline. \textbf{The configuration was fixed
 on our own data before this dataset was obtained}; no parameter was tuned on
-MRAMG.
+MRAMG. Table~\ref{tab:mramg} reports the result against the comparators published
+with that benchmark.
 
 \begin{table}[t]
 \caption{MRAMG-Bench Academic subset, Image Precision ($n = 200$). Published
@@ -667,6 +671,20 @@ is $\pm$0.014 F1, so differences smaller than that are not resolvable, and we
 decline to claim any. The MRAMG result carries the generalisation weight precisely
 because it is external, larger ($n = 200$) and authored by others.
 
+\textbf{Scaling the sample is compute-bound, not annotation-bound.} A judge
+cannot simply replace the annotator --- that is the circularity below --- but a
+rectified estimator can use judge labels while subtracting the judge's bias,
+measured on the human-labelled subset, in the manner of prediction-powered
+inference~\cite{ares}. If the judge were uninformative such an estimator degrades
+to the human-only estimate rather than to a wrong one. We implemented it and it is
+not yet applicable to our data: the pairs carrying both labels came from two
+annotation passes with different candidate pools, and because every gold figure
+appears in both pools by construction, that intersection is enriched 2.46$\times$
+in positives (12.1\,\% against 4.9\,\%) and is therefore not the random subsample
+the correction requires. Making it applicable needs one judge pass over pools
+drawn as the annotator's were --- inference, not annotation. We report the
+implementation and the blocked gate rather than the estimate.
+
 \textbf{Circular gold.} Our 165-question scaled gold was built by a frontier VLM.
 For any pipeline containing a VLM stage this inflates results --- measured
 directly: the same selector scores 0.521 against that gold and 0.283 against
@@ -762,6 +780,11 @@ document QA,'' \emph{arXiv:2606.16092}, 2026.
 R.~Osmulski, G.~de S.~P. Moreira, R.~Ak, M.~Xu, B.~Schifferer, and E.~Oldridge,
 ``MIRACL-VISION: A large, multilingual, visual document retrieval benchmark,''
 \emph{arXiv:2505.11651}, 2025.
+
+\bibitem{ares}
+J.~Saad-Falcon, O.~Khattab, C.~Potts, and M.~Zaharia, ``ARES: An automated
+evaluation framework for retrieval-augmented generation systems,'' in
+\emph{Proc.\ NAACL-HLT}, 2024, pp.~338--354.
 
 \bibitem{docling}
 C.~Auer, M.~Lysak, A.~Nassar, M.~Dolfi, N.~Livathinos, P.~Vagenas, C.~Berrospi
