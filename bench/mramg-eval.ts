@@ -32,7 +32,7 @@
  * glossed.
  *
  * Usage:
- *   IKAT_PROVIDER=ugm bun bench/mramg-eval.ts [limit]
+ *   IKAT_PROVIDER=ugm bun tests/bench-kb/src/ikat/mramg-eval.ts [limit]
  */
 import * as fs from "node:fs"
 import * as path from "node:path"
@@ -215,6 +215,16 @@ async function main() {
   for (const s of subsets) {
     console.log(`\n${"=".repeat(66)}`)
     all.push(await evalSubset(s, limit))
+  }
+
+  // Always persist, including for a single subset. The first per-question run
+  // completed and its data was discarded because only the all-subsets path wrote
+  // anything — fifteen minutes of compute for a number already on screen.
+  {
+    const out = path.join(DIR, "..", "results", `mramg-${subsets.join("-")}.json`)
+    fs.mkdirSync(path.dirname(out), { recursive: true })
+    fs.writeFileSync(out, JSON.stringify({ topK: TOP_K, min: MIN, ctx: CTX, results: all }, null, 2))
+    console.log(`\nwrote ${out}`)
   }
 
   if (all.length > 1) {

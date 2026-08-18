@@ -99,9 +99,12 @@ Steps **3** and **6** are the contribution. Steps 7–9 compose existing compone
 |---|---|---:|---:|---:|
 | MRAMG Academic, Image Precision | benchmark authors | **69.63** | 65.28 | +4.35 |
 | &nbsp;&nbsp;same, forced emission | benchmark authors | **67.50** | 65.28 | +2.22 |
+| MMDocRAG, vision gate vs. no gate, IF1 | benchmark authors | **68.91** | 61.10 | +7.81 |
 | Figure selection F1 | human, n=48 | **0.605** | 0.417 | +0.188 |
 | Figure selection precision | human, n=48 | **0.542** | 0.304 | +0.238 |
 | &nbsp;&nbsp;vs. the deployed system | human, n=48 | **0.605** | 0.049 | +0.556 |
+| MRAMG Lifestyle, Image Precision | benchmark authors | 55.00 | **62.23** | *loses* |
+| MMDocRAG vs. GPT-4.1, IF1 | benchmark authors | 68.91 | **80.7** | *loses* |
 | Placement rule | layout | — | MRAMG | *loses* |
 
 Image Precision counts only emitted images, so abstaining could buy the score —
@@ -183,6 +186,29 @@ it.
 Image Precision counts only emitted images, so abstention could buy the score —
 ours abstains on 49%. Forcing exactly one image on **every** question still leads,
 with recall rising 41.59 → 61.64. The margin is not selective answering.
+
+**All six subsets are run and reported**, pooled into the domains the published
+table uses: Academic is a win (69.12 vs 65.28), Lifestyle a loss (55.00 vs
+62.23), and the Web domain admits no claim at all — under our candidate
+construction every candidate there is already a gold image, so precision is
+arithmetic rather than earned.
+
+**MMDocRAG** (`n=2055`, 4 domains, NeurIPS 2025) is the second benchmark, and the
+control: every candidate carries an *author-written* description, so the text
+standing in for an image is theirs, not ours. In that regime the cross-encoder
+matches BM25 (63.38 vs 63.48 F1) — what carried MRAMG was the anchor-derived
+*representation*, not the ranker. And the vision gate, run for the first time
+against gold we did not author, lifts a matched 200-question sample from
+F1 61.10 to **68.91** (+13.65 precision): removing a wrongly ranked leader
+*promotes* the next survivor into the emitted slot, so a remove-only stage
+raises recall too. Still behind GPT-4.1's published 80.7, stated as such.
+
+**The mechanism, confirmed by making it worse.** Growing the prose window around
+the figure's position monotonically destroys precision — 72.67 (200 chars) →
+69.12 (400) → 59.59 (800) → 57.30 (whole document) — and shrinking it below the
+anchor starves recall (100 chars: recall collapses to 19.82). The signal *is*
+the local anchor context. The frozen config uses 400; 200 would score higher and
+was deliberately not adopted, because it was discovered on the test set.
 
 ## Quickstart
 

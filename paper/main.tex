@@ -396,7 +396,8 @@ perfectly by construction, because its selection rule and the gold set coincide.
 That number is \textbf{not evidence} and is stated only to make the circularity
 explicit.
 
-\section{External Validation on MRAMG-Bench}
+\section{External Validation}
+\label{sec:external}
 
 Every result above is measured on a corpus we assembled against a gold standard we
 defined. 80\,\% of our gold figure links are derived from the anchor itself, and on
@@ -439,6 +440,15 @@ Qwen2-VL-7B, MLLM-based & 1.63 \\
 \end{tabular}
 \end{table}
 
+\textbf{The margin, bounded.} A bootstrap over questions ($B = 2 \times 10^4$)
+places our pooled Academic precision at 69.12 with 95\,\% interval
+$[61.43, 76.56]$; 15.7\,\% of resamples fall at or below the published 65.28.
+The comparator is a point estimate whose own sampling error we cannot
+resample, so the test is one-sided by necessity. The honest verdict is
+\emph{higher, not significantly higher}: on 200 questions a four-point margin
+is real but not resolvable, and we decline to claim more than the interval
+supports.
+
 \textbf{The abstention objection, and its test.} Image Precision counts only
 emitted images, so a system that declines on hard questions could purchase its
 score; ours abstains on 49\,\%. Removing that advantage entirely --- emitting
@@ -446,17 +456,223 @@ exactly one image on \emph{every} question --- yields precision 67.50, recall
 61.64, F1 64.44. Still ahead of every published configuration, with recall rising
 from 41.59. The margin is not an artefact of selective answering.
 
-\textbf{Scope.} This is a \emph{selection} result placed beside end-to-end systems
-that also generate the surrounding answer; Image Precision is computed over the
-same quantity, but the tasks are not identical. On MRAMG's Lifestyle domain we
-reach $\approx$55 against 62.23 for Gemini-1.5-Pro --- third overall, first among
-open-weight systems.
+\textbf{The other five subsets.} One subset reported out of six reads as
+selection whether or not it was, so Table~\ref{tab:mramg-all} reports all of
+them, pooled into the three domains the published comparison uses. The pooling
+sums raw counts --- averaging per-subset precision would weight a 200-question
+subset like a 2360-question one. One domain is a win, one is a loss, and one
+admits no claim at all: on every Web-domain question, \emph{every} candidate our
+construction produces is already a gold image (the \emph{all-gold} column), so
+there is no wrong answer available and precision is arithmetic rather than
+earned. Quoting our 100.00 there against the published 93.63 would be a false
+claim, and the diagnostic exists so that it cannot be made silently. The
+Lifestyle loss is informative in an unexpected direction: the \texttt{manual}
+subset carries 91.5 candidates per question --- 27$\times$ the arxiv pool ---
+and still scores \emph{higher} than \texttt{recipe} at 4.9 candidates, so
+distractor count is not what breaks the method. Recipe averages 2.2 gold images
+per question while the frozen configuration emits at most two and abstains on
+19\,\%, capping recall; Section~\ref{sec:admission} locates most of the
+remaining loss in the admission rule rather than the ranking.
+
+\begin{table}[t]
+\caption{All MRAMG-Bench domains under the frozen configuration.
+\emph{All-gold} is the share of questions where every candidate is already a
+gold image; where it is 100\,\% the domain poses no selection decision under our
+candidate construction, and no claim is made.}
+\label{tab:mramg-all}
+\centering
+\begin{tabular}{@{}lrrrrl@{}}
+\toprule
+Domain & $n$ & All-gold & Ours IP & Best publ. & \\
+\midrule
+Academic & 200 & 0\,\% & \textbf{69.12} & 65.28 & win \\
+Lifestyle & 2714 & 41\,\% & 55.00 & 62.23 & loss \\
+Web & 1850 & 100\,\% & \emph{(100.00)} & 93.63 & no claim \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Scope.} These are \emph{selection} results placed beside end-to-end
+systems that also generate the surrounding answer; Image Precision is computed
+over the same quantity, but the tasks are not identical. (The Academic figure in
+Table~\ref{tab:mramg-all} is 69.12 rather than 69.63: the CPU reproduction of
+the original GPU run, identical in true positives, recall and silent rate,
+differing by exactly one borderline emission.)
+
+\textbf{The mechanism, confirmed by making it worse.} If the anchor carries the
+signal, diluting it should destroy it. It does, monotonically: representing
+each image by a growing window of prose around its position, Academic Image
+Precision decays 72.67 (200 characters) $\to$ 69.12 (400) $\to$ 59.59 (800)
+$\to$ 58.74 (1600) $\to$ 57.30 (6000, effectively the whole document). Below
+the peak the failure flips from dilution to starvation --- at 100 characters
+precision holds (70.97) but recall collapses from 51.09 to 19.82, as windows
+shrink beneath the admission floor. The \emph{local} prose adjacent to the
+figure's position is what discriminates; every character beyond it is noise,
+and too few characters leave nothing to score. Two hygiene notes. The frozen
+configuration uses 400, and the sweep shows 200 would have scored higher on
+both precision and recall --- we do \emph{not} adopt it, because a value
+discovered on the test set would convert every number in this section from
+measurement to tuning. And the shape is itself the strongest form of the claim:
+had the anchor been incidental, some wider window would have won.
 
 \textbf{What it does not license.} The same configuration reaches $\approx$30\,\%
 precision on the Indonesian textbooks. That corpus is harder: a third of its
 figures carry no caption, most are decorative, and a dozen illustrations per book
 depict children learning. A benchmark number must not be quoted as a product
 capability.
+
+\subsection{MMDocRAG: a second benchmark, and what the ranker is not}
+\label{sec:mmdocrag}
+
+A single external benchmark is a single point of failure, so we add
+MMDocRAG~\cite{mmdocrag}: 2{,}055 questions over 147 documents in four domains
+(financial, academic, news, research reports), 5.0 image candidates per question
+against 1.5 gold, expert-annotated by its authors, and only 0.5\,\% of questions
+degenerate --- the selection decision is real almost everywhere. One property
+makes it the ideal control: each candidate ships with an \emph{author-written}
+description, so the text standing in for an image is theirs, not ours, and the
+regime is the opposite of the textbook corpus --- text about the image is
+present and good.
+
+In that regime the cross-encoder earns nothing over lexical matching: 63.38 F1
+against 63.48 for BM25 over the same descriptions (top-2, no threshold, whole
+benchmark). This is a result we want on record, because it disciplines the
+Academic win: what carried MRAMG was not the ranker but the
+\emph{representation} it ranked --- anchor-derived context standing in for
+images that captions do not describe. Where good text about the image already
+exists, a 568M cross-encoder is BM25.
+
+The frozen configuration also exposes its own admission floor here. With the
+absolute threshold ($s \geq 0.1$) it scores 57.30 overall and \textbf{11.31} on
+the News domain; removing only the floor raises News to \textbf{74.03}. A
+constant admissible-score cut assumes the score distribution is corpus-invariant,
+and it is not --- Section~\ref{sec:admission} treats this as a finding about
+admission rules rather than a number to be quietly fixed.
+
+\subsection{The vision gate, on gold we did not author}
+\label{sec:composed-ext}
+
+Every external number above tests the weakest configuration we own: the
+cross-encoder alone. The stage that carried the internal result --- a
+vision-language model that sees each surviving candidate \emph{as an image} and
+may only remove it --- had never been run against external gold. MMDocRAG is
+the hard case for it: descriptions here are good, and the gate's value was
+measured where they are absent. If sight helps anyway, the claim is stronger
+than we made it.
+
+On a 200-question stride sample (the file is document-ordered, so a prefix
+would sample a handful of documents rather than the benchmark), with an
+identical prefilter and top-1 emission for both arms:
+
+\begin{center}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+System & IP & IR & IF1 \\
+\midrule
+Cross-encoder alone & 75.00 & 51.55 & 61.10 \\
++ vision gate (composed) & \textbf{88.65} & \textbf{56.36} & \textbf{68.91} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The gate saw 400 candidates and kept 228. Precision rising is expected of a
+remove-only stage; recall rising ($+4.8$) is not, and the mechanism is worth
+stating: under top-1 emission, deleting a wrongly ranked leader \emph{promotes}
+the next survivor into the emitted slot. We measured eight such promotions
+against one loss. Removal never reorders the list, but it reorders what is
+emitted.
+
+Two honesty notes. The gate instance here is a frontier VLM, not the 8B-class
+model of the deployed system --- what is validated externally is the
+\emph{architecture} (sight composed after discrimination), not the deployed
+checkpoint. And the composed 68.91 remains behind the 80.7 the benchmark's
+authors report for GPT-4.1 selecting over interleaved candidates; the
+comparison we claim is against our own ablation on identical inputs, where the
+gate is worth $+13.65$ precision and $+7.81$ F1.
+
+\section{Admission Does Not Transfer; Ranking Does}
+\label{sec:admission}
+
+Selection hides two decisions: how to \emph{order} candidates, which the
+cross-encoder does, and how many to \emph{admit}, which a rule does. The frozen
+configuration admits by an absolute floor on the sigmoid score, $s \geq 0.1$,
+and the external runs indict that floor from two directions: it is the
+difference between 11.31 and 74.03 on MMDocRAG News
+(Section~\ref{sec:mmdocrag}), and it is implicated in the Lifestyle loss, where
+abstention caps recall on multi-gold questions. An absolute cut assumes the
+score distribution is corpus-invariant. It is not: description style shifts it
+wholesale.
+
+The scale-free alternative is admission \emph{relative to the question's own
+distribution}: admit candidates scoring at least $\alpha \cdot
+\max_j s_j$ for the question at hand. If the failure really is distribution
+shift, one $\alpha$ should transfer where no absolute floor does.
+
+We test this without touching the model: the cross-encoder's raw scores for
+every candidate of every question on both benchmarks --- seven evaluation units
+(three MRAMG domains, four MMDocRAG domains) --- are persisted once, and every
+rule thereafter is arithmetic over that file. This also disciplines the method:
+the entire sensitivity surface is computed across all units at once and
+reported whole. Nothing is selected per benchmark, and the statistic a rule is
+judged on is its \emph{worst} unit and its macro average --- transfer, not any
+single win.
+
+\begin{table*}[t]
+\caption{Admission rules over identical cross-encoder scores, F1 per evaluation
+unit. Every rule sees the same ranking; only how many candidates are admitted
+changes. \emph{Macro} averages the seven units; \emph{worst} is the transfer
+statistic. The full grid ($\alpha \in [0.2, 0.9]$, $K \in \{2,3,4\}$, three
+guard variants) is in the released artifact; rows here are representative and
+nothing was selected per unit.}
+\label{tab:admission}
+\centering
+\begin{tabular}{@{}lrrrrrrrrr@{}}
+\toprule
+& \multicolumn{4}{c}{MMDocRAG} & \multicolumn{3}{c}{MRAMG} & & \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-8}
+Rule & Acad. & Fin. & News & Res. & Acad. & Life. & Web & Macro & Worst \\
+\midrule
+$s \geq 0.1$, top-2 (frozen) & 59.38 & 61.65 & 11.31 & 62.84 & 51.93 & 40.47 & 72.58 & 51.45 & 11.31 \\
+$s \geq 0.001$, top-2 & 63.32 & 63.40 & 42.64 & 61.97 & 65.55 & 49.26 & 94.97 & 63.02 & 42.64 \\
+top-2, no threshold & 62.60 & 62.22 & \textbf{74.03} & 60.65 & 64.16 & \textbf{49.73} & \textbf{100.00} & 67.63 & \textbf{49.73} \\
+$s \geq 0.2 \cdot s_{\max}$, top-3 & \textbf{66.74} & \textbf{67.33} & 65.62 & \textbf{65.78} & \textbf{68.62} & 48.78 & 90.99 & \textbf{67.70} & 48.78 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Table~\ref{tab:admission} reports the surface, and its reading is not the one
+we expected when we built it. We expected relative admission to be the fix.
+It is a fix --- but the load-bearing boundary runs elsewhere: between rules
+that reference an \emph{absolute} score and rules that are \emph{scale-free}.
+The frozen floor scores macro 51.45 with a worst unit of 11.31; on News it
+leaves the system mute on 86\,\% of questions, buying precision 100 at recall
+6. Weakening the floor to 0.001 --- three orders of magnitude --- still leaves
+News 48\,\% silent, because the score distribution there sits almost entirely
+below even that: the shift between corpora is not a matter of degree an
+absolute constant can survive. Every scale-free rule, by contrast, lands
+within about one macro point of every other: plain top-2 at 67.63, relative
+admission at 67.70, and the entire $\alpha$-grid from 0.2 to 0.9 between 61.99
+and 68.06 with no unit collapsing anywhere. The choice \emph{between} the two
+families is worth sixteen macro points; the choice \emph{within} the
+scale-free family is worth about one.
+
+What relative admission does buy over plain top-$K$ is precision at equal F1:
+on the description-rich MMDocRAG domains it trades a few points of recall for
+five to eight of precision (Financial 52.65 $\to$ 60.08, Academic 63.78 $\to$
+67.54), which is the trade a system showing figures to a reader wants. It also
+degrades gracefully: because the cut references only the question's own score
+distribution, it cannot go silent wholesale the way the floor does on News.
+
+Two disciplines kept this honest. Every number above comes from one persisted
+score file, so no rule enjoyed a fresh inference run; and the grid was
+evaluated across all seven units simultaneously, judged on macro and worst
+unit --- a rule that wins its best unit and collapses elsewhere is exactly
+what this protocol exists to catch, and the frozen floor is that rule.
+
+The frozen configuration's own numbers elsewhere in this paper are
+\emph{not} restated under better admission: they remain as frozen, losses
+included. This section's claim is about rule families, established on the full
+surface, not a post-hoc upgrade to the headline.
 
 \section{Selection: Composing Sight with Discrimination}
 \label{sec:select}
@@ -467,7 +683,9 @@ asymmetry motivated a direct comparison, on the 48 human-annotated items ---
 the only gold no model produced (Table~\ref{tab:select}).
 
 \begin{table}[t]
-\caption{Figure selection against human annotation ($n = 48$, 19 positive links).}
+\caption{Figure selection against human annotation. Preliminary: $n = 48$ items
+carrying 19 positive links, one annotator; the externally scored version of this
+comparison is Section~\ref{sec:composed-ext}.}
 \label{tab:select}
 \centering
 \begin{tabular}{@{}lrrr@{}}
@@ -629,6 +847,12 @@ Setting & Gold & Ours & Best other & $\Delta$ \\
 \multicolumn{5}{@{}l}{\emph{External --- gold authored by the benchmark's authors}} \\
 MRAMG Acad., IP & theirs & \textbf{69.63} & 65.28 & $+4.35$ \\
 \quad forced emission & theirs & \textbf{67.50} & 65.28 & $+2.22$ \\
+MMDoc., gate vs.\ no gate, IF1 & theirs & \textbf{68.91} & 61.10 & $+7.81$ \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{External --- where the method loses}} \\
+MRAMG Lifestyle, IP & theirs & 55.00 & \textbf{62.23} & $-7.23$ \\
+MMDoc.\ vs.\ GPT-4.1, IF1 & theirs & 68.91 & \textbf{80.7} & $-11.8$ \\
+MMDoc.\ ranker vs.\ BM25, IF1 & theirs & 63.38 & 63.48 & $-0.10$ \\
 \midrule
 \multicolumn{5}{@{}l}{\emph{Internal --- gold from human annotation, $n = 48$}} \\
 Selection F1 & human & \textbf{0.605} & 0.417 & $+0.188$ \\
@@ -655,7 +879,16 @@ gate with the cross-encoder reaches F1 0.605. The two stages alone reach 0.417 a
 (0.789 alone, against 0.368 for the cross-encoder) and the cross-encoder supplies
 precision. Neither ordering of a single stage reaches the composition.
 
-\textbf{The row the method loses.} Anchoring alone does not beat similarity-based
+\textbf{The rows the method loses.} Three external comparisons go against us and
+are listed with the wins. Lifestyle is a genuine loss of the frozen
+configuration, most of it located in the admission rule
+(Section~\ref{sec:admission}). The GPT-4.1 row compares a 568M ranker plus one
+gate call against a frontier LLM reasoning over interleaved candidates --- we
+close 7.8 of the 19.6-point gap with the gate and state the rest. The BM25 row
+is a tie we report as a loss of the \emph{ranker}: where descriptions are
+author-written, the cross-encoder earns nothing over lexical matching, which is
+precisely why the MRAMG win must be credited to the anchor representation.
+Finally, anchoring alone does not beat similarity-based
 placement: the best placement rule in our comparison is MRAMG's bipartite
 assignment, not ours. The contribution of anchoring is that it makes uncaptioned
 figures \emph{reachable} at all --- a candidate-admission gain, not a ranking one
@@ -669,12 +902,12 @@ replicated across two extraction pipelines; they do not depend on any system run
 C4 divides, and only one half is externally supported. That selection carries the
 practical gain is corroborated independently by MRAMG, where a cross-encoder over
 anchor-derived context alone beats the published systems. That the gain
-\emph{requires a stage which looks at the image} is supported only by the
-human-gold comparison: the MRAMG configuration contains no vision stage, so it
-cannot speak to that half. Nor could a caption-rich corpus test it --- the claim
-is about what happens when text about an image is absent or useless, which is the
-regime the textbook corpus is in and MRAMG is not. That half therefore rests
-entirely on 48 items annotated by one person. C1 is the weakest of the four: on questions answerable only from a figure,
+\emph{requires a stage which looks at the image} was, in the first version of
+this study, supported only by 48 items annotated by one person; it is now also
+supported externally, by the MMDocRAG composed run
+(Section~\ref{sec:composed-ext}), where the gate adds $+13.65$ precision on gold
+we did not author --- with the caveat stated there that the external gate
+instance is a frontier VLM rather than the deployed 8B-class model. C1 is the weakest of the four: on questions answerable only from a figure,
 no configuration recovered the content, and the system that most exceeded a
 text-only baseline did so with a significant loss of faithfulness.
 
@@ -762,6 +995,12 @@ deployment.
 X.~Peng, C.~Qin, Z.~Chen, R.~Xu, C.~Xiong, and C.-S. Wu, ``UniDoc-Bench: A unified
 benchmark for document-centric multimodal RAG,'' \emph{arXiv:2510.03663}, 2026.
 
+\bibitem{mmdocrag}
+K.~Dong, Y.~Chang, S.~Huang, Y.~Wang, R.~Tang, and Y.~Liu, ``Benchmarking
+retrieval-augmented multimodal generation for document question answering,'' in
+\emph{Advances in Neural Information Processing Systems (NeurIPS)}, 2025,
+arXiv:2505.16470.
+
 \bibitem{realmmrag}
 N.~Wasserman \emph{et al.}, ``REAL-MM-RAG: A real-world multi-modal retrieval
 benchmark,'' \emph{arXiv:2502.12342}, 2025.
@@ -784,11 +1023,6 @@ language models,'' \emph{arXiv:2407.01449}, 2024.
 Q.~Yu, Z.~Xiao, B.~Li, Z.~Wang, C.~Chen, and W.~Zhang, ``MRAMG-Bench: A
 comprehensive benchmark for advancing multimodal retrieval-augmented multimodal
 generation,'' \emph{arXiv:2502.04176}, 2025.
-
-\bibitem{mmdocrag}
-K.~Dong, Y.~Chang, S.~Huang, Y.~Wang, R.~Tang, and Y.~Liu, ``Benchmarking
-retrieval-augmented multimodal generation for document question answering,''
-\emph{arXiv:2505.16470}, 2025.
 
 \bibitem{vinqa}
 Y.~R. Jang, H.~Kong, K.~An, J.~S. Huh, G.~Kim, and S.~J. Choi, ``VinQA: Visual

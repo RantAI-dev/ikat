@@ -60,6 +60,16 @@ annotation for any headline number.
 | Table II | MRAMG-Bench Academic, Image Precision, against published comparators | `MRAMG_SUBSET=arxiv bun bench/mramg-eval.ts 200` | `MRAMG_DIR` |
 | Table II, forced-emission row | same, emitting exactly one image on every question | `MRAMG_SUBSET=arxiv IKAT_RERANK_TOP_K=1 IKAT_RERANK_MIN=-1 bun bench/mramg-eval.ts 200` | `MRAMG_DIR` |
 | all six subsets | every subset, pooled into the three domains the published table uses | `MRAMG_SUBSET=all bun bench/mramg-eval.ts 99999` | `MRAMG_DIR` |
+| §External, MMDocRAG | image-quote selection over the benchmark's own descriptions, per domain | `bun bench/mmdocrag-eval.ts` | `MMDOCRAG_DIR` (the 25 MB `dev_15.jsonl` only) |
+| §External, BM25 tie | the no-model floor the ranker must clear (it does not, there) | `python3 bench/mmdocrag-baselines.py` | same |
+| §External, vision gate | composed pipeline vs. cross-encoder alone, identical 200-question stride sample | `bun bench/mmdocrag-composed.ts --manifest 200`, judge the manifest, then `--score verdicts.json` | images archive + a VLM judge |
+| §External, anchor-window sweep | precision decay as the window grows past the anchor | `MRAMG_SUBSET=arxiv MRAMG_CTX=… bun bench/mramg-eval.ts 200` for CTX ∈ {100,200,400,800,1600,6000} | `MRAMG_DIR` |
+| §Admission | the full admission-rule surface over one persisted score file | `bun bench/dump-scores.ts` once, then `python3 bench/admission-rules.py` | rerank endpoint once; afterwards nothing |
+| §External, the margin bounded | question-level bootstrap of the Academic margin | `python3 bench/bootstrap-margin.py` | the score dump |
+
+The score dump this repo ships ([`docs/score-dump.jsonl`](docs/score-dump.jsonl),
+6,819 questions, ids and scores only — no benchmark text) lets the admission
+study and the bootstrap reproduce **with no model at all**.
 
 Only the `.jsonl` files are needed — 18 MB. `IMAGE.zip` (1.5 GB) is not used by
 this path, which scores the text standing in for each image.
@@ -86,10 +96,12 @@ whole reason the freeze is stated in the paper.
 labels, and its bias is measured on the human-labelled subset and subtracted, so
 a useless judge degrades the estimate to human-only rather than corrupting it.
 
-It currently **refuses to report**, because the doubly-labelled pairs are 2.46x
-enriched in positives and the correction would inherit that. Read the refusal —
-it names the exact input that would make the data eligible. See
-[`docs/12-prediction-powered-selection.md`](docs/12-prediction-powered-selection.md).
+Its representativeness gate now **passes** (0.95x after judging the annotator's
+own pools verbatim), and the estimator still buys nothing: at N/n = 3.7 the
+rectifier's own sampling error dominates, and four of five intervals fail to
+narrow. The machinery works; the ratio is the constraint. See
+[`docs/12-prediction-powered-selection.md`](docs/12-prediction-powered-selection.md)
+for both the earlier refusal and the current negative result.
 
 ## What limits the headline number
 

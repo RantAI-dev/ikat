@@ -21,9 +21,27 @@
       "evidence": "Table II, docs/13"
     },
     {
+      "name": "Second benchmark, and the gate on external gold",
+      "state": "done",
+      "note": "MMDocRAG (2055 questions, 4 domains, NeurIPS 2025) added as a second external benchmark. Two results: the cross-encoder matches BM25 where descriptions are author-written (63.38 vs 63.48) — so the MRAMG win was the representation, not the ranker — and the vision gate, run for the first time against gold we did not author, adds +13.65 precision / +7.81 F1 over the identical pipeline without it. Still behind GPT-4.1's published 80.7.",
+      "evidence": "§V, composed-result.json"
+    },
+    {
+      "name": "Admission-rule study",
+      "state": "done",
+      "note": "6,819 questions, one persisted score file, the full rule grid across all seven evaluation units. The finding is not the one we expected: the boundary that matters is absolute-vs-scale-free, not where the floor sits. The frozen floor scores macro 51.45 with a worst unit of 11.31 (News: 86% mute); even 0.001 leaves News 48% silent. Every scale-free rule — plain top-K or relative-to-max — lands within ~1 macro point of every other (67.6–67.7), no unit collapsing. Family choice: 16 macro points. Choice within the family: one.",
+      "evidence": "§Admission, docs/14, admission-rules.json"
+    },
+    {
+      "name": "Academic margin, bounded",
+      "state": "done",
+      "note": "Bootstrap over questions (B=20,000): pooled IP 69.12, 95% CI [61.43, 76.56]; 15.7% of resamples fall at or below the published 65.28. The paper now says 'higher, not significantly higher' — a four-point margin on 200 questions is real but not resolvable.",
+      "evidence": "§External, bootstrap-margin.py"
+    },
+    {
       "name": "Selection result",
       "state": "partial",
-      "note": "The composed selector reaches F1 0.605 against human annotation — but on 48 items carrying 19 positive links. This is the number a reviewer will push hardest on, and the sample is the binding constraint on it.",
+      "note": "Demoted to preliminary: F1 0.605 against human annotation on 48 items carrying 19 positive links. The externally scored version of the same comparison — the MMDocRAG composed run — now carries the weight instead.",
       "evidence": "Table III"
     },
     {
