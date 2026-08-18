@@ -1,0 +1,1602 @@
+{
+ "J000": {
+  "arm": "B",
+  "qid": "ARXIV_145"
+ },
+ "J001": {
+  "arm": "A",
+  "qid": "ARXIV_178"
+ },
+ "J002": {
+  "arm": "A",
+  "qid": "ARXIV_164"
+ },
+ "J003": {
+  "arm": "A",
+  "qid": "ARXIV_111"
+ },
+ "J004": {
+  "arm": "B",
+  "qid": "ARXIV_24"
+ },
+ "J005": {
+  "arm": "B",
+  "qid": "ARXIV_3"
+ },
+ "J006": {
+  "arm": "B",
+  "qid": "ARXIV_46"
+ },
+ "J007": {
+  "arm": "A",
+  "qid": "ARXIV_47"
+ },
+ "J008": {
+  "arm": "B",
+  "qid": "ARXIV_110"
+ },
+ "J009": {
+  "arm": "B",
+  "qid": "ARXIV_10"
+ },
+ "J010": {
+  "arm": "B",
+  "qid": "ARXIV_196"
+ },
+ "J011": {
+  "arm": "B",
+  "qid": "ARXIV_16"
+ },
+ "J012": {
+  "arm": "B",
+  "qid": "ARXIV_64"
+ },
+ "J013": {
+  "arm": "B",
+  "qid": "ARXIV_68"
+ },
+ "J014": {
+  "arm": "A",
+  "qid": "ARXIV_195"
+ },
+ "J015": {
+  "arm": "B",
+  "qid": "ARXIV_170"
+ },
+ "J016": {
+  "arm": "B",
+  "qid": "ARXIV_160"
+ },
+ "J017": {
+  "arm": "B",
+  "qid": "ARXIV_141"
+ },
+ "J018": {
+  "arm": "B",
+  "qid": "ARXIV_6"
+ },
+ "J019": {
+  "arm": "A",
+  "qid": "ARXIV_73"
+ },
+ "J020": {
+  "arm": "B",
+  "qid": "ARXIV_136"
+ },
+ "J021": {
+  "arm": "B",
+  "qid": "ARXIV_56"
+ },
+ "J022": {
+  "arm": "A",
+  "qid": "ARXIV_190"
+ },
+ "J023": {
+  "arm": "B",
+  "qid": "ARXIV_35"
+ },
+ "J024": {
+  "arm": "B",
+  "qid": "ARXIV_54"
+ },
+ "J025": {
+  "arm": "A",
+  "qid": "ARXIV_14"
+ },
+ "J026": {
+  "arm": "B",
+  "qid": "ARXIV_17"
+ },
+ "J027": {
+  "arm": "B",
+  "qid": "ARXIV_23"
+ },
+ "J028": {
+  "arm": "A",
+  "qid": "ARXIV_99"
+ },
+ "J029": {
+  "arm": "B",
+  "qid": "ARXIV_188"
+ },
+ "J030": {
+  "arm": "A",
+  "qid": "ARXIV_84"
+ },
+ "J031": {
+  "arm": "B",
+  "qid": "ARXIV_86"
+ },
+ "J032": {
+  "arm": "A",
+  "qid": "ARXIV_101"
+ },
+ "J033": {
+  "arm": "A",
+  "qid": "ARXIV_143"
+ },
+ "J034": {
+  "arm": "B",
+  "qid": "ARXIV_99"
+ },
+ "J035": {
+  "arm": "B",
+  "qid": "ARXIV_61"
+ },
+ "J036": {
+  "arm": "A",
+  "qid": "ARXIV_134"
+ },
+ "J037": {
+  "arm": "B",
+  "qid": "ARXIV_20"
+ },
+ "J038": {
+  "arm": "B",
+  "qid": "ARXIV_65"
+ },
+ "J039": {
+  "arm": "A",
+  "qid": "ARXIV_182"
+ },
+ "J040": {
+  "arm": "A",
+  "qid": "ARXIV_193"
+ },
+ "J041": {
+  "arm": "A",
+  "qid": "ARXIV_15"
+ },
+ "J042": {
+  "arm": "A",
+  "qid": "ARXIV_78"
+ },
+ "J043": {
+  "arm": "A",
+  "qid": "ARXIV_59"
+ },
+ "J044": {
+  "arm": "B",
+  "qid": "ARXIV_105"
+ },
+ "J045": {
+  "arm": "A",
+  "qid": "ARXIV_105"
+ },
+ "J046": {
+  "arm": "A",
+  "qid": "ARXIV_157"
+ },
+ "J047": {
+  "arm": "B",
+  "qid": "ARXIV_184"
+ },
+ "J048": {
+  "arm": "A",
+  "qid": "ARXIV_19"
+ },
+ "J049": {
+  "arm": "B",
+  "qid": "ARXIV_70"
+ },
+ "J050": {
+  "arm": "B",
+  "qid": "ARXIV_18"
+ },
+ "J051": {
+  "arm": "B",
+  "qid": "ARXIV_31"
+ },
+ "J052": {
+  "arm": "B",
+  "qid": "ARXIV_122"
+ },
+ "J053": {
+  "arm": "B",
+  "qid": "ARXIV_149"
+ },
+ "J054": {
+  "arm": "A",
+  "qid": "ARXIV_123"
+ },
+ "J055": {
+  "arm": "B",
+  "qid": "ARXIV_137"
+ },
+ "J056": {
+  "arm": "A",
+  "qid": "ARXIV_95"
+ },
+ "J057": {
+  "arm": "A",
+  "qid": "ARXIV_65"
+ },
+ "J058": {
+  "arm": "A",
+  "qid": "ARXIV_130"
+ },
+ "J059": {
+  "arm": "B",
+  "qid": "ARXIV_157"
+ },
+ "J060": {
+  "arm": "B",
+  "qid": "ARXIV_26"
+ },
+ "J061": {
+  "arm": "A",
+  "qid": "ARXIV_1"
+ },
+ "J062": {
+  "arm": "B",
+  "qid": "ARXIV_97"
+ },
+ "J063": {
+  "arm": "B",
+  "qid": "ARXIV_81"
+ },
+ "J064": {
+  "arm": "B",
+  "qid": "ARXIV_58"
+ },
+ "J065": {
+  "arm": "B",
+  "qid": "ARXIV_55"
+ },
+ "J066": {
+  "arm": "B",
+  "qid": "ARXIV_33"
+ },
+ "J067": {
+  "arm": "B",
+  "qid": "ARXIV_83"
+ },
+ "J068": {
+  "arm": "A",
+  "qid": "ARXIV_46"
+ },
+ "J069": {
+  "arm": "B",
+  "qid": "ARXIV_71"
+ },
+ "J070": {
+  "arm": "A",
+  "qid": "ARXIV_141"
+ },
+ "J071": {
+  "arm": "A",
+  "qid": "ARXIV_108"
+ },
+ "J072": {
+  "arm": "B",
+  "qid": "ARXIV_93"
+ },
+ "J073": {
+  "arm": "A",
+  "qid": "ARXIV_31"
+ },
+ "J074": {
+  "arm": "A",
+  "qid": "ARXIV_162"
+ },
+ "J075": {
+  "arm": "B",
+  "qid": "ARXIV_67"
+ },
+ "J076": {
+  "arm": "A",
+  "qid": "ARXIV_113"
+ },
+ "J077": {
+  "arm": "A",
+  "qid": "ARXIV_22"
+ },
+ "J078": {
+  "arm": "A",
+  "qid": "ARXIV_74"
+ },
+ "J079": {
+  "arm": "A",
+  "qid": "ARXIV_181"
+ },
+ "J080": {
+  "arm": "A",
+  "qid": "ARXIV_3"
+ },
+ "J081": {
+  "arm": "B",
+  "qid": "ARXIV_138"
+ },
+ "J082": {
+  "arm": "B",
+  "qid": "ARXIV_22"
+ },
+ "J083": {
+  "arm": "B",
+  "qid": "ARXIV_107"
+ },
+ "J084": {
+  "arm": "A",
+  "qid": "ARXIV_133"
+ },
+ "J085": {
+  "arm": "B",
+  "qid": "ARXIV_88"
+ },
+ "J086": {
+  "arm": "B",
+  "qid": "ARXIV_43"
+ },
+ "J087": {
+  "arm": "B",
+  "qid": "ARXIV_89"
+ },
+ "J088": {
+  "arm": "B",
+  "qid": "ARXIV_72"
+ },
+ "J089": {
+  "arm": "A",
+  "qid": "ARXIV_49"
+ },
+ "J090": {
+  "arm": "B",
+  "qid": "ARXIV_84"
+ },
+ "J091": {
+  "arm": "B",
+  "qid": "ARXIV_143"
+ },
+ "J092": {
+  "arm": "B",
+  "qid": "ARXIV_192"
+ },
+ "J093": {
+  "arm": "A",
+  "qid": "ARXIV_149"
+ },
+ "J094": {
+  "arm": "B",
+  "qid": "ARXIV_186"
+ },
+ "J095": {
+  "arm": "B",
+  "qid": "ARXIV_82"
+ },
+ "J096": {
+  "arm": "B",
+  "qid": "ARXIV_76"
+ },
+ "J097": {
+  "arm": "B",
+  "qid": "ARXIV_52"
+ },
+ "J098": {
+  "arm": "B",
+  "qid": "ARXIV_48"
+ },
+ "J099": {
+  "arm": "A",
+  "qid": "ARXIV_119"
+ },
+ "J100": {
+  "arm": "B",
+  "qid": "ARXIV_11"
+ },
+ "J101": {
+  "arm": "B",
+  "qid": "ARXIV_172"
+ },
+ "J102": {
+  "arm": "A",
+  "qid": "ARXIV_139"
+ },
+ "J103": {
+  "arm": "B",
+  "qid": "ARXIV_63"
+ },
+ "J104": {
+  "arm": "A",
+  "qid": "ARXIV_198"
+ },
+ "J105": {
+  "arm": "B",
+  "qid": "ARXIV_69"
+ },
+ "J106": {
+  "arm": "B",
+  "qid": "ARXIV_41"
+ },
+ "J107": {
+  "arm": "B",
+  "qid": "ARXIV_128"
+ },
+ "J108": {
+  "arm": "B",
+  "qid": "ARXIV_90"
+ },
+ "J109": {
+  "arm": "B",
+  "qid": "ARXIV_106"
+ },
+ "J110": {
+  "arm": "B",
+  "qid": "ARXIV_8"
+ },
+ "J111": {
+  "arm": "B",
+  "qid": "ARXIV_87"
+ },
+ "J112": {
+  "arm": "B",
+  "qid": "ARXIV_51"
+ },
+ "J113": {
+  "arm": "A",
+  "qid": "ARXIV_129"
+ },
+ "J114": {
+  "arm": "A",
+  "qid": "ARXIV_54"
+ },
+ "J115": {
+  "arm": "B",
+  "qid": "ARXIV_66"
+ },
+ "J116": {
+  "arm": "B",
+  "qid": "ARXIV_37"
+ },
+ "J117": {
+  "arm": "A",
+  "qid": "ARXIV_58"
+ },
+ "J118": {
+  "arm": "B",
+  "qid": "ARXIV_156"
+ },
+ "J119": {
+  "arm": "B",
+  "qid": "ARXIV_100"
+ },
+ "J120": {
+  "arm": "B",
+  "qid": "ARXIV_108"
+ },
+ "J121": {
+  "arm": "A",
+  "qid": "ARXIV_23"
+ },
+ "J122": {
+  "arm": "A",
+  "qid": "ARXIV_94"
+ },
+ "J123": {
+  "arm": "B",
+  "qid": "ARXIV_101"
+ },
+ "J124": {
+  "arm": "A",
+  "qid": "ARXIV_166"
+ },
+ "J125": {
+  "arm": "A",
+  "qid": "ARXIV_183"
+ },
+ "J126": {
+  "arm": "B",
+  "qid": "ARXIV_40"
+ },
+ "J127": {
+  "arm": "B",
+  "qid": "ARXIV_79"
+ },
+ "J128": {
+  "arm": "B",
+  "qid": "ARXIV_13"
+ },
+ "J129": {
+  "arm": "A",
+  "qid": "ARXIV_185"
+ },
+ "J130": {
+  "arm": "B",
+  "qid": "ARXIV_44"
+ },
+ "J131": {
+  "arm": "A",
+  "qid": "ARXIV_148"
+ },
+ "J132": {
+  "arm": "A",
+  "qid": "ARXIV_199"
+ },
+ "J133": {
+  "arm": "B",
+  "qid": "ARXIV_112"
+ },
+ "J134": {
+  "arm": "B",
+  "qid": "ARXIV_7"
+ },
+ "J135": {
+  "arm": "B",
+  "qid": "ARXIV_139"
+ },
+ "J136": {
+  "arm": "B",
+  "qid": "ARXIV_0"
+ },
+ "J137": {
+  "arm": "A",
+  "qid": "ARXIV_43"
+ },
+ "J138": {
+  "arm": "B",
+  "qid": "ARXIV_74"
+ },
+ "J139": {
+  "arm": "B",
+  "qid": "ARXIV_169"
+ },
+ "J140": {
+  "arm": "B",
+  "qid": "ARXIV_34"
+ },
+ "J141": {
+  "arm": "B",
+  "qid": "ARXIV_94"
+ },
+ "J142": {
+  "arm": "A",
+  "qid": "ARXIV_35"
+ },
+ "J143": {
+  "arm": "A",
+  "qid": "ARXIV_24"
+ },
+ "J144": {
+  "arm": "B",
+  "qid": "ARXIV_80"
+ },
+ "J145": {
+  "arm": "B",
+  "qid": "ARXIV_102"
+ },
+ "J146": {
+  "arm": "B",
+  "qid": "ARXIV_57"
+ },
+ "J147": {
+  "arm": "B",
+  "qid": "ARXIV_175"
+ },
+ "J148": {
+  "arm": "A",
+  "qid": "ARXIV_170"
+ },
+ "J149": {
+  "arm": "A",
+  "qid": "ARXIV_26"
+ },
+ "J150": {
+  "arm": "B",
+  "qid": "ARXIV_164"
+ },
+ "J151": {
+  "arm": "B",
+  "qid": "ARXIV_95"
+ },
+ "J152": {
+  "arm": "B",
+  "qid": "ARXIV_29"
+ },
+ "J153": {
+  "arm": "A",
+  "qid": "ARXIV_21"
+ },
+ "J154": {
+  "arm": "B",
+  "qid": "ARXIV_12"
+ },
+ "J155": {
+  "arm": "B",
+  "qid": "ARXIV_158"
+ },
+ "J156": {
+  "arm": "B",
+  "qid": "ARXIV_19"
+ },
+ "J157": {
+  "arm": "A",
+  "qid": "ARXIV_93"
+ },
+ "J158": {
+  "arm": "B",
+  "qid": "ARXIV_77"
+ },
+ "J159": {
+  "arm": "B",
+  "qid": "ARXIV_111"
+ },
+ "J160": {
+  "arm": "B",
+  "qid": "ARXIV_47"
+ },
+ "J161": {
+  "arm": "A",
+  "qid": "ARXIV_55"
+ },
+ "J162": {
+  "arm": "A",
+  "qid": "ARXIV_83"
+ },
+ "J163": {
+  "arm": "A",
+  "qid": "ARXIV_159"
+ },
+ "J164": {
+  "arm": "A",
+  "qid": "ARXIV_138"
+ },
+ "J165": {
+  "arm": "A",
+  "qid": "ARXIV_109"
+ },
+ "J166": {
+  "arm": "A",
+  "qid": "ARXIV_63"
+ },
+ "J167": {
+  "arm": "B",
+  "qid": "ARXIV_178"
+ },
+ "J168": {
+  "arm": "B",
+  "qid": "ARXIV_132"
+ },
+ "J169": {
+  "arm": "A",
+  "qid": "ARXIV_25"
+ },
+ "J170": {
+  "arm": "A",
+  "qid": "ARXIV_91"
+ },
+ "J171": {
+  "arm": "B",
+  "qid": "ARXIV_91"
+ },
+ "J172": {
+  "arm": "B",
+  "qid": "ARXIV_39"
+ },
+ "J173": {
+  "arm": "B",
+  "qid": "ARXIV_121"
+ },
+ "J174": {
+  "arm": "A",
+  "qid": "ARXIV_81"
+ },
+ "J175": {
+  "arm": "B",
+  "qid": "ARXIV_119"
+ },
+ "J176": {
+  "arm": "A",
+  "qid": "ARXIV_57"
+ },
+ "J177": {
+  "arm": "A",
+  "qid": "ARXIV_135"
+ },
+ "J178": {
+  "arm": "A",
+  "qid": "ARXIV_75"
+ },
+ "J179": {
+  "arm": "B",
+  "qid": "ARXIV_98"
+ },
+ "J180": {
+  "arm": "B",
+  "qid": "ARXIV_96"
+ },
+ "J181": {
+  "arm": "A",
+  "qid": "ARXIV_131"
+ },
+ "J182": {
+  "arm": "A",
+  "qid": "ARXIV_98"
+ },
+ "J183": {
+  "arm": "A",
+  "qid": "ARXIV_36"
+ },
+ "J184": {
+  "arm": "B",
+  "qid": "ARXIV_114"
+ },
+ "J185": {
+  "arm": "B",
+  "qid": "ARXIV_168"
+ },
+ "J186": {
+  "arm": "B",
+  "qid": "ARXIV_85"
+ },
+ "J187": {
+  "arm": "B",
+  "qid": "ARXIV_109"
+ },
+ "J188": {
+  "arm": "B",
+  "qid": "ARXIV_15"
+ },
+ "J189": {
+  "arm": "B",
+  "qid": "ARXIV_161"
+ },
+ "J190": {
+  "arm": "B",
+  "qid": "ARXIV_148"
+ },
+ "J191": {
+  "arm": "A",
+  "qid": "ARXIV_165"
+ },
+ "J192": {
+  "arm": "A",
+  "qid": "ARXIV_153"
+ },
+ "J193": {
+  "arm": "A",
+  "qid": "ARXIV_146"
+ },
+ "J194": {
+  "arm": "A",
+  "qid": "ARXIV_197"
+ },
+ "J195": {
+  "arm": "B",
+  "qid": "ARXIV_125"
+ },
+ "J196": {
+  "arm": "B",
+  "qid": "ARXIV_50"
+ },
+ "J197": {
+  "arm": "A",
+  "qid": "ARXIV_160"
+ },
+ "J198": {
+  "arm": "A",
+  "qid": "ARXIV_194"
+ },
+ "J199": {
+  "arm": "B",
+  "qid": "ARXIV_131"
+ },
+ "J200": {
+  "arm": "A",
+  "qid": "ARXIV_156"
+ },
+ "J201": {
+  "arm": "B",
+  "qid": "ARXIV_129"
+ },
+ "J202": {
+  "arm": "B",
+  "qid": "ARXIV_75"
+ },
+ "J203": {
+  "arm": "A",
+  "qid": "ARXIV_30"
+ },
+ "J204": {
+  "arm": "A",
+  "qid": "ARXIV_127"
+ },
+ "J205": {
+  "arm": "A",
+  "qid": "ARXIV_177"
+ },
+ "J206": {
+  "arm": "B",
+  "qid": "ARXIV_4"
+ },
+ "J207": {
+  "arm": "A",
+  "qid": "ARXIV_16"
+ },
+ "J208": {
+  "arm": "B",
+  "qid": "ARXIV_32"
+ },
+ "J209": {
+  "arm": "B",
+  "qid": "ARXIV_174"
+ },
+ "J210": {
+  "arm": "A",
+  "qid": "ARXIV_90"
+ },
+ "J211": {
+  "arm": "B",
+  "qid": "ARXIV_115"
+ },
+ "J212": {
+  "arm": "B",
+  "qid": "ARXIV_36"
+ },
+ "J213": {
+  "arm": "A",
+  "qid": "ARXIV_20"
+ },
+ "J214": {
+  "arm": "B",
+  "qid": "ARXIV_126"
+ },
+ "J215": {
+  "arm": "B",
+  "qid": "ARXIV_135"
+ },
+ "J216": {
+  "arm": "B",
+  "qid": "ARXIV_150"
+ },
+ "J217": {
+  "arm": "B",
+  "qid": "ARXIV_127"
+ },
+ "J218": {
+  "arm": "B",
+  "qid": "ARXIV_103"
+ },
+ "J219": {
+  "arm": "B",
+  "qid": "ARXIV_152"
+ },
+ "J220": {
+  "arm": "A",
+  "qid": "ARXIV_171"
+ },
+ "J221": {
+  "arm": "A",
+  "qid": "ARXIV_29"
+ },
+ "J222": {
+  "arm": "B",
+  "qid": "ARXIV_5"
+ },
+ "J223": {
+  "arm": "B",
+  "qid": "ARXIV_154"
+ },
+ "J224": {
+  "arm": "A",
+  "qid": "ARXIV_128"
+ },
+ "J225": {
+  "arm": "B",
+  "qid": "ARXIV_140"
+ },
+ "J226": {
+  "arm": "B",
+  "qid": "ARXIV_42"
+ },
+ "J227": {
+  "arm": "B",
+  "qid": "ARXIV_142"
+ },
+ "J228": {
+  "arm": "A",
+  "qid": "ARXIV_2"
+ },
+ "J229": {
+  "arm": "B",
+  "qid": "ARXIV_185"
+ },
+ "J230": {
+  "arm": "B",
+  "qid": "ARXIV_118"
+ },
+ "J231": {
+  "arm": "B",
+  "qid": "ARXIV_124"
+ },
+ "J232": {
+  "arm": "B",
+  "qid": "ARXIV_78"
+ },
+ "J233": {
+  "arm": "B",
+  "qid": "ARXIV_144"
+ },
+ "J234": {
+  "arm": "A",
+  "qid": "ARXIV_118"
+ },
+ "J235": {
+  "arm": "A",
+  "qid": "ARXIV_10"
+ },
+ "J236": {
+  "arm": "B",
+  "qid": "ARXIV_2"
+ },
+ "J237": {
+  "arm": "B",
+  "qid": "ARXIV_123"
+ },
+ "J238": {
+  "arm": "A",
+  "qid": "ARXIV_18"
+ },
+ "J239": {
+  "arm": "B",
+  "qid": "ARXIV_183"
+ },
+ "J240": {
+  "arm": "B",
+  "qid": "ARXIV_9"
+ },
+ "J241": {
+  "arm": "A",
+  "qid": "ARXIV_34"
+ },
+ "J242": {
+  "arm": "A",
+  "qid": "ARXIV_56"
+ },
+ "J243": {
+  "arm": "A",
+  "qid": "ARXIV_82"
+ },
+ "J244": {
+  "arm": "B",
+  "qid": "ARXIV_151"
+ },
+ "J245": {
+  "arm": "A",
+  "qid": "ARXIV_77"
+ },
+ "J246": {
+  "arm": "A",
+  "qid": "ARXIV_172"
+ },
+ "J247": {
+  "arm": "B",
+  "qid": "ARXIV_181"
+ },
+ "J248": {
+  "arm": "A",
+  "qid": "ARXIV_147"
+ },
+ "J249": {
+  "arm": "A",
+  "qid": "ARXIV_176"
+ },
+ "J250": {
+  "arm": "B",
+  "qid": "ARXIV_176"
+ },
+ "J251": {
+  "arm": "A",
+  "qid": "ARXIV_154"
+ },
+ "J252": {
+  "arm": "A",
+  "qid": "ARXIV_142"
+ },
+ "J253": {
+  "arm": "A",
+  "qid": "ARXIV_121"
+ },
+ "J254": {
+  "arm": "A",
+  "qid": "ARXIV_17"
+ },
+ "J255": {
+  "arm": "B",
+  "qid": "ARXIV_159"
+ },
+ "J256": {
+  "arm": "B",
+  "qid": "ARXIV_92"
+ },
+ "J257": {
+  "arm": "B",
+  "qid": "ARXIV_133"
+ },
+ "J258": {
+  "arm": "A",
+  "qid": "ARXIV_5"
+ },
+ "J259": {
+  "arm": "A",
+  "qid": "ARXIV_110"
+ },
+ "J260": {
+  "arm": "A",
+  "qid": "ARXIV_117"
+ },
+ "J261": {
+  "arm": "A",
+  "qid": "ARXIV_48"
+ },
+ "J262": {
+  "arm": "A",
+  "qid": "ARXIV_9"
+ },
+ "J263": {
+  "arm": "A",
+  "qid": "ARXIV_161"
+ },
+ "J264": {
+  "arm": "B",
+  "qid": "ARXIV_189"
+ },
+ "J265": {
+  "arm": "A",
+  "qid": "ARXIV_97"
+ },
+ "J266": {
+  "arm": "B",
+  "qid": "ARXIV_25"
+ },
+ "J267": {
+  "arm": "A",
+  "qid": "ARXIV_126"
+ },
+ "J268": {
+  "arm": "A",
+  "qid": "ARXIV_158"
+ },
+ "J269": {
+  "arm": "A",
+  "qid": "ARXIV_140"
+ },
+ "J270": {
+  "arm": "A",
+  "qid": "ARXIV_7"
+ },
+ "J271": {
+  "arm": "A",
+  "qid": "ARXIV_8"
+ },
+ "J272": {
+  "arm": "B",
+  "qid": "ARXIV_180"
+ },
+ "J273": {
+  "arm": "A",
+  "qid": "ARXIV_27"
+ },
+ "J274": {
+  "arm": "A",
+  "qid": "ARXIV_137"
+ },
+ "J275": {
+  "arm": "A",
+  "qid": "ARXIV_189"
+ },
+ "J276": {
+  "arm": "A",
+  "qid": "ARXIV_175"
+ },
+ "J277": {
+  "arm": "A",
+  "qid": "ARXIV_85"
+ },
+ "J278": {
+  "arm": "A",
+  "qid": "ARXIV_28"
+ },
+ "J279": {
+  "arm": "A",
+  "qid": "ARXIV_116"
+ },
+ "J280": {
+  "arm": "A",
+  "qid": "ARXIV_69"
+ },
+ "J281": {
+  "arm": "B",
+  "qid": "ARXIV_166"
+ },
+ "J282": {
+  "arm": "B",
+  "qid": "ARXIV_27"
+ },
+ "J283": {
+  "arm": "B",
+  "qid": "ARXIV_171"
+ },
+ "J284": {
+  "arm": "B",
+  "qid": "ARXIV_130"
+ },
+ "J285": {
+  "arm": "A",
+  "qid": "ARXIV_44"
+ },
+ "J286": {
+  "arm": "A",
+  "qid": "ARXIV_102"
+ },
+ "J287": {
+  "arm": "B",
+  "qid": "ARXIV_146"
+ },
+ "J288": {
+  "arm": "A",
+  "qid": "ARXIV_45"
+ },
+ "J289": {
+  "arm": "A",
+  "qid": "ARXIV_191"
+ },
+ "J290": {
+  "arm": "B",
+  "qid": "ARXIV_73"
+ },
+ "J291": {
+  "arm": "A",
+  "qid": "ARXIV_100"
+ },
+ "J292": {
+  "arm": "A",
+  "qid": "ARXIV_92"
+ },
+ "J293": {
+  "arm": "B",
+  "qid": "ARXIV_147"
+ },
+ "J294": {
+  "arm": "B",
+  "qid": "ARXIV_104"
+ },
+ "J295": {
+  "arm": "A",
+  "qid": "ARXIV_96"
+ },
+ "J296": {
+  "arm": "B",
+  "qid": "ARXIV_134"
+ },
+ "J297": {
+  "arm": "A",
+  "qid": "ARXIV_196"
+ },
+ "J298": {
+  "arm": "B",
+  "qid": "ARXIV_116"
+ },
+ "J299": {
+  "arm": "A",
+  "qid": "ARXIV_76"
+ },
+ "J300": {
+  "arm": "A",
+  "qid": "ARXIV_71"
+ },
+ "J301": {
+  "arm": "B",
+  "qid": "ARXIV_193"
+ },
+ "J302": {
+  "arm": "B",
+  "qid": "ARXIV_117"
+ },
+ "J303": {
+  "arm": "A",
+  "qid": "ARXIV_72"
+ },
+ "J304": {
+  "arm": "A",
+  "qid": "ARXIV_6"
+ },
+ "J305": {
+  "arm": "A",
+  "qid": "ARXIV_174"
+ },
+ "J306": {
+  "arm": "B",
+  "qid": "ARXIV_49"
+ },
+ "J307": {
+  "arm": "A",
+  "qid": "ARXIV_52"
+ },
+ "J308": {
+  "arm": "A",
+  "qid": "ARXIV_66"
+ },
+ "J309": {
+  "arm": "B",
+  "qid": "ARXIV_162"
+ },
+ "J310": {
+  "arm": "B",
+  "qid": "ARXIV_45"
+ },
+ "J311": {
+  "arm": "A",
+  "qid": "ARXIV_64"
+ },
+ "J312": {
+  "arm": "B",
+  "qid": "ARXIV_30"
+ },
+ "J313": {
+  "arm": "A",
+  "qid": "ARXIV_42"
+ },
+ "J314": {
+  "arm": "A",
+  "qid": "ARXIV_122"
+ },
+ "J315": {
+  "arm": "A",
+  "qid": "ARXIV_12"
+ },
+ "J316": {
+  "arm": "A",
+  "qid": "ARXIV_37"
+ },
+ "J317": {
+  "arm": "A",
+  "qid": "ARXIV_50"
+ },
+ "J318": {
+  "arm": "A",
+  "qid": "ARXIV_60"
+ },
+ "J319": {
+  "arm": "B",
+  "qid": "ARXIV_191"
+ },
+ "J320": {
+  "arm": "A",
+  "qid": "ARXIV_115"
+ },
+ "J321": {
+  "arm": "A",
+  "qid": "ARXIV_120"
+ },
+ "J322": {
+  "arm": "B",
+  "qid": "ARXIV_167"
+ },
+ "J323": {
+  "arm": "A",
+  "qid": "ARXIV_62"
+ },
+ "J324": {
+  "arm": "A",
+  "qid": "ARXIV_39"
+ },
+ "J325": {
+  "arm": "B",
+  "qid": "ARXIV_182"
+ },
+ "J326": {
+  "arm": "A",
+  "qid": "ARXIV_192"
+ },
+ "J327": {
+  "arm": "A",
+  "qid": "ARXIV_152"
+ },
+ "J328": {
+  "arm": "B",
+  "qid": "ARXIV_60"
+ },
+ "J329": {
+  "arm": "B",
+  "qid": "ARXIV_165"
+ },
+ "J330": {
+  "arm": "B",
+  "qid": "ARXIV_155"
+ },
+ "J331": {
+  "arm": "A",
+  "qid": "ARXIV_150"
+ },
+ "J332": {
+  "arm": "B",
+  "qid": "ARXIV_59"
+ },
+ "J333": {
+  "arm": "A",
+  "qid": "ARXIV_184"
+ },
+ "J334": {
+  "arm": "A",
+  "qid": "ARXIV_104"
+ },
+ "J335": {
+  "arm": "A",
+  "qid": "ARXIV_88"
+ },
+ "J336": {
+  "arm": "A",
+  "qid": "ARXIV_106"
+ },
+ "J337": {
+  "arm": "A",
+  "qid": "ARXIV_114"
+ },
+ "J338": {
+  "arm": "A",
+  "qid": "ARXIV_89"
+ },
+ "J339": {
+  "arm": "A",
+  "qid": "ARXIV_124"
+ },
+ "J340": {
+  "arm": "B",
+  "qid": "ARXIV_14"
+ },
+ "J341": {
+  "arm": "B",
+  "qid": "ARXIV_190"
+ },
+ "J342": {
+  "arm": "B",
+  "qid": "ARXIV_153"
+ },
+ "J343": {
+  "arm": "A",
+  "qid": "ARXIV_132"
+ },
+ "J344": {
+  "arm": "A",
+  "qid": "ARXIV_67"
+ },
+ "J345": {
+  "arm": "B",
+  "qid": "ARXIV_179"
+ },
+ "J346": {
+  "arm": "B",
+  "qid": "ARXIV_62"
+ },
+ "J347": {
+  "arm": "A",
+  "qid": "ARXIV_86"
+ },
+ "J348": {
+  "arm": "B",
+  "qid": "ARXIV_173"
+ },
+ "J349": {
+  "arm": "A",
+  "qid": "ARXIV_163"
+ },
+ "J350": {
+  "arm": "B",
+  "qid": "ARXIV_53"
+ },
+ "J351": {
+  "arm": "B",
+  "qid": "ARXIV_199"
+ },
+ "J352": {
+  "arm": "A",
+  "qid": "ARXIV_179"
+ },
+ "J353": {
+  "arm": "A",
+  "qid": "ARXIV_187"
+ },
+ "J354": {
+  "arm": "A",
+  "qid": "ARXIV_61"
+ },
+ "J355": {
+  "arm": "A",
+  "qid": "ARXIV_68"
+ },
+ "J356": {
+  "arm": "B",
+  "qid": "ARXIV_1"
+ },
+ "J357": {
+  "arm": "A",
+  "qid": "ARXIV_107"
+ },
+ "J358": {
+  "arm": "B",
+  "qid": "ARXIV_177"
+ },
+ "J359": {
+  "arm": "B",
+  "qid": "ARXIV_187"
+ },
+ "J360": {
+  "arm": "B",
+  "qid": "ARXIV_38"
+ },
+ "J361": {
+  "arm": "A",
+  "qid": "ARXIV_145"
+ },
+ "J362": {
+  "arm": "A",
+  "qid": "ARXIV_186"
+ },
+ "J363": {
+  "arm": "B",
+  "qid": "ARXIV_198"
+ },
+ "J364": {
+  "arm": "B",
+  "qid": "ARXIV_21"
+ },
+ "J365": {
+  "arm": "A",
+  "qid": "ARXIV_32"
+ },
+ "J366": {
+  "arm": "A",
+  "qid": "ARXIV_41"
+ },
+ "J367": {
+  "arm": "A",
+  "qid": "ARXIV_40"
+ },
+ "J368": {
+  "arm": "A",
+  "qid": "ARXIV_79"
+ },
+ "J369": {
+  "arm": "A",
+  "qid": "ARXIV_33"
+ },
+ "J370": {
+  "arm": "A",
+  "qid": "ARXIV_13"
+ },
+ "J371": {
+  "arm": "A",
+  "qid": "ARXIV_168"
+ },
+ "J372": {
+  "arm": "A",
+  "qid": "ARXIV_53"
+ },
+ "J373": {
+  "arm": "A",
+  "qid": "ARXIV_173"
+ },
+ "J374": {
+  "arm": "A",
+  "qid": "ARXIV_51"
+ },
+ "J375": {
+  "arm": "B",
+  "qid": "ARXIV_195"
+ },
+ "J376": {
+  "arm": "A",
+  "qid": "ARXIV_167"
+ },
+ "J377": {
+  "arm": "B",
+  "qid": "ARXIV_197"
+ },
+ "J378": {
+  "arm": "A",
+  "qid": "ARXIV_70"
+ },
+ "J379": {
+  "arm": "A",
+  "qid": "ARXIV_188"
+ },
+ "J380": {
+  "arm": "A",
+  "qid": "ARXIV_11"
+ },
+ "J381": {
+  "arm": "A",
+  "qid": "ARXIV_155"
+ },
+ "J382": {
+  "arm": "B",
+  "qid": "ARXIV_194"
+ },
+ "J383": {
+  "arm": "A",
+  "qid": "ARXIV_0"
+ },
+ "J384": {
+  "arm": "B",
+  "qid": "ARXIV_120"
+ },
+ "J385": {
+  "arm": "A",
+  "qid": "ARXIV_87"
+ },
+ "J386": {
+  "arm": "B",
+  "qid": "ARXIV_28"
+ },
+ "J387": {
+  "arm": "A",
+  "qid": "ARXIV_4"
+ },
+ "J388": {
+  "arm": "B",
+  "qid": "ARXIV_163"
+ },
+ "J389": {
+  "arm": "A",
+  "qid": "ARXIV_169"
+ },
+ "J390": {
+  "arm": "A",
+  "qid": "ARXIV_103"
+ },
+ "J391": {
+  "arm": "A",
+  "qid": "ARXIV_136"
+ },
+ "J392": {
+  "arm": "A",
+  "qid": "ARXIV_38"
+ },
+ "J393": {
+  "arm": "A",
+  "qid": "ARXIV_151"
+ },
+ "J394": {
+  "arm": "B",
+  "qid": "ARXIV_113"
+ },
+ "J395": {
+  "arm": "A",
+  "qid": "ARXIV_144"
+ },
+ "J396": {
+  "arm": "A",
+  "qid": "ARXIV_180"
+ },
+ "J397": {
+  "arm": "A",
+  "qid": "ARXIV_80"
+ },
+ "J398": {
+  "arm": "A",
+  "qid": "ARXIV_125"
+ },
+ "J399": {
+  "arm": "A",
+  "qid": "ARXIV_112"
+ }
+}

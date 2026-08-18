@@ -60,6 +60,34 @@ on the score dump before this experiment existed, and applied unchanged.
    about. Arm A's insertions carry no provenance. The benchmark scores
    position only via LLM-judged metrics (GPT-4o judge); deferred, not proxied.
 
+## The judged half: placement ties, selection loses
+
+The benchmark's four LLM-judged metrics, run blind: 400 answers (arm B in its
+pre-registered variant, each figure placed after the answer sentence matching
+its anchor context best, via cross-encoder), interleaved under neutral shuffled
+keys `J000..J399`, scored by a single judge model, key unblinded only at
+scoring. Paired per-question differences, bootstrap CIs (B=5000):
+
+| metric (scale) | mean A−B | 95% CI | verdict |
+|---|---:|---|---|
+| relevance (1–5) | +0.306 | [+0.145, +0.478] | A wins |
+| effectiveness (1–5) | +0.242 | [+0.081, +0.403] | A wins |
+| **position (0–1)** | **−0.012** | **[−0.085, +0.061]** | **tie, 48 vs 49** |
+| comprehensive (1–5) | +0.085 | [−0.035, +0.210] | tie |
+
+The split is the finding. The generator picks better images — it selects with
+its own answer in view. But on *position*, the axis this paper exists for, a
+mechanical join ties the generator's own inline placement exactly, while
+remaining traceable to a source location. Overall answer quality is
+indistinguishable. Placement does not need the generator; selection is where
+the generator's edge lives — which is exactly the stage docs/11 showed a
+vision gate can supply.
+
+Caveats: one judge model (Claude, via blind subagent batches); text stand-ins
+for images, not pixels; the judge shares a vendor with the evaluation
+tooling's author (not with any system under test — generator is SEA-LION).
+Blinding is the mitigation; per-item verdicts are shipped.
+
 ## Deviations from their protocol, stated
 
 - Generator: `Llama-SEA-LION-v3.5-8B-R` fp8 via the box's vLLM, thinking off.

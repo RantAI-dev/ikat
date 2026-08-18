@@ -35,7 +35,7 @@
     {
       "name": "End-to-end generation",
       "state": "done",
-      "note": "MRAMG's own generation protocol on Academic, 200 questions, same 8B SEA-LION generator in both arms. One finding against us, reported as such: inline insertion by the generator beats post-hoc selection on F1 (61.71 vs 55.91); ours keeps a ten-point precision lead and slightly better prose. And one for us: the admission study's pre-registered rule, fixed before this experiment existed, lifted our arm +7.6 F1 exactly as predicted — a replication, not a tune.",
+      "note": "MRAMG's own generation protocol on Academic, 200 questions, same 8B SEA-LION generator in both arms. Statistical half: inline insertion beats post-hoc selection on F1 (61.71 vs 55.91) — a loss, reported as one — while ours keeps +10 precision, and the admission study's pre-registered rule replicated out-of-sample (+7.6 F1). Judged half, blind, paired: the generator selects better images (relevance +0.31, effectiveness +0.24, CIs exclude zero) but on POSITION — the axis the paper is about — a mechanical anchor join ties the generator exactly (−0.01, CI [−0.09,+0.06], 48 wins to 49), and comprehensive quality is indistinguishable. Placement does not need the generator.",
       "evidence": "§End-to-end, docs/15"
     },
     {

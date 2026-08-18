@@ -629,12 +629,42 @@ us: the admission-rule study's prediction \emph{replicated out of sample}.
 Section~\ref{sec:admission}'s rule was fixed on the score dump before this
 experiment existed; applied here unchanged, it lifts arm B from 48.30 to 55.91
 F1 by ending the 50\,\% silence, exactly the failure mode it was built to
-name. What this table does not measure is the axis the paper is about ---
-\emph{where} an image lands and whether its placement is traceable to the
-source. Arm A's insertions carry no provenance; the benchmark scores that
-axis only through LLM-judged position metrics, which we defer rather than
-proxy. Generator details and protocol deviations (fp8 quantisation, 4096-token
-window with whole-chunk truncation) are in the released runner.
+name. What the statistical half cannot measure is the axis the paper is about ---
+\emph{where} an image lands. The benchmark scores that axis with LLM-judged
+metrics, which we ran blind: all 400 answers (both arms, arm B in its
+pre-registered variant with each figure placed after the answer sentence
+matching its anchor context best) were interleaved under neutral shuffled
+keys and scored by a single judge model on the benchmark's four scales, the
+key unblinded only at scoring. Paired per-question differences with bootstrap
+intervals:
+
+\begin{center}
+\begin{tabular}{@{}lrrl@{}}
+\toprule
+Metric (scale) & A $-$ B & 95\,\% CI & \\
+\midrule
+Relevance (1--5) & $+0.31$ & $[+0.15, +0.48]$ & A wins \\
+Effectiveness (1--5) & $+0.24$ & $[+0.08, +0.40]$ & A wins \\
+Position (0--1) & $-0.01$ & $[-0.09, +0.06]$ & tie \\
+Comprehensive (1--5) & $+0.09$ & $[-0.04, +0.21]$ & tie \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The split is the finding. The generator selects better images --- it chooses
+with its own answer in view, and relevance and effectiveness follow. But on
+\emph{position}, the metric this paper is about, a mechanical join ties it
+exactly (48 questions to 49): anchor-derived placement is as good as the
+generator's own inline choice, while remaining traceable to a source
+position, and overall answer quality is indistinguishable. Placement, in
+other words, does not need the generator; selection is where the generator's
+advantage lives, which is precisely where Section~\ref{sec:composed-ext}
+showed a vision stage can substitute. Caveats: one judge model, text
+stand-ins rather than pixels, and the judge shares a vendor with none of the
+systems under test but with the evaluation tooling's author; blinding is the
+mitigation, and per-item verdicts ship with the repo. Generator details and
+protocol deviations (fp8 quantisation, 4096-token window with whole-chunk
+truncation) are in the released runner.
 
 \section{Admission Does Not Transfer; Ranking Does}
 \label{sec:admission}
