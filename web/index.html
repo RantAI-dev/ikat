@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IKAT — placement is provenance</title>
-<meta name="description" content="Anchor-preserving ingestion for figure-grounded retrieval-augmented generation. Manuscript, results, and current status.">
+<meta name="description" content="Anchor-preserving ingestion for figure-grounded RAG. A layout parser already knows where every figure belongs; we stop throwing that away. Manuscript, results, and status — losses included.">
 <link rel="icon" href="logo.svg" type="image/svg+xml">
 <style>
   :root {
@@ -13,10 +13,14 @@
     --muted: #6c6459;
     --rule: #e2ddd4;
     --card: #ffffff;
+    --card-soft: #f5f2ec;
     --accent: #e4572e;
+    --accent-soft: #fdeee8;
     --done: #2f7a4d;
     --partial: #b8860b;
     --blocked: #b1442a;
+    --tie: #5b6d9e;
+    --shadow: 0 1px 2px rgba(22,19,15,.05), 0 4px 16px rgba(22,19,15,.04);
     --serif: Georgia, "Times New Roman", serif;
     --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
     --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
@@ -24,40 +28,104 @@
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #14120f; --fg: #ece7df; --muted: #9a9188; --rule: #2e2a25;
-      --card: #1b1815; --done: #5fbf87; --partial: #d8ab3f; --blocked: #e07a5f;
+      --card: #1b1815; --card-soft: #201c18; --accent-soft: #2c1c14;
+      --done: #5fbf87; --partial: #d8ab3f; --blocked: #e07a5f; --tie: #8fa3d4;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 16px rgba(0,0,0,.25);
     }
   }
+  /* The toggle wins over the media query, in both directions. */
+  html[data-theme="light"] {
+    --bg: #fbfaf8; --fg: #16130f; --muted: #6c6459; --rule: #e2ddd4;
+    --card: #ffffff; --card-soft: #f5f2ec; --accent-soft: #fdeee8;
+    --done: #2f7a4d; --partial: #b8860b; --blocked: #b1442a; --tie: #5b6d9e;
+    --shadow: 0 1px 2px rgba(22,19,15,.05), 0 4px 16px rgba(22,19,15,.04);
+  }
+  html[data-theme="dark"] {
+    --bg: #14120f; --fg: #ece7df; --muted: #9a9188; --rule: #2e2a25;
+    --card: #1b1815; --card-soft: #201c18; --accent-soft: #2c1c14;
+    --done: #5fbf87; --partial: #d8ab3f; --blocked: #e07a5f; --tie: #8fa3d4;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 16px rgba(0,0,0,.25);
+  }
+
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0; background: var(--bg); color: var(--fg);
     font-family: var(--sans); font-size: 16px; line-height: 1.65;
     -webkit-font-smoothing: antialiased;
+    transition: background .25s ease, color .25s ease;
   }
-  .wrap { max-width: 46rem; margin: 0 auto; padding: 3.5rem 1.25rem 5rem; }
-  header { border-bottom: 1px solid var(--rule); padding-bottom: 2rem; margin-bottom: 2.5rem; }
-  .mark { display: block; width: 20rem; max-width: 100%; color: var(--fg); }
+  .wrap { max-width: 48rem; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
+
+  .topbar { display: flex; align-items: center; gap: 1rem; margin-bottom: 2.5rem; }
+  .topbar .mark { width: 7.5rem; color: var(--fg); display: block; }
+  .topnav { margin-left: auto; display: flex; align-items: center; gap: 1rem; font-size: .85rem; }
+  .topnav a { color: var(--muted); text-decoration: none; }
+  .topnav a:hover { color: var(--accent); }
+  @media (max-width: 40rem) { .topnav a.navlink { display: none; } }
+  #theme {
+    cursor: pointer; border: 1px solid var(--rule); background: var(--card);
+    color: var(--fg); border-radius: 999px; width: 2.1rem; height: 2.1rem;
+    font-size: 1rem; line-height: 1; display: grid; place-items: center;
+  }
+  #theme:hover { border-color: var(--accent); color: var(--accent); }
+
+  header.hero { padding-bottom: 2.25rem; border-bottom: 1px solid var(--rule); margin-bottom: 2.5rem; }
+  .kicker {
+    font-family: var(--mono); font-size: .72rem; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 .8rem;
+  }
   h1 {
-    font-family: var(--serif); font-weight: normal; font-size: 1.75rem;
-    line-height: 1.3; margin: 1.75rem 0 0.75rem; letter-spacing: -0.01em;
+    font-family: var(--serif); font-weight: normal; font-size: 2rem;
+    line-height: 1.25; margin: 0 0 1rem; letter-spacing: -0.01em;
   }
-  .lede { color: var(--muted); margin: 0; font-size: 1.05rem; }
+  .lede { color: var(--muted); margin: 0; font-size: 1.06rem; }
+  .lede strong { color: var(--fg); font-weight: 600; }
   h2 {
     font-family: var(--sans); font-size: 0.78rem; font-weight: 600;
     letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
-    margin: 3rem 0 1rem;
+    margin: 3.25rem 0 1rem;
   }
   a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 3px; }
   a:hover { color: var(--accent); }
 
-  .actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.75rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.6rem; }
   .btn {
-    display: inline-block; padding: 0.5rem 0.95rem; border: 1px solid var(--rule);
-    border-radius: 6px; background: var(--card); font-size: 0.9rem;
-    text-decoration: none; color: inherit;
+    display: inline-block; padding: 0.55rem 1rem; border: 1px solid var(--rule);
+    border-radius: 8px; background: var(--card); font-size: 0.9rem;
+    text-decoration: none; color: inherit; box-shadow: var(--shadow);
   }
   .btn:hover { border-color: var(--accent); color: var(--accent); }
   .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .btn.primary:hover { color: #fff; opacity: 0.9; }
+  .btn.primary:hover { color: #fff; opacity: 0.92; }
+
+  /* claim / non-claim cards */
+  .claims { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.25rem; }
+  @media (max-width: 40rem) { .claims { grid-template-columns: 1fr; } }
+  .claim-card {
+    border: 1px solid var(--rule); border-radius: 10px; background: var(--card);
+    padding: 1.1rem 1.2rem; box-shadow: var(--shadow);
+  }
+  .claim-card h3 {
+    margin: 0 0 .6rem; font-size: .78rem; letter-spacing: .1em;
+    text-transform: uppercase; font-weight: 600;
+  }
+  .claim-card.yes h3 { color: var(--done); }
+  .claim-card.no h3 { color: var(--blocked); }
+  .claim-card ul { margin: 0; padding-left: 1.1rem; }
+  .claim-card li { margin: .45rem 0; font-size: .93rem; color: var(--muted); }
+  .claim-card li strong { color: var(--fg); font-weight: 600; }
+
+  /* stat strip */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.25rem; }
+  @media (max-width: 44rem) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat {
+    border: 1px solid var(--rule); border-radius: 10px; background: var(--card);
+    padding: 1rem 1.05rem; box-shadow: var(--shadow);
+  }
+  .stat b { display: block; font-family: var(--serif); font-size: 1.55rem; font-weight: normal; letter-spacing: -.01em; }
+  .stat b em { font-style: normal; color: var(--accent); }
+  .stat span { display: block; font-size: .8rem; color: var(--muted); margin-top: .35rem; line-height: 1.45; }
 
   .m { border-top: 1px solid var(--rule); padding: 1.15rem 0; }
   .m:last-child { border-bottom: 1px solid var(--rule); }
@@ -80,7 +148,7 @@
   figure { margin: 1.5rem 0 0; }
   figure img { display: block; width: 100%; height: auto; }
   figcaption { color: var(--muted); font-size: 0.86rem; margin-top: 0.6rem; }
-  .fig-scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 8px; background: var(--card); padding: 1rem; }
+  .fig-scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 10px; background: var(--card); padding: 1rem; box-shadow: var(--shadow); }
   .fig-scroll img { min-width: 640px; }
 
   .stage { display: grid; grid-template-columns: 1.6rem 1fr; gap: 0.85rem; padding: 0.7rem 0; border-top: 1px solid var(--rule); }
@@ -89,7 +157,7 @@
   .num {
     font-family: var(--mono); font-size: 0.75rem; color: var(--accent);
     border: 1px solid var(--rule); border-radius: 4px; text-align: center;
-    height: 1.6rem; line-height: 1.5rem;
+    height: 1.6rem; line-height: 1.5rem; background: var(--card);
   }
   .stage p { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.93rem; }
   .phase { font-family: var(--mono); font-size: 0.72rem; letter-spacing: .1em; text-transform: uppercase;
@@ -97,16 +165,50 @@
   .free { color: var(--done); font-family: var(--mono); font-size: .7rem; border: 1px solid currentColor;
           border-radius: 3px; padding: 0 .3rem; margin-left: .4rem; white-space: nowrap; }
 
-  .tbl { width: 100%; overflow-x: auto; }
-  table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
-  th, td { text-align: left; padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--rule); white-space: nowrap; }
-  th { font-weight: 600; font-size: 0.78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .tbl { width: 100%; overflow-x: auto; border: 1px solid var(--rule); border-radius: 10px; background: var(--card); box-shadow: var(--shadow); }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+  th, td { text-align: left; padding: 0.55rem 0.85rem; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+  tr:last-child td { border-bottom: 0; }
+  th { font-weight: 600; font-size: 0.75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
   td.n, th.n { text-align: right; font-family: var(--mono); }
-  tr.us td { font-weight: 600; }
-  tr.us td.n { color: var(--accent); }
-  tr.loss td { color: var(--muted); }
+  tr.us td.n b { color: var(--accent); font-weight: 600; }
+  tr.grp td {
+    font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
+    background: var(--card-soft); padding-top: .45rem; padding-bottom: .45rem;
+  }
+  tr.grp.win td { color: var(--done); }
+  tr.grp.tie td { color: var(--tie); }
+  tr.grp.loss td { color: var(--blocked); }
+  td .why { display: block; white-space: normal; font-size: .78rem; color: var(--muted); margin-top: .1rem; }
 
-  .viewer { margin-top: 1rem; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--card); }
+  /* The diagrams are inlined by JS so the manual theme toggle reaches them.
+     Their own <style> only follows the OS preference; these higher-specificity
+     rules follow the pinned choice, in both directions. */
+  html[data-theme="dark"] .fig-scroll svg .fg { fill: #ece7df; }
+  html[data-theme="dark"] .fig-scroll svg .mut { fill: #9a9188; }
+  html[data-theme="dark"] .fig-scroll svg .rule { stroke: #34302a; }
+  html[data-theme="dark"] .fig-scroll svg .card { fill: #1b1815; stroke: #2e2a25; }
+  html[data-theme="dark"] .fig-scroll svg .page { fill: #201d19; stroke: #2e2a25; }
+  html[data-theme="dark"] .fig-scroll svg .band { fill: #201d19; stroke: #2e2a25; }
+  html[data-theme="dark"] .fig-scroll svg .acc { fill: #ff6b41; }
+  html[data-theme="dark"] .fig-scroll svg .accs { stroke: #ff6b41; }
+  html[data-theme="dark"] .fig-scroll svg .accf { fill: #ff6b41; fill-opacity: .13; stroke: #ff6b41; }
+  html[data-theme="dark"] .fig-scroll svg .dead { stroke: #e07a5f; }
+  html[data-theme="dark"] .fig-scroll svg .deadf { fill: #e07a5f; }
+  html[data-theme="light"] .fig-scroll svg .fg { fill: #16130f; }
+  html[data-theme="light"] .fig-scroll svg .mut { fill: #6c6459; }
+  html[data-theme="light"] .fig-scroll svg .rule { stroke: #d8d2c8; }
+  html[data-theme="light"] .fig-scroll svg .card { fill: #ffffff; stroke: #e2ddd4; }
+  html[data-theme="light"] .fig-scroll svg .page { fill: #f3f0ea; stroke: #e2ddd4; }
+  html[data-theme="light"] .fig-scroll svg .band { fill: #f3f0ea; stroke: #e2ddd4; }
+  html[data-theme="light"] .fig-scroll svg .acc { fill: #e4572e; }
+  html[data-theme="light"] .fig-scroll svg .accs { stroke: #e4572e; }
+  html[data-theme="light"] .fig-scroll svg .accf { fill: #e4572e; fill-opacity: .10; stroke: #e4572e; }
+  html[data-theme="light"] .fig-scroll svg .dead { stroke: #b1442a; }
+  html[data-theme="light"] .fig-scroll svg .deadf { fill: #b1442a; }
+  .fig-scroll svg { display: block; width: 100%; height: auto; min-width: 640px; }
+
+  .viewer { margin-top: 1rem; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; background: var(--card); box-shadow: var(--shadow); }
   .viewer object, .viewer iframe { display: block; width: 100%; height: 34rem; border: 0; }
   @media (max-width: 40rem) { .viewer { display: none; } }
 
@@ -120,15 +222,29 @@
 <body>
 <div class="wrap">
 
-<header>
+<div class="topbar">
   <img src="wordmark.svg" alt="IKAT" class="mark">
-  <h1>Placement Is Provenance: Anchor-Preserving Ingestion for Figure-Grounded Retrieval-Augmented Generation</h1>
+  <nav class="topnav">
+    <a class="navlink" href="#how">How it works</a>
+    <a class="navlink" href="#results">Results</a>
+    <a class="navlink" href="#status">Status</a>
+    <a class="navlink" href="#paper">Paper</a>
+    <button id="theme" type="button" aria-label="Toggle light and dark mode" title="Toggle theme">◐</button>
+  </nav>
+</div>
+
+<header class="hero">
+  <p class="kicker">Figure-grounded RAG · two public benchmarks · losses reported with the wins</p>
+  <h1>Placement Is Provenance: Anchor&#8209;Preserving Ingestion for Figure&#8209;Grounded Retrieval&#8209;Augmented Generation</h1>
   <p class="lede">
-    A layout parser already knows where every figure belongs — its position in the
-    block sequence says so exactly. Conventional ingestion throws that ordering
-    away and spends the rest of the pipeline trying to reconstruct it from
-    captions. This binds it instead, at the one moment the information still
-    exists.
+    Where a figure belongs in an answer is decided by the document's author, and
+    every layout parser reads it: the figure's position in the block sequence.
+    Conventional ingestion throws that ordering away, then spends the rest of the
+    pipeline guessing it back from captions — which
+    <strong>four figures in five do not have</strong> in our corpus.
+    IKAT keeps it instead. The anchor is a join over data the parser already
+    produced: <strong>no model, no training, nothing tuned per corpus</strong> —
+    and it makes every uncaptioned figure reachable.
   </p>
   <div class="actions">
     <a class="btn primary" href="paper.pdf">Read the manuscript (PDF)</a>
@@ -137,14 +253,44 @@
   </div>
 </header>
 
-<h2>How it works</h2>
+<h2>Read this first — what is claimed, and what is not</h2>
+<div class="claims">
+  <div class="claim-card yes">
+    <h3>This paper claims</h3>
+    <ul>
+      <li><strong>Placement is separable from retrieval</strong>, cheap to measure, and decided at ingestion — the ground truth comes from the source typesetting, at zero annotation cost.</li>
+      <li><strong>The anchor carries the signal.</strong> A 568M cross-encoder over anchor context tops every published system on MRAMG Academic selection; widen the window past the anchor and precision decays monotonically.</li>
+      <li><strong>Placement does not need the generator.</strong> Judged blind, a mechanical anchor join ties an LLM's own inline placement exactly (48 questions to 49) — while staying traceable to a source position.</li>
+      <li><strong>Absolute score floors do not transfer</strong> across corpora; any scale-free admission rule recovers 16 macro-F1 points. Pre-registered, then replicated out-of-sample.</li>
+    </ul>
+  </div>
+  <div class="claim-card no">
+    <h3>It does not claim</h3>
+    <ul>
+      <li><strong>Not across-the-board SOTA.</strong> MRAMG Lifestyle loses (55.00 vs 62.23); MMDocRAG trails GPT-4.1 (68.91 vs 80.7); with a small generator, inline insertion beats post-hoc selection on end-to-end F1.</li>
+      <li><strong>Not a better ranker.</strong> Where descriptions are author-written, the cross-encoder ties BM25. The win is the <em>representation</em> it ranks, not the model.</li>
+      <li><strong>Not statistical significance on the headline margin.</strong> +3.84 on 200 questions: bootstrap says "higher", not "significantly higher".</li>
+      <li><strong>Not a product capability.</strong> Benchmark numbers are benchmark numbers; the stress corpus is far harder.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Findings at a glance</h2>
+<div class="stats">
+  <div class="stat"><b><em>100%</em> vs 19%</b><span>figures reachable by anchor vs by printed caption — model-free, replicated on two independent extraction pipelines</span></div>
+  <div class="stat"><b><em>69.12</em> vs 65.28</b><span>MRAMG Academic Image Precision, a 568M cross-encoder vs GPT-4o — configuration frozen before the data was downloaded</span></div>
+  <div class="stat"><b><em>+13.65</em> IP</b><span>what a vision gate adds on MMDocRAG, external gold, identical pipeline with and without it</span></div>
+  <div class="stat"><b>48 : 49</b><span>judged placement, anchor join vs the generator's own inline choice — a dead tie, and ours is traceable to the source</span></div>
+</div>
+
+<h2 id="how">How it works</h2>
 <p class="lede" style="font-size:0.95rem">
   Two halves. Ingestion runs once per document and invokes no model at all.
   Serving adds two ranking stages per query.
 </p>
 
 <figure>
-  <div class="fig-scroll"><img src="ingestion.svg" alt="The parser emits an ordered block sequence with a figure between two paragraphs. Conventional ingestion stores chunks and figures separately and discards the ordering, so position must be reconstructed from a caption that 80.7% of figures do not have. Anchor-preserving ingestion stores the index of the chunk holding the preceding prose block, making position a lookup available for every figure."></div>
+  <div class="fig-scroll"><img src="ingestion.svg" alt="The parser emits an ordered block sequence with a figure between two paragraphs. Conventional ingestion stores chunks and figures separately and discards the ordering, so position must be reconstructed from a caption that most figures do not have. Anchor-preserving ingestion stores the index of the chunk holding the preceding prose block, making position a lookup available for every figure."></div>
   <figcaption>The whole idea in one picture. The ordering exists at parse time and is thrown away a step later; everything downstream is then spent trying to guess it back.</figcaption>
 </figure>
 
@@ -167,35 +313,36 @@
 <div class="stage"><span class="num">9</span><div><b>Emit</b><p>Survivors are ordered by the stage-7 score and the top one is returned. Emitting nothing is valid and frequent.</p></div></div>
 <div class="stage"><span class="num">10</span><div><b>Place</b><p>The figure is inserted at the sentence boundary its anchor points to, not at a position inferred from its caption.</p></div></div>
 
-<p class="note">Steps 3 and 6 are the contribution. Steps 7–9 compose existing components; the tables below report what each one adds.</p>
+<p class="note">Steps 3 and 6 are the contribution. Steps 7–9 compose existing components; the paper reports what each one adds.</p>
 
-<h2>Compared with</h2>
+<h2 id="results">Every head-to-head, including the losses</h2>
+<p class="lede" style="font-size:0.95rem; margin-bottom:1rem">
+  All gold below was authored by other people (the benchmarks' own annotators),
+  except the two rows marked <code>n=48</code>. Nothing was tuned on any of it.
+</p>
 <div class="tbl">
 <table>
-  <thead><tr><th>Setting</th><th>Gold by</th><th class="n">Ours</th><th class="n">Best other</th><th class="n">&Delta;</th></tr></thead>
+  <thead><tr><th>Setting</th><th class="n">Ours</th><th class="n">Other</th><th class="n">&Delta;</th></tr></thead>
   <tbody>
-    <tr class="us"><td>MRAMG Academic, Image Precision</td><td>benchmark authors</td><td class="n">69.63</td><td class="n">65.28</td><td class="n">+4.35</td></tr>
-    <tr class="us"><td>&nbsp;&nbsp;same, forced emission</td><td>benchmark authors</td><td class="n">67.50</td><td class="n">65.28</td><td class="n">+2.22</td></tr>
-    <tr class="us"><td>Figure selection F1</td><td>human, n=48</td><td class="n">0.605</td><td class="n">0.417</td><td class="n">+0.188</td></tr>
-    <tr class="us"><td>Figure selection precision</td><td>human, n=48</td><td class="n">0.542</td><td class="n">0.304</td><td class="n">+0.238</td></tr>
-    <tr class="us"><td>&nbsp;&nbsp;vs. the deployed system</td><td>human, n=48</td><td class="n">0.605</td><td class="n">0.049</td><td class="n">+0.556</td></tr>
-    <tr class="loss"><td>Placement rule</td><td>layout</td><td class="n">—</td><td class="n">MRAMG</td><td class="n">loses</td></tr>
+    <tr class="grp win"><td colspan="4">Wins</td></tr>
+    <tr class="us"><td>MRAMG Academic, selection, Image Precision<span class="why">568M cross-encoder vs GPT-4o; frozen config; bootstrap CI [61.4, 76.6]</span></td><td class="n"><b>69.12</b></td><td class="n">65.28</td><td class="n">+3.84</td></tr>
+    <tr class="us"><td>&nbsp;&nbsp;same, forced emission (0% silent)<span class="why">removes the abstention advantage entirely; recall rises 41.6 → 61.6</span></td><td class="n"><b>67.50</b></td><td class="n">65.28</td><td class="n">+2.22</td></tr>
+    <tr class="us"><td>MMDocRAG, vision gate vs no gate, IF1<span class="why">external gold, identical inputs; the gate also lifts recall by promotion</span></td><td class="n"><b>68.91</b></td><td class="n">61.10</td><td class="n">+7.81</td></tr>
+    <tr class="us"><td>Admission: scale-free vs absolute floor, macro F1<span class="why">7 evaluation units; worst unit 49.7 vs 11.3; whole grid published</span></td><td class="n"><b>67.70</b></td><td class="n">51.45</td><td class="n">+16.25</td></tr>
+    <tr class="us"><td>Figure selection vs deployed system, F1 (n=48)<span class="why">preliminary: one annotator, 19 positive links</span></td><td class="n"><b>0.605</b></td><td class="n">0.049</td><td class="n">+0.556</td></tr>
+    <tr class="grp tie"><td colspan="4">Ties — each one is information</td></tr>
+    <tr><td>Judged placement (0–1), anchor join vs LLM inline<span class="why">blind, paired: −0.01, CI [−0.09, +0.06], 48 wins to 49 — placement does not need the generator</span></td><td class="n">0.729</td><td class="n">0.733</td><td class="n">tie</td></tr>
+    <tr><td>MMDocRAG ranker vs BM25, IF1<span class="why">where descriptions are author-written the ranker earns nothing — the win is the representation</span></td><td class="n">63.38</td><td class="n">63.48</td><td class="n">tie</td></tr>
+    <tr class="grp loss"><td colspan="4">Losses — reported, not hidden</td></tr>
+    <tr><td>MRAMG Lifestyle, Image Precision<span class="why">most of the gap is the admission floor; some remains after fixing it</span></td><td class="n">55.00</td><td class="n"><b>62.23</b></td><td class="n">−7.23</td></tr>
+    <tr><td>MMDocRAG vs GPT-4.1, IF1<span class="why">568M + one gate call vs a frontier LLM over interleaved candidates</span></td><td class="n">68.91</td><td class="n"><b>80.7</b></td><td class="n">−11.8</td></tr>
+    <tr><td>End-to-end IF1, ours vs inline insertion<span class="why">same 8B generator both arms; the generator selects with its answer in view</span></td><td class="n">55.91</td><td class="n"><b>61.71</b></td><td class="n">−5.80</td></tr>
+    <tr><td>Placement rule alone vs MRAMG's bipartite rule<span class="why">anchoring's contribution is admission — reaching uncaptioned figures — not out-ranking</span></td><td class="n">—</td><td class="n"><b>MRAMG</b></td><td class="n">loses</td></tr>
   </tbody>
 </table>
 </div>
-<p class="lede" style="font-size:0.93rem;margin-top:1rem">
-  Image Precision counts only emitted images, so abstaining could buy the score —
-  ours abstains on 49% of questions. Forcing exactly one image on every question
-  still leads, with recall rising 41.59 → 61.64.
-</p>
-<p class="lede" style="font-size:0.93rem;margin-top:.75rem">
-  The last row is a loss and is reported as one. Anchoring alone does not beat
-  similarity-based placement; the best placement rule in our comparison is
-  MRAMG's. What anchoring contributes is <em>candidate admission</em> — making
-  uncaptioned figures reachable — and the practical gain then comes from selection.
-</p>
 
-<h2>Status</h2>
+<h2 id="status">Status</h2>
 <p class="lede" style="font-size:0.95rem">
   Target: <span id="target">—</span>. This list is generated from
   <a href="https://github.com/RantAI-dev/ikat/blob/main/web/progress.json"><code>web/progress.json</code></a>
@@ -203,10 +350,10 @@
 </p>
 <div id="milestones"></div>
 
-<h2>What the claim is, and is not</h2>
+<h2>Scope notes</h2>
 <div id="notes"></div>
 
-<h2>Manuscript</h2>
+<h2 id="paper">Manuscript</h2>
 <div class="viewer">
   <object data="paper.pdf" type="application/pdf">
     <iframe src="paper.pdf" title="Manuscript"></iframe>
@@ -233,6 +380,36 @@
 </div>
 
 <script>
+// Theme: media query is the default; the toggle pins a choice and persists it.
+(function () {
+  const root = document.documentElement;
+  const btn = document.getElementById('theme');
+  const saved = localStorage.getItem('theme');
+  if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
+  const current = () => root.dataset.theme ||
+    (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  btn.addEventListener('click', () => {
+    const next = current() === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    localStorage.setItem('theme', next);
+  });
+})();
+
+// Inline the SVG diagrams so the theme toggle's CSS can restyle their classes.
+// On any failure the <img> stays, which still renders (OS theme only).
+document.querySelectorAll('.fig-scroll img[src$=".svg"]').forEach(img => {
+  fetch(img.getAttribute('src'))
+    .then(r => { if (!r.ok) throw 0; return r.text(); })
+    .then(text => {
+      const doc = new DOMParser().parseFromString(text, 'image/svg+xml');
+      const svg = doc.documentElement;
+      if (svg.nodeName !== 'svg') throw 0;
+      svg.setAttribute('role', 'img');
+      img.replaceWith(document.importNode(svg, true));
+    })
+    .catch(() => {});
+});
+
 // The page is static; only the status list is data-driven, so that updating
 // progress is editing one JSON file rather than hand-editing markup.
 fetch('progress.json')
