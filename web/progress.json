@@ -33,6 +33,12 @@
       "evidence": "§Admission, docs/14, admission-rules.json"
     },
     {
+      "name": "End-to-end generation",
+      "state": "done",
+      "note": "MRAMG's own generation protocol on Academic, 200 questions, same 8B SEA-LION generator in both arms. One finding against us, reported as such: inline insertion by the generator beats post-hoc selection on F1 (61.71 vs 55.91); ours keeps a ten-point precision lead and slightly better prose. And one for us: the admission study's pre-registered rule, fixed before this experiment existed, lifted our arm +7.6 F1 exactly as predicted — a replication, not a tune.",
+      "evidence": "§End-to-end, docs/15"
+    },
+    {
       "name": "Academic margin, bounded",
       "state": "done",
       "note": "Bootstrap over questions (B=20,000): pooled IP 69.12, 95% CI [61.43, 76.56]; 15.7% of resamples fall at or below the published 65.28. The paper now says 'higher, not significantly higher' — a four-point margin on 200 questions is real but not resolvable.",

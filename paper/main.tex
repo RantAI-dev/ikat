@@ -590,6 +590,52 @@ authors report for GPT-4.1 selecting over interleaved candidates; the
 comparison we claim is against our own ablation on identical inputs, where the
 gate is worth $+13.65$ precision and $+7.81$ F1.
 
+\subsection{End-to-end, and where the pipeline does not win}
+\label{sec:endtoend}
+
+Every external number above is a selection result placed beside end-to-end
+systems, and we have said so each time. This subsection removes the caveat by
+running MRAMG's own generation protocol on Academic: bge-m3 retrieval over
+$\sim$256-token sentence chunks, top-10 chunks per question, an 8B SEA-LION
+generator on the partner-class GPU, and two arms differing in exactly one
+mechanism. In arm A --- the benchmark's LLM-based framework --- the retrieved
+chunks keep inline image placeholders and the generator inserts them while
+writing, per the benchmark's published prompt. In arm B the same chunks are
+stripped of placeholders, the same generator writes a text-only answer, and
+the frozen IKAT pipeline selects images by anchor context. Same retriever,
+same chunks, same generator, same questions; retrieval surfaces 90.4\,\% of
+gold images, which ceilings both arms equally.
+
+\begin{center}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Arm & IP & IR & IF1 & R-L & silent \\
+\midrule
+A: generator inserts & 53.38 & \textbf{73.13} & \textbf{61.71} & 0.261 & 7\,\% \\
+B: IKAT, frozen & \textbf{63.91} & 38.81 & 48.30 & \textbf{0.277} & 50\,\% \\
+B: IKAT, scale-free adm. & 47.45 & 68.04 & 55.91 & \textbf{0.277} & 0\,\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Two findings, one against us and one for us. Against us: with a small
+generator, letting the model insert images \emph{while writing} beats post-hoc
+selection on F1 (61.71 against our best 55.91). The generator places images
+with the full answer in view, while our selector ranks against the question
+alone; what our pipeline retains is precision (63.91 frozen, ten points above
+arm A) and marginally better prose (ROUGE-L 0.277 vs.\ 0.261) --- consistent
+with figure duty and writing duty interfering when one model does both. For
+us: the admission-rule study's prediction \emph{replicated out of sample}.
+Section~\ref{sec:admission}'s rule was fixed on the score dump before this
+experiment existed; applied here unchanged, it lifts arm B from 48.30 to 55.91
+F1 by ending the 50\,\% silence, exactly the failure mode it was built to
+name. What this table does not measure is the axis the paper is about ---
+\emph{where} an image lands and whether its placement is traceable to the
+source. Arm A's insertions carry no provenance; the benchmark scores that
+axis only through LLM-judged position metrics, which we defer rather than
+proxy. Generator details and protocol deviations (fp8 quantisation, 4096-token
+window with whole-chunk truncation) are in the released runner.
+
 \section{Admission Does Not Transfer; Ranking Does}
 \label{sec:admission}
 
@@ -851,6 +897,7 @@ MMDoc., gate vs.\ no gate, IF1 & theirs & \textbf{68.91} & 61.10 & $+7.81$ \\
 \midrule
 \multicolumn{5}{@{}l}{\emph{External --- where the method loses}} \\
 MRAMG Lifestyle, IP & theirs & 55.00 & \textbf{62.23} & $-7.23$ \\
+End-to-end IF1 vs.\ inline insert & theirs & 55.91 & \textbf{61.71} & $-5.80$ \\
 MMDoc.\ vs.\ GPT-4.1, IF1 & theirs & 68.91 & \textbf{80.7} & $-11.8$ \\
 MMDoc.\ ranker vs.\ BM25, IF1 & theirs & 63.38 & 63.48 & $-0.10$ \\
 \midrule
@@ -879,7 +926,7 @@ gate with the cross-encoder reaches F1 0.605. The two stages alone reach 0.417 a
 (0.789 alone, against 0.368 for the cross-encoder) and the cross-encoder supplies
 precision. Neither ordering of a single stage reaches the composition.
 
-\textbf{The rows the method loses.} Three external comparisons go against us and
+\textbf{The rows the method loses.} Four external comparisons go against us and
 are listed with the wins. Lifestyle is a genuine loss of the frozen
 configuration, most of it located in the admission rule
 (Section~\ref{sec:admission}). The GPT-4.1 row compares a 568M ranker plus one
@@ -887,7 +934,10 @@ gate call against a frontier LLM reasoning over interleaved candidates --- we
 close 7.8 of the 19.6-point gap with the gate and state the rest. The BM25 row
 is a tie we report as a loss of the \emph{ranker}: where descriptions are
 author-written, the cross-encoder earns nothing over lexical matching, which is
-precisely why the MRAMG win must be credited to the anchor representation.
+precisely why the MRAMG win must be credited to the anchor representation. The
+end-to-end row (Section~\ref{sec:endtoend}) is the newest and the most
+instructive: with the same small generator, inline insertion beats post-hoc
+selection on F1, and what our pipeline keeps is precision and provenance.
 Finally, anchoring alone does not beat similarity-based
 placement: the best placement rule in our comparison is MRAMG's bipartite
 assignment, not ours. The contribution of anchoring is that it makes uncaptioned

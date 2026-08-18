@@ -66,6 +66,7 @@ annotation for any headline number.
 | §External, anchor-window sweep | precision decay as the window grows past the anchor | `MRAMG_SUBSET=arxiv MRAMG_CTX=… bun bench/mramg-eval.ts 200` for CTX ∈ {100,200,400,800,1600,6000} | `MRAMG_DIR` |
 | §Admission | the full admission-rule surface over one persisted score file | `bun bench/dump-scores.ts` once, then `python3 bench/admission-rules.py` | rerank endpoint once; afterwards nothing |
 | §External, the margin bounded | question-level bootstrap of the Academic margin | `python3 bench/bootstrap-margin.py` | the score dump |
+| §External, end-to-end | MRAMG's generation protocol, two arms, one generator; `rescore` applies the pre-registered admission variant | `bun bench/mramg-endtoend.ts index` / `run 200` / `score` / `rescore` | embed + rerank + an OpenAI-compatible generator |
 
 The score dump this repo ships ([`docs/score-dump.jsonl`](docs/score-dump.jsonl),
 6,819 questions, ids and scores only — no benchmark text) lets the admission
