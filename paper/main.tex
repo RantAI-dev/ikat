@@ -171,7 +171,12 @@ comparator. MMDocRAG~\cite{mmdocrag} reports image-quote selection F1 separately
 from text. VinQA~\cite{vinqa} defines a visual citation measure with a
 citation-order placement rule, implemented here as a second comparator.
 ImageRef-VL~\cite{imageref} addresses contextual image referencing in
-vision-language models.
+vision-language models. RAG-IGBench~\cite{ragig} evaluates open-domain
+interleaved image--text generation with automated metrics for text, image and
+their consistency, validated against human assessment; like MRAMG's judged
+metrics, its placement signal ultimately rests on a model or a person reading
+the answer, whereas the layout-gold metric here derives it from the source
+typesetting.
 
 Our contribution relative to these is (i) a placement ground truth obtained from
 the document's own typesetting rather than from annotation, and (ii) the
@@ -1142,6 +1147,12 @@ language models,'' \emph{arXiv:2407.01449}, 2024.
 Q.~Yu, Z.~Xiao, B.~Li, Z.~Wang, C.~Chen, and W.~Zhang, ``MRAMG-Bench: A
 comprehensive benchmark for advancing multimodal retrieval-augmented multimodal
 generation,'' \emph{arXiv:2502.04176}, 2025.
+
+\bibitem{ragig}
+R.~Zhang, Y.~Huang, C.~Lu, Q.~Wang, Y.~Gao, Y.~Wu, Y.~Hu, Y.~Xu, W.~Wang,
+H.~Wang, and E.~Chen, ``RAG-IGBench: Innovative evaluation for RAG-based
+interleaved generation in open-domain question answering,''
+\emph{arXiv:2512.05119}, 2025.
 
 \bibitem{vinqa}
 Y.~R. Jang, H.~Kong, K.~An, J.~S. Huh, G.~Kim, and S.~J. Choi, ``VinQA: Visual
