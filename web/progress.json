@@ -52,9 +52,9 @@
     },
     {
       "name": "Annotation scale-up",
-      "state": "blocked",
-      "note": "A second annotator on the existing 48 items, and more items after that. We tested whether an automated judge could substitute and it cannot at this scale, so this is back to being the binding constraint with no shortcut available.",
-      "evidence": "docs/12"
+      "state": "scoped",
+      "note": "Closed by design, not by completion. The study operates under a no-human-annotation constraint, so more annotators were never coming — and the paper no longer needs them: its weight moved to gold authored by the benchmarks' own annotators, and the n=48 set is explicitly labelled preliminary. The substitutes were tested honestly: a judge cannot replace annotation at this scale (docs/12) and a second vendor's judge fails the licensing exam outright (docs/16). Both limits are reported in the paper rather than worked around.",
+      "evidence": "docs/12, docs/16"
     },
     {
       "name": "Bibliography",
@@ -65,7 +65,7 @@
     {
       "name": "Authorship and venue",
       "state": "todo",
-      "note": "The author list is deliberately unfilled in main.tex and CITATION.cff. Venue is undecided: the running header currently reads as a preprint, and the title was rewritten to name the method rather than the deployment.",
+      "note": "The one item left before submission, and deliberately the author's alone: fill the author list and affiliation in main.tex and CITATION.cff, and pick the venue. Everything scientific upstream of this line is closed.",
       "evidence": "paper/README.md"
     },
     {
@@ -76,8 +76,8 @@
     },
     {
       "name": "Judge-scaled estimation",
-      "state": "blocked",
-      "note": "Built, and it does not work at this scale. The validity gate passes now (enrichment 0.95x) and the judge agrees with a person at kappa 0.556, replicating an earlier independent measurement. But four of five confidence intervals fail to narrow and one widens 19%: with 165 judged questions against 45 annotated, the ratio is far below what prediction-powered inference needs. Human annotation remains the constraint.",
+      "state": "done",
+      "note": "Done — as a negative result, which is still a result. The machinery works: the validity gate passes (enrichment 0.95x) and the judge's kappa of 0.556 replicates an earlier independent measurement. But at 165 judged questions against 45 annotated, four of five confidence intervals fail to narrow and one widens 19% — the unlabelled-to-labelled ratio is far below what prediction-powered inference needs. The experiment is complete, the answer is no, and the paper reports it as a bounded negative rather than leaving it open.",
       "evidence": "docs/12"
     }
   ],
