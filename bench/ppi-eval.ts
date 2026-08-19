@@ -56,13 +56,13 @@
  * DISTRACTORS instead, which is the same disease in a new place.
  *
  * Usage:
- *   bun tests/bench-kb/src/ikat/ppi-eval.ts
+ *   bun bench/ppi-eval.ts
  */
 import * as fs from "node:fs"
 import * as path from "node:path"
-import { cohensKappa } from "../judge"
+import { cohensKappa } from "./judge"
 
-const BENCH_ROOT = path.resolve(import.meta.dirname, "../..")
+const BENCH_ROOT = path.resolve(import.meta.dirname, "..")
 const C = path.join(BENCH_ROOT, "corpus")
 const BOOT = Number(process.env.IKAT_BOOTSTRAP ?? 10000)
 
