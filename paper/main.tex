@@ -45,13 +45,25 @@ that the information determining it is produced by every layout parser and
 routinely discarded before serving.
 
 The method is a join over data the parser already produced, not a model: it is
-independent of language and of document genre. We evaluate it on both. On
-MRAMG-Bench's Academic subset --- English arXiv documents whose gold image lists
-were written by ten graduate-student annotators in computer science, each
-assigned papers in their own field --- a 568M-parameter cross-encoder over anchor-derived context
-reaches Image Precision \textbf{69.63}, and \textbf{67.50} under forced emission,
-against 65.28 for the best published system (GPT-4o). The configuration was frozen
-before that dataset was obtained.
+independent of language and of document genre. We evaluate it on two public
+benchmarks with a configuration frozen before either dataset was obtained. On
+MRAMG-Bench's Academic domain a 568M-parameter cross-encoder over
+anchor-derived context reaches Image Precision \textbf{69.12} against 65.28 for
+the best published system (GPT-4o) --- higher, though a question-level
+bootstrap shows the four-point margin is not statistically resolvable at
+$n=200$ --- and diluting the anchor window degrades precision monotonically,
+which is the mechanism claim in falsifiable form. On MMDocRAG, a
+vision-language gate run against gold we did not author adds \textbf{+13.65}
+precision over the identical pipeline without it. Under the benchmark's own
+end-to-end generation protocol, blind LLM judging finds that a mechanical
+anchor join places figures exactly as well as the generator's own inline
+choice (48 questions to 49) while remaining traceable to a source position:
+placement does not need the generator. A rule study over 6{,}819 questions
+further shows that absolute admission thresholds do not transfer across
+corpora while any scale-free rule does --- worth sixteen macro-F1 points, and
+replicated out of sample after pre-registration. Losses are reported in the
+same tables as wins, including a domain the method loses and an end-to-end F1
+comparison it loses.
 
 For development and stress testing we release a caption-scarce stress corpus of
 Indonesian K--12 curriculum textbooks: 13 government titles,
@@ -74,14 +86,15 @@ indistinguishable figures also doubles: caption availability is not caption
 discriminability.
 
 On the textbook corpus, composing a vision-language filter with that same
-cross-encoder raises figure-selection precision from 0.028 to \textbf{0.542}
-against human annotation --- sight for recall, discrimination for precision.
+cross-encoder raises figure-selection precision from 0.028 to 0.542 against a
+preliminary human annotation ($n=48$) --- sight for recall, discrimination for
+precision --- a result the MMDocRAG gate run now corroborates externally.
 
 \end{abstract}
 
 \begin{IEEEkeywords}
 Multimodal retrieval-augmented generation, document layout analysis, figure
-grounding, document ingestion, cross-encoder reranking.
+grounding, document ingestion, cross-encoder reranking, admission calibration.
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -99,7 +112,7 @@ has moved on, or bundled at the end where the reader must reconstruct which
 sentence it belongs to. The first failure is measured everywhere. The second is
 measured almost nowhere.
 
-This paper makes four claims, each falsifiable by the experiments reported here.
+This paper makes five claims, each falsifiable by the experiments reported here.
 
 \begin{itemize}
 \item[\textbf{C1}] Figures in curriculum textbooks carry content absent from the
@@ -113,7 +126,18 @@ recoverable for 100\,\% of figures, and is discarded by conventional ingestion.
 \item[\textbf{C4}] Selection, not placement, is where the practical gain lies, and
 the gain requires a stage that looks at the image rather than at text about the
 image.
+\item[\textbf{C5}] Admission --- how many ranked candidates to emit --- does not
+transfer across corpora when ruled by an absolute score threshold, and does
+under any scale-free rule. The choice of rule \emph{family} is worth an order
+of magnitude more than any tuning within a family.
 \end{itemize}
+
+C2 and C3 are established model-free. C1, C4 and C5 are tested on two public
+benchmarks --- MRAMG-Bench and MMDocRAG, spanning seven evaluation domains ---
+under a configuration frozen before either dataset was obtained, including an
+end-to-end run of MRAMG's own generation protocol with blind LLM judging. The
+same experiments produce the comparisons the method \emph{loses}, and
+Section~\ref{sec:summary} lists them beside the wins.
 
 \subsection{Setting}
 
@@ -427,7 +451,7 @@ figures for comparators.}
 \toprule
 System & Image Precision \\
 \midrule
-\textbf{Ours (cross-encoder, 568M params)} & \textbf{69.63} \\
+\textbf{Ours (cross-encoder, 568M params)} & \textbf{69.12} \\
 \textbf{Ours, forced emission (0\,\% silent)} & \textbf{67.50} \\
 GPT-4o, LLM-based & 65.28 \\
 Claude-3.5-Sonnet, LLM-based & 62.17 \\
@@ -494,10 +518,11 @@ Web & 1850 & 100\,\% & \emph{(100.00)} & 93.63 & no claim \\
 
 \textbf{Scope.} These are \emph{selection} results placed beside end-to-end
 systems that also generate the surrounding answer; Image Precision is computed
-over the same quantity, but the tasks are not identical. (The Academic figure in
-Table~\ref{tab:mramg-all} is 69.12 rather than 69.63: the CPU reproduction of
-the original GPU run, identical in true positives, recall and silent rate,
-differing by exactly one borderline emission.)
+over the same quantity, but the tasks are not identical. (69.12 is the number this
+paper quotes throughout: the CPU reproduction, whose per-question data the
+bootstrap uses. The original GPU run scored 69.63 --- identical true
+positives, recall and silent rate, differing by exactly one borderline
+emission --- and is kept in the released artifacts.)
 
 \textbf{The mechanism, confirmed by making it worse.} If the anchor carries the
 signal, diluting it should destroy it. It does, monotonically: representing
@@ -921,7 +946,7 @@ against a gold authored by other people, the rest against our own annotation.
 Setting & Gold & Ours & Best other & $\Delta$ \\
 \midrule
 \multicolumn{5}{@{}l}{\emph{External --- gold authored by the benchmark's authors}} \\
-MRAMG Acad., IP & theirs & \textbf{69.63} & 65.28 & $+4.35$ \\
+MRAMG Acad., IP & theirs & \textbf{69.12} & 65.28 & $+3.84$ \\
 \quad forced emission & theirs & \textbf{67.50} & 65.28 & $+2.22$ \\
 MMDoc., gate vs.\ no gate, IF1 & theirs & \textbf{68.91} & 61.10 & $+7.81$ \\
 \midrule
@@ -943,7 +968,7 @@ Placement rule & layout & --- & MRAMG & --- \\
 \end{table}
 
 On MRAMG-Bench's Academic subset a 568M-parameter cross-encoder over
-anchor-derived context reaches Image Precision 69.63, ahead of GPT-4o at 65.28,
+anchor-derived context reaches Image Precision 69.12, ahead of GPT-4o at 65.28,
 Claude-3.5-Sonnet at 62.17 and Gemini-1.5-Pro at 59.85. Because Image Precision
 counts only emitted images, abstention could buy the score; ours abstains on
 49\,\% of questions. Forcing exactly one image on every question still leads, at
@@ -979,7 +1004,7 @@ figures \emph{reachable} at all --- a candidate-admission gain, not a ranking on
 
 \textbf{What the evidence supports.} C2 and C3 are established model-free and
 replicated across two extraction pipelines; they do not depend on any system run.
-C4 divides, and only one half is externally supported. That selection carries the
+C4 divides, and both halves now carry external support. That selection carries the
 practical gain is corroborated independently by MRAMG, where a cross-encoder over
 anchor-derived context alone beats the published systems. That the gain
 \emph{requires a stage which looks at the image} was, in the first version of
@@ -987,7 +1012,11 @@ this study, supported only by 48 items annotated by one person; it is now also
 supported externally, by the MMDocRAG composed run
 (Section~\ref{sec:composed-ext}), where the gate adds $+13.65$ precision on gold
 we did not author --- with the caveat stated there that the external gate
-instance is a frontier VLM rather than the deployed 8B-class model. C1 is the weakest of the four: on questions answerable only from a figure,
+instance is a frontier VLM rather than the deployed 8B-class model. C5 is the
+best-evidenced claim in the paper: the rule surface was computed whole on
+6{,}819 questions across seven domains, and its prediction then replicated on
+an experiment that did not exist when the rule was fixed
+(Section~\ref{sec:endtoend}). C1 is the weakest of the five: on questions answerable only from a figure,
 no configuration recovered the content, and the system that most exceeded a
 text-only baseline did so with a significant loss of faithfulness.
 
@@ -1051,17 +1080,27 @@ reconstruct it from captions that four figures in five do not have. Preserving t
 reading-order anchor is a join, not a model, and it is recoverable for 100\,\% of
 figures.
 
-The practical gain, however, comes from selection rather than placement, and it
-requires a stage that looks at the image. Composing a vision-language filter with
-a small cross-encoder --- sight for recall, discrimination for precision --- raises
-figure-selection precision from 0.028 to 0.542 against human annotation, and the
-same design reaches state-of-the-art Image Precision on MRAMG-Bench's Academic
-subset with a 568M-parameter ranker and no tuning on that dataset.
+The external evidence divides cleanly along the paper's own axis. On
+\emph{placement}, a mechanical anchor join ties the generator's own inline
+choice under blind judging while remaining traceable to a source position ---
+placement does not need the generator, and it does not need captions. On
+\emph{selection}, a 568M cross-encoder over anchor-derived context tops every
+published system on MRAMG's Academic domain (69.12 against 65.28; higher,
+though not statistically resolvable at $n=200$), the anchor-window sweep
+confirms the mechanism by destroying it, and a stage that looks at the image
+adds +13.65 precision on gold we did not author. Two of the study's most
+useful results are constraints rather than wins: absolute admission thresholds
+do not transfer across corpora while any scale-free rule does --- a
+pre-registered prediction that replicated out of sample --- and where text
+about an image is already good, the ranker earns nothing over BM25, so the
+contribution is the representation, not the model. The comparisons the method
+loses, including an end-to-end F1 comparison against inline insertion, are in
+the same tables as those it wins.
 
-Finally, we report that this stage ran zero times in production while every
-component test passed. We suspect that class of fault is common and
-under-reported, because a stage that fails by not running leaves nothing behind to
-find.
+Finally, we report that the vision stage ran zero times in production while
+every component test passed. We suspect that class of fault is common and
+under-reported, because a stage that fails by not running leaves nothing
+behind to find.
 
 \section*{Acknowledgment}
 

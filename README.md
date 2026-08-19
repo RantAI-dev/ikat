@@ -6,7 +6,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Paper](https://img.shields.io/badge/paper-IEEEtran-B31B1B.svg)](paper/)
-[![MRAMG Academic](https://img.shields.io/badge/MRAMG%20Academic-69.63%20IP-E4572E.svg)](#external-validation)
+[![MRAMG Academic](https://img.shields.io/badge/MRAMG%20Academic-69.12%20IP-E4572E.svg)](#external-validation)
 
 </div>
 
@@ -97,24 +97,36 @@ Steps **3** and **6** are the contribution. Steps 7–9 compose existing compone
 
 | setting | gold by | ours | best other | Δ |
 |---|---|---:|---:|---:|
-| MRAMG Academic, Image Precision | benchmark authors | **69.63** | 65.28 | +4.35 |
+| MRAMG Academic, Image Precision | benchmark authors | **69.12** | 65.28 | +3.84 |
 | &nbsp;&nbsp;same, forced emission | benchmark authors | **67.50** | 65.28 | +2.22 |
 | MMDocRAG, vision gate vs. no gate, IF1 | benchmark authors | **68.91** | 61.10 | +7.81 |
+| Admission: scale-free vs. absolute floor, macro F1 | benchmark authors | **67.70** | 51.45 | +16.25 |
 | Figure selection F1 | human, n=48 | **0.605** | 0.417 | +0.188 |
 | Figure selection precision | human, n=48 | **0.542** | 0.304 | +0.238 |
 | &nbsp;&nbsp;vs. the deployed system | human, n=48 | **0.605** | 0.049 | +0.556 |
+| Judged placement (0–1), anchor join vs. LLM inline | blind LLM judge | 0.729 | 0.733 | *tie* |
+| MMDocRAG ranker vs. BM25, IF1 | benchmark authors | 63.38 | 63.48 | *tie* |
 | MRAMG Lifestyle, Image Precision | benchmark authors | 55.00 | **62.23** | *loses* |
 | MMDocRAG vs. GPT-4.1, IF1 | benchmark authors | 68.91 | **80.7** | *loses* |
+| End-to-end IF1, ours vs. inline insertion | benchmark authors | 55.91 | **61.71** | *loses* |
 | Placement rule | layout | — | MRAMG | *loses* |
 
 Image Precision counts only emitted images, so abstaining could buy the score —
 ours abstains on 49%. Forcing exactly one image on every question still leads,
 with recall rising 41.59 → 61.64.
 
-The last row is a loss and is reported as one. Anchoring alone does not beat
-similarity-based placement. What it contributes is *candidate admission* —
-making uncaptioned figures reachable — and the practical gain then comes from
-selection.
+The ties carry as much information as the wins. The judged-placement tie
+(−0.01, CI [−0.09, +0.06], 48 questions to 49, blind and paired) means a
+mechanical anchor join places figures as well as the generator's own inline
+choice — while staying traceable to a source position. The BM25 tie means the
+ranker earns nothing where descriptions are already good, so the MRAMG win
+belongs to the *representation*, not the model.
+
+The losses are reported as losses. Anchoring alone does not beat
+similarity-based placement; with a small generator, inline insertion beats
+post-hoc selection on end-to-end F1. What anchoring contributes is *candidate
+admission* — making uncaptioned figures reachable — and the practical gain
+then comes from selection.
 
 ## Placement is a distinct failure mode
 
@@ -174,7 +186,7 @@ it.
 
 | system | Image Precision |
 |---|---:|
-| **IKAT (cross-encoder, 568M params)** | **69.63** |
+| **IKAT (cross-encoder, 568M params)** | **69.12** |
 | **IKAT, forced emission (0% silent)** | **67.50** |
 | GPT-4o, LLM-based | 65.28 |
 | Claude-3.5-Sonnet, LLM-based | 62.17 |
