@@ -56,13 +56,13 @@
  * DISTRACTORS instead, which is the same disease in a new place.
  *
  * Usage:
- *   bun bench/ppi-eval.ts
+ *   bun tests/bench-kb/src/ikat/ppi-eval.ts
  */
 import * as fs from "node:fs"
 import * as path from "node:path"
-import { cohensKappa } from "./judge"
+import { cohensKappa } from "../judge"
 
-const BENCH_ROOT = path.resolve(import.meta.dirname, "..")
+const BENCH_ROOT = path.resolve(import.meta.dirname, "../..")
 const C = path.join(BENCH_ROOT, "corpus")
 const BOOT = Number(process.env.IKAT_BOOTSTRAP ?? 10000)
 
@@ -110,7 +110,9 @@ function quantile(xs: number[], q: number): number {
  * enrichment disappears by construction rather than by luck.
  */
 function loadJudge(): { source: string; labels: Map<string, { pool: string[]; pos: Set<string> }> } {
-  const scaled = path.join(C, "annotation-scale", "judge-labels.json")
+  // Override to score a different judge's labels (same schema) against the
+  // same human gold — e.g. judge-labels-minimax.json for the cross-vendor kappa.
+  const scaled = process.env.IKAT_JUDGE_LABELS ?? path.join(C, "annotation-scale", "judge-labels.json")
   const out = new Map<string, { pool: string[]; pos: Set<string> }>()
   if (fs.existsSync(scaled)) {
     const d = JSON.parse(fs.readFileSync(scaled, "utf-8")) as {

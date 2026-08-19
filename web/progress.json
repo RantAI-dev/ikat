@@ -35,7 +35,7 @@
     {
       "name": "End-to-end generation",
       "state": "done",
-      "note": "MRAMG's own generation protocol on Academic, 200 questions, same 8B SEA-LION generator in both arms. Statistical half: inline insertion beats post-hoc selection on F1 (61.71 vs 55.91) — a loss, reported as one — while ours keeps +10 precision, and the admission study's pre-registered rule replicated out-of-sample (+7.6 F1). Judged half, blind, paired: the generator selects better images (relevance +0.31, effectiveness +0.24, CIs exclude zero) but on POSITION — the axis the paper is about — a mechanical anchor join ties the generator exactly (−0.01, CI [−0.09,+0.06], 48 wins to 49), and comprehensive quality is indistinguishable. Placement does not need the generator.",
+      "note": "MRAMG's own generation protocol on Academic, 200 questions, same 8B SEA-LION generator in both arms. Statistical half: inline insertion beats post-hoc selection on F1 (61.71 vs 55.91) — a loss, reported as one — while ours keeps +10 precision, and the admission study's pre-registered rule replicated out-of-sample (+7.6 F1). Judged half, blind, paired, now under TWO independent vendors' judges: the generator's selection advantage replicates (relevance and effectiveness, CIs exclude zero, both judges), comprehensive is a tie twice, and on POSITION the anchor join ties under the first judge (48:49) and wins outright under the second (−0.09, CI [−0.16,−0.01], 56:36). Under neither judge does the generator place better than the join.",
       "evidence": "§End-to-end, docs/15"
     },
     {
@@ -67,6 +67,12 @@
       "state": "todo",
       "note": "The author list is deliberately unfilled in main.tex and CITATION.cff. Venue is undecided: the running header currently reads as a preprint, and the title was rewritten to name the method rather than the deployment.",
       "evidence": "paper/README.md"
+    },
+    {
+      "name": "Second judge, cross-vendor",
+      "state": "done",
+      "note": "MiniMax-M3 sat the identical selection-judging exam — same protocol, same pools, same images, 360 human-labelled pairs — and failed it: kappa 0.362 at 2.76x permissiveness, against the incumbent's 0.556 at 1.24x. It was therefore NOT licensed as a gate, and the refusal is the result: kappa is a per-model credential and now demonstrably does not transfer across vendors. On the end-to-end judged metrics (a different instrument, validated by inter-judge agreement r=0.64–0.79) it strengthens every conclusion instead.",
+      "evidence": "docs/16"
     },
     {
       "name": "Judge-scaled estimation",

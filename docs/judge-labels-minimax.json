@@ -1,0 +1,2707 @@
+{
+ "model": "MiniMax-M3 (MiniMax API, images inline)",
+ "protocol": "annotator instruction verbatim; 8 candidates; pools reused verbatim where a person annotated",
+ "nCandidates": 8,
+ "labels": [
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q30::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p209-b3",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p220-b4",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p222-b4",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p223-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p221-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p217-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p218-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b6"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q22::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p217-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p221-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p220-b4",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p209-b3",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b6",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p222-b4",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p218-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p223-b5"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q5::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p218-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p209-b3",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p220-b4",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p223-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p217-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b6",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p221-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p222-b4"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q17::comparison",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p218-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p222-b4",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p223-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b6",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p221-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p220-b4",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p209-b3",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p217-b5"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q7::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p222-b4",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p221-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p217-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p218-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b6",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p220-b4",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p223-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p209-b3"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q10::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p218-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p223-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p217-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p222-b4",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b6",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p209-b3",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p221-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p220-b4"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q0::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p223-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p220-b4",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p221-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p217-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p222-b4",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b6",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p218-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p209-b3"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q6::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p217-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p223-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p209-b3",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p220-b4",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p222-b4",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b6",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p218-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p221-b5"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q19::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p220-b4",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p223-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p217-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p222-b4",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b6",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p209-b3",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p218-b5",
+    "buku-panduan-guru-pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p221-b5"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::fq0",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p233-b5",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p237-b6",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p12-b0",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p236-b4",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p232-b2",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p235-b3"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p12-b0"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q30::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p235-b3",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p237-b6",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p232-b2",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p12-b0",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p233-b5",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p236-b4"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q22::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p237-b6",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p232-b2",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p236-b4",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p233-b5",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p12-b0",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p235-b3"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q5::comparison",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p237-b6",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p233-b5",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p236-b4",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p235-b3",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p232-b2",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p12-b0"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p12-b0"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q17::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p237-b6",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p236-b4",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p232-b2",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p235-b3",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p233-b5",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p12-b0"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q7::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p236-b4",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p233-b5",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p237-b6",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p235-b3",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p232-b2",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p12-b0"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q10::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p235-b3",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p236-b4",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p237-b6",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p233-b5",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p232-b2",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p12-b0"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q0::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p235-b3",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p232-b2",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p233-b5",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p236-b4",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p237-b6",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p12-b0"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q6::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p235-b3",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p237-b6",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p232-b2",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p233-b5",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p12-b0",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p236-b4"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q19::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p235-b3",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p12-b0",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p233-b5",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p237-b6",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b7",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p236-b4",
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p232-b2"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p12-b0"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq9",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p226-b7",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p166-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p108-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p59-b0"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b3"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q30::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b1",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p108-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p164-b4",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p129-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p108-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p78-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p83-b6"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq10",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p69-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p188-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p117-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p164-b4",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p226-b7",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b6"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p188-b9"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q22::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p166-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p193-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p129-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p59-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b1",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p190-b4"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq3",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p108-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p153-b12",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b1",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p78-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p138-b10",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p83-b6"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p83-b6"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q5::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p59-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p138-b10",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p117-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p78-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p84-b12",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b9"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq1",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p84-b12",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p188-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b1",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p78-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p59-b0"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p59-b0"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q17::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p78-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p164-b4",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p188-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p108-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p84-b12"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq0",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b1",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p166-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p188-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p190-b4",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p69-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p16-b0"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p16-b0"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q7::comparison",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p138-b10",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p188-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p59-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p81-b1",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b1",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p98-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p78-b9"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq7",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b1",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p193-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p81-b1",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p59-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p182-b7",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p112-b3"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p193-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p81-b1",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p112-b3"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q10::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p226-b7",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p83-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p78-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p84-b12",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p117-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p59-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p127-b1",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b9"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq5",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b1",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p83-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p69-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b1"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b1"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q0::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p164-b4",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p108-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p127-b1",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p188-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b1"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq2",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b1",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p59-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p83-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p188-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p117-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p166-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p69-b3"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p69-b3"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q6::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p138-b10",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p112-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p81-b1",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p69-b3",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p98-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p59-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p129-b3"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b6"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq4",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p190-b4",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b1",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p188-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p138-b10",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p78-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p59-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p182-b7",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p84-b12"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p84-b12"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q19::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b0",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p153-b12",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p84-b12",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p182-b7",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p108-b9",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p188-b6",
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b3"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p84-b12"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::fq0",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p214-b4",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p124-b7",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p60-b4",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p187-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p154-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p57-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p198-b7",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p79-b3"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p214-b4",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p154-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p198-b7"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::q30::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p142-b7",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p124-b7",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p7-b1",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p48-b7",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p79-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p187-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p226-b6",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p79-b2"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::fq1",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p66-b7",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p187-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b19",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b9",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p226-b6",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p211-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b10",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b8"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p187-b3"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::q22::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p48-b7",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p9-b10",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b9",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p150-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p10-b5",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p154-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b19",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p7-b4"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::q5::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p79-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p10-b5",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b10",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p79-b2",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p187-b4",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p57-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p150-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p114-b1"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::q17::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p160-b7",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p10-b5",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p57-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p104-b8",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p154-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p48-b7",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p79-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p187-b4"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::q7::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p226-b6",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p214-b4",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b19",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p207-b1",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b2",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p10-b5",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p66-b7",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p142-b7"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p214-b4"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::q10::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b8",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b19",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p9-b10",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p207-b1",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b10",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p214-b4",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p150-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p7-b4"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::q0::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b9",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p198-b7",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b19",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p160-b7",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p57-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p150-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p142-b7",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p10-b5"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::q6::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p187-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p60-b4",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p79-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p226-b6",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p150-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p7-b4",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b8",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p10-b5"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p60-b4",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p7-b4"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::q19::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b19",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p198-b7",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p48-b7",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p66-b7",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b9",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p86-b7",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p57-b3",
+    "buku-panduan-guru-pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p7-b4"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::fq3",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p6-b15",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p31-b1",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p48-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p234-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p120-b0",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p145-b12",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p116-b0",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p166-b12"
+   ],
+   "picked": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p145-b12"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::q9::explanatory",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p166-b20",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p5-b2",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p180-b13",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p30-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p49-b3",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p167-b3",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p203-b1",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p30-b7"
+   ],
+   "picked": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p49-b3"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::fq0",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p30-b8",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p5-b10",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p195-b13",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p68-b17",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p7-b0",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p6-b5",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p237-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p238-b6"
+   ],
+   "picked": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p5-b10",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p6-b5"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::q20::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p117-b17",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p236-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p196-b1",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p196-b3",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p11-b3",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p4-b24",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p191-b1",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p214-b1"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::fq7",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p203-b1",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p7-b10",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p167-b2",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p191-b2",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p30-b8",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p7-b0",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p195-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p183-b2"
+   ],
+   "picked": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p183-b2"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::q17::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p11-b3",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p53-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p167-b3",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p48-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p4-b24",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p196-b1",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p7-b10",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p42-b6"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::fq5",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p4-b24",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p233-b8",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p167-b3",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p191-b2",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p167-b2",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p7-b10",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p195-b13",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p180-b13"
+   ],
+   "picked": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p180-b13"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::q5::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p182-b2",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p5-b10",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p196-b3",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p196-b1",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p214-b1",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p31-b1",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p195-b4",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p4-b24"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::fq1",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p237-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p230-b13",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p48-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p191-b1",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p195-b14",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p7-b10",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p5-b10",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p7-b14"
+   ],
+   "picked": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p7-b10",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p7-b14"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::q2::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p116-b9",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p120-b0",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p164-b1",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p233-b8",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p49-b3",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p5-b10",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p6-b15",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p11-b3"
+   ],
+   "picked": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p11-b3"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::fq2",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p202-b10",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p230-b13",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p231-b19",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p30-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p196-b3",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p228-b7",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p24-b2",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p11-b3"
+   ],
+   "picked": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p11-b3"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::q0::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p229-b13",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p5-b10",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p235-b9",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p42-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p30-b8",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p30-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p5-b2",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p237-b6"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::fq6",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p166-b22",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p195-b14",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p233-b8",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p7-b10",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p202-b0",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p235-b9",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p30-b9",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p182-b2"
+   ],
+   "picked": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p195-b14",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p182-b2"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::q4::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p116-b11",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p24-b2",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p232-b5",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p166-b20",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p7-b10",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p116-b9",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p234-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p53-b6"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::fq4",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p30-b8",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p24-b2",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p229-b13",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p49-b1",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p230-b13",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p145-b12",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p214-b1",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p163-b11"
+   ],
+   "picked": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p163-b11"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::q16::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p68-b17",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p164-b10",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p183-b2",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p11-b3",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p42-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p30-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p5-b2",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p4-b24"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::q15::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p49-b3",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p202-b10",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p7-b0",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p6-b5",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p6-b15",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p238-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p42-b6",
+    "buku-panduan-guru-matematika-untuk-sdmi-kelas-iii::p167-b3"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::fq5",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p81-b7",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p28-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p77-b9",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p41-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p63-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p111-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p40-b3"
+   ],
+   "picked": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p41-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p40-b3"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q30::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p105-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p100-b20",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p48-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p123-b8",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p35-b11",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p19-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b2"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::fq0",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p72-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p161-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p101-b6",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p81-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p137-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p38-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p35-b11",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p16-b2"
+   ],
+   "picked": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p35-b11"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q22::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p98-b18",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p144-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p38-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p154-b3",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p105-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p42-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p158-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p80-b3"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::fq2",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p52-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p100-b20",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p109-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p149-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p116-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p16-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p39-b5",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p38-b0"
+   ],
+   "picked": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p38-b0"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q5::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b9",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p82-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p115-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p102-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p149-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p53-b3",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p98-b10",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p101-b4"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::fq9",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p85-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p54-b3",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p181-b16",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p53-b3",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p181-b5",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p178-b5",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p149-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p52-b0"
+   ],
+   "picked": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p85-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p52-b0"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q17::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p81-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p77-b9",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p101-b6",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p89-b6",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p98-b18",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p47-b10",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p63-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p80-b3"
+   ],
+   "picked": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p81-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p80-b3"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::fq7",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p101-b6",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p98-b21",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p48-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p123-b8",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p178-b19",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p98-b12",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p42-b1"
+   ],
+   "picked": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p42-b1"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q7::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p15-b14",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p47-b10",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p98-b18",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p35-b11",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p40-b3",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p100-b20",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p51-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p125-b2"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::fq12",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p16-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p181-b16",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p15-b14",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p109-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p53-b3",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p80-b3",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p54-b3"
+   ],
+   "picked": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p54-b3"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q10::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p48-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p125-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p41-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p53-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p89-b3",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p154-b3",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p161-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p47-b10"
+   ],
+   "picked": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p48-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p47-b10"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::fq14",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p116-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p111-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p113-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p16-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p54-b3",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p38-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p63-b0"
+   ],
+   "picked": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p63-b0"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q0::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p179-b4",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p41-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p47-b10",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p139-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p181-b16",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p16-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p42-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b9"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::fq11",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p117-b8",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p158-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p154-b3",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p41-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p92-b12",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p53-b3"
+   ],
+   "picked": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p41-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p53-b3"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q6::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p15-b14",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p98-b12",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p77-b9",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p141-b3",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p63-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p113-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p100-b20"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::fq10",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b9",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p152-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p89-b6",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p180-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p109-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p53-b1"
+   ],
+   "picked": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p53-b1"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::q19::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p16-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p147-b1",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p178-b5",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p52-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p142-b0",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p98-b12",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p139-b2",
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p122-b1"
+   ],
+   "picked": [
+    "pendidikan-agama-katolik-dan-budi-pekerti-untuk-sd-kelas-iii::p139-b2"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::fq0",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p187-b3",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p188-b12",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p188-b11",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p27-b9",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p60-b15",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p37-b20",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p78-b13",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p16-b17"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p60-b15"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::q30::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p188-b11",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p27-b9",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p93-b3",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p187-b3",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p188-b13",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p19-b13",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p78-b13",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p25-b12"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::fq1",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p115-b3",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p92-b2",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p184-b11",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p141-b4",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p72-b8",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p45-b4",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p169-b11",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p17-b13"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p92-b2"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::q22::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p37-b20",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p144-b17",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p188-b10",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p188-b11",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p60-b15",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p174-b1",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p132-b13",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p223-b14"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::q5::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p223-b19",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p164-b8",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p141-b4",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p20-b13",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p22-b8",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p220-b6",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p92-b2",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p25-b12"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::q17::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p78-b13",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p144-b17",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p94-b8",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p177-b12",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p57-b11",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p141-b4",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p45-b5",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p17-b13"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::q7::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p115-b4",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p144-b17",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p169-b11",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p223-b4",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p22-b8",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p70-b8",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p152-b11",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p17-b13"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::q10::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p123-b1",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p220-b6",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p177-b12",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p174-b1",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p141-b4",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p169-b11",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p43-b14",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p188-b8"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::q0::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p188-b8",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p223-b14",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p60-b15",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p45-b3",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p223-b4",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p115-b4",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p20-b13",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p142-b8"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::q6::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p106-b15",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p220-b6",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p19-b13",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p221-b6",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p45-b5",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p18-b13",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p164-b8",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p123-b1"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::q19::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p19-b25",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p17-b13",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p19-b13",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p127-b5",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p67-b10",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p141-b3",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p123-b1",
+    "buku-panduan-guru-pendidikan-kepercayaan-terhadap-tuhan-yang-maha-esa-dan-budi-p::p22-b8"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::fq1",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p164-b6",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p55-b9",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b9",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p79-b0",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b11",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b12",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p20-b1",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b14"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p20-b1"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q30::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p90-b9",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b10",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b16",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p55-b9",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p169-b14",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p79-b0",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p143-b2",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p198-b1"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::fq0",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b8",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b7",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b9",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p216-b5",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p55-b9",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b7",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p13-b1",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p99-b1"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p13-b1"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q22::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b8",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b12",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p120-b18",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p218-b5",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p120-b20",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p114-b4",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p92-b0",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p13-b1"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p92-b0"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::fq3",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p120-b20",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p220-b5",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b16",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p169-b16",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p149-b16",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p55-b7",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p91-b0",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p92-b0"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p92-b0"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q5::comparison",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p20-b1",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p79-b0",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b11",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p120-b19",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p91-b0",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p219-b5",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p216-b5",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p170-b0"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p170-b0"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::fq2",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b4",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b11",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p120-b18",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p221-b5",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p55-b5",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p55-b9",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p165-b0",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p20-b4"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p20-b4"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q17::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p220-b5",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p222-b5",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p107-b0",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b6",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p198-b1",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p55-b7",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b7",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p99-b1"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q7::comparison",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b16",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p90-b9",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p55-b11",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p221-b5",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b15",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p90-b7",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p91-b0",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p164-b6"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q10::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p79-b0",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p91-b0",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p170-b0",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b5",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p90-b7",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p55-b11",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p219-b5",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p55-b3"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p79-b0"
+   ]
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q0::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p114-b4",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b6",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p20-b4",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p55-b11",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p169-b14",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p90-b9",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p92-b0",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p169-b17"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q6::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b14",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p216-b5",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b10",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p91-b0",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p145-b0",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p90-b9",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p220-b5",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p55-b11"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q19::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p169-b16",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b8",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p174-b9",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p90-b7",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p55-b7",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p15-b7",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p223-b5",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p79-b0"
+   ],
+   "picked": [
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p169-b16",
+    "buku-panduan-guru-pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p15-b7"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq1",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b11",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b13",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p15-b21",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p24-b1",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p96-b14",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p126-b12",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p146-b1",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p111-b14"
+   ],
+   "picked": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p24-b1"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q32::explanatory",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p99-b4",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p56-b9",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p53-b7",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p91-b11",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p83-b4",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p48-b21",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b11",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p57-b1"
+   ],
+   "picked": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p91-b11",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b11"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq9",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p32-b8",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p165-b8",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p55-b3",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p38-b5",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p53-b4",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p51-b1",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p118-b16",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p66-b6"
+   ],
+   "picked": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p165-b8",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p55-b3",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p38-b5",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p51-b1",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p118-b16",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p66-b6"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q11::explanatory",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p75-b5",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p113-b4",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p79-b17",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b13",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p99-b6",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p171-b7",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p19-b22",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p45-b1"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq13",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p131-b13",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p96-b7",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p104-b4",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b11",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p38-b7",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p29-b17",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p38-b9",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p99-b4"
+   ],
+   "picked": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p99-b4"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q29::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p95-b8",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p19-b24",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p162-b11",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p160-b19",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p23-b10",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p129-b11",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p62-b10",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p158-b5"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq12",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p62-b5",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p116-b10",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p72-b0",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p39-b3",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p79-b15",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p50-b2",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b13",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p95-b8"
+   ],
+   "picked": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p95-b8"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q6::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p24-b4",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p119-b6",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p24-b1",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p32-b8",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p23-b8",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p23-b10",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p38-b7",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p23-b6"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq10",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b5",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b13",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p178-b3",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p142-b21",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b11",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p56-b9",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p82-b0",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p80-b4"
+   ],
+   "picked": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p142-b21",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p80-b4"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q20::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p116-b10",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p35-b4",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p95-b8",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p23-b10",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b13",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p96-b7",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p51-b1",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p95-b5"
+   ],
+   "picked": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p96-b7"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq2",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p107-b20",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b11",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p100-b0",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p141-b7",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b12",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p23-b6",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p74-b7",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p24-b4"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q0::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p84-b1",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p38-b9",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p18-b2",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p39-b3",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p29-b17",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p60-b23",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b13",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b13"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq4",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p76-b12",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p53-b3",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p52-b10",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p171-b7",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p23-b10",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p84-b9",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p83-b4",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b12"
+   ],
+   "picked": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b12"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q23::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p118-b16",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p18-b2",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p112-b6",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p19-b24",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p107-b20",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p165-b8",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p64-b4",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p123-b8"
+   ],
+   "picked": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p112-b6",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p123-b8"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq6",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p38-b9",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p24-b4",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p96-b7",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p15-b21",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p47-b15",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b13",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p35-b4",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p31-b12"
+   ],
+   "picked": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p15-b21",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p31-b12"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q18::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p82-b0",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p32-b6",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p54-b4",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p121-b17",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p18-b2",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p104-b4",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p55-b3",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p81-b0"
+   ],
+   "picked": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p104-b4"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::fq3",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p23-b1",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p135-b2",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p64-b0",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p27-b8",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p66-b4",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p112-b6",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p84-b9",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b3"
+   ],
+   "picked": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b3"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::q7::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p23-b8",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p66-b2",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p23-b10",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b15",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p166-b4",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p24-b4",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p24-b1",
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p23-b6"
+   ],
+   "picked": [
+    "pendidikan-agama-hindu-dan-budi-pekerti-untuk-sd-kelas-iii::p23-b8"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::fq0",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p198-b10",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p99-b2",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p158-b15",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b10",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p160-b5",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p12-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p139-b5",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p60-b0"
+   ],
+   "picked": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p198-b10",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p99-b2",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p158-b15",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b10",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p160-b5",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p12-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p139-b5",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p60-b0"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q11::explanatory",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p181-b3",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p16-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p208-b4",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b17",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p187-b13",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p86-b9",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p192-b10",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p58-b2"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::fq10",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p78-b6",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p201-b4",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p192-b10",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p85-b11",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p26-b12",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p116-b6",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p69-b2",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p54-b5"
+   ],
+   "picked": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p54-b5"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q22::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b14",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b19",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b17",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p74-b7",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b18",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b15",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b16",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p176-b15"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::fq15",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p208-b4",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b9",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p22-b3",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p218-b2",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p86-b11",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p77-b3",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p68-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p100-b11"
+   ],
+   "picked": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p100-b11"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q19::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p181-b12",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p99-b2",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b18",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p65-b5",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p165-b1",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p188-b16",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p14-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p108-b3"
+   ],
+   "picked": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p99-b2",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p108-b3"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::fq14",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p17-b1",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p35-b7",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p94-b4",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b6",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p180-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p169-b22",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p176-b13",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p96-b0"
+   ],
+   "picked": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p96-b0"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q7::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b4",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b6",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p181-b3",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p90-b8",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b8",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b10",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p176-b13",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p33-b13"
+   ],
+   "picked": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b4",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p33-b13"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::fq2",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p154-b19",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p14-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p188-b16",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p40-b7",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p188-b13",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p61-b7",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b10",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p20-b0"
+   ],
+   "picked": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p20-b0"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q4::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p217-b5",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p74-b7",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p31-b6",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p14-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p20-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p175-b13",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p181-b2",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p19-b11"
+   ],
+   "picked": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p14-b0"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::fq5",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p121-b3",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p11-b13",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p165-b2",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p158-b15",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p14-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p41-b13",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p181-b3",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p28-b4"
+   ],
+   "picked": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p14-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p28-b4"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q2::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p20-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p17-b1",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p192-b10",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p28-b4",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p78-b6",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p85-b11",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p93-b2",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p77-b8"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::fq11",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p14-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p60-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b4",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p77-b5",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p180-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p170-b4",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p17-b1",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p61-b7"
+   ],
+   "picked": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p61-b7"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q6::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b4",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p14-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b6",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p147-b2",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b8",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p11-b13",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b10",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p33-b13"
+   ],
+   "picked": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p33-b13"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::fq12",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p17-b1",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p77-b8",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p22-b3",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p130-b15",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p11-b13",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b4",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b6",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p78-b6"
+   ],
+   "picked": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p78-b6"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q18::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p33-b13",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p27-b3",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p191-b5",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p104-b12",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p202-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p17-b1",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p22-b3",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p108-b3"
+   ],
+   "picked": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p108-b3"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::fq1",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p60-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p108-b3",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p96-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p44-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p152-b7",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p101-b9",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p28-b4",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p17-b1"
+   ],
+   "picked": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p44-b0",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p17-b1"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::q17::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p43-b5",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b9",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b9",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p155-b2",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b8",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b10",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b7",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b6"
+   ],
+   "picked": [
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p43-b5",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b9",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b9",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b8",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b10",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b7",
+    "pendidikan-agama-buddha-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b6"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::fq0",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p88-b3",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p84-b2",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p163-b6",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p112-b8",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p128-b2",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p62-b8",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p46-b10",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b1"
+   ],
+   "picked": [
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p25-b1"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::q10::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p6-b13",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p48-b5",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p109-b2",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p47-b2",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p159-b2",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p176-b3",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p48-b2",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p66-b6"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::fq1",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p60-b8",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p42-b8",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b3",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p48-b5",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p105-b10",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p30-b5",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p56-b4",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p20-b3"
+   ],
+   "picked": [
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p60-b8",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p42-b8",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p134-b3",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p48-b5",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p105-b10",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p30-b5",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p56-b4"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::q22::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p68-b4",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p105-b10",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p132-b8",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p47-b2",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p164-b0",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p54-b4",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p94-b8",
+    "pendidikan-agama-kristen-dan-budi-pekerti-untuk-sd-kelas-iii::p147-b0"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::fq10",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p47-b19",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p9-b4",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p186-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p125-b1",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p10-b9",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p112-b7",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p92-b5",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p12-b10"
+   ],
+   "picked": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p125-b1"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q30::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p158-b5",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p157-b2",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p78-b8",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p187-b2",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p196-b10",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p221-b7",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p85-b4",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p47-b0"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::fq12",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p204-b2",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p70-b9",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p57-b4",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p144-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p24-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p128-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p221-b1",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p10-b7"
+   ],
+   "picked": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p144-b0"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q22::factual",
+   "labelled": true,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p180-b4",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p21-b5",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p95-b7",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p53-b17",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p100-b6",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p119-b6",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p47-b17",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p192-b2"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::fq4",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p142-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p101-b4",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p9-b6",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b3",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p254-b5",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p69-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p218-b2",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p75-b13"
+   ],
+   "picked": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p75-b13"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q5::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p68-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p10-b5",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p220-b5",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p186-b8",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p180-b3",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p88-b5",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p183-b5",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p10-b9"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::fq1",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p92-b5",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p10-b5",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p12-b10",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p182-b8",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p11-b1",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p48-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p9-b6",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p36-b1"
+   ],
+   "picked": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p36-b1"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q17::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p11-b1",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p153-b3",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p9-b1",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p128-b1",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p10-b1",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p70-b8",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p84-b5",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p113-b10"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::fq0",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p70-b8",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p155-b9",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p184-b3",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p9-b6",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p226-b2",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p74-b4",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p9-b1",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p11-b1"
+   ],
+   "picked": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p11-b1"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q7::comparison",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p36-b1",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p196-b11",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p204-b2",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p175-b5",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p255-b5",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p95-b3",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p97-b3",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b0"
+   ],
+   "picked": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p36-b1"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::fq8",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p190-b7",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p95-b9",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p185-b10",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p75-b13",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b3",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p47-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p47-b19",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p118-b4"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q10::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p78-b8",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p81-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p47-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p118-b4",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p122-b8",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p222-b4",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p93-b1",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p78-b6"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::fq6",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p72-b7",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p47-b18",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p75-b13",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p48-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p132-b4",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p47-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p254-b5",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p92-b5"
+   ],
+   "picked": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p92-b5"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q0::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p11-b1",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p60-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p72-b7",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p39-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p180-b3",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p10-b9",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b6",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p112-b7"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::fq3",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p142-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p33-b3",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p60-b6",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p230-b3",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p21-b3",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p72-b4",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p37-b3"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q6::factual",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p39-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p187-b6",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p155-b9",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p186-b6",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p69-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p123-b3",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p36-b1",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p34-b0"
+   ],
+   "picked": []
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::fq5",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p183-b1",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p248-b5",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p102-b2",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p95-b9",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p186-b0",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p199-b7",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p10-b9",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p81-b7"
+   ],
+   "picked": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p81-b7"
+   ]
+  },
+  {
+   "questionId": "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::q19::explanatory",
+   "labelled": false,
+   "shownFigureIds": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p100-b3",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p21-b5",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p14-b1",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p45-b3",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p24-b4",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p212-b6",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p19-b2",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p8-b3"
+   ],
+   "picked": [
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p21-b5",
+    "pendidikan-agama-khonghucu-dan-budi-pekerti-untuk-sd-kelas-iii::p24-b4"
+   ]
+  }
+ ]
+}

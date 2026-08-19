@@ -1,0 +1,2802 @@
+[
+{
+"key": "J000",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.33,
+"comprehensive": 3.0
+},
+{
+"key": "J001",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J002",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J003",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J004",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J005",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J006",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J007",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J008",
+"relevance": 1.0,
+"effectiveness": 1.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J009",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J010",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J011",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J012",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 0.33,
+"comprehensive": 4.0
+},
+{
+"key": "J013",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J014",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 0.0,
+"comprehensive": 4.0
+},
+{
+"key": "J015",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J016",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J017",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J018",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J019",
+"relevance": null,
+"effectiveness": null,
+"position": null,
+"comprehensive": 3.0
+},
+{
+"key": "J020",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.33,
+"comprehensive": 3.0
+},
+{
+"key": "J021",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J022",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J023",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J024",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J025",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J026",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J027",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.5,
+"comprehensive": 4.0
+},
+{
+"key": "J028",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J029",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J030",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J031",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J032",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J033",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J034",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 5.0
+},
+{
+"key": "J035",
+"relevance": 1.0,
+"effectiveness": 1.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J036",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J037",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J038",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J039",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J040",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.67,
+"comprehensive": 3.0
+},
+{
+"key": "J041",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J042",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J043",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J044",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 5.0
+},
+{
+"key": "J045",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J046",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 0.5,
+"comprehensive": 4.0
+},
+{
+"key": "J047",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J048",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J049",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J050",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J051",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J052",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J053",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J054",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J055",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.67,
+"comprehensive": 3.0
+},
+{
+"key": "J056",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J057",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J058",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J059",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J060",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J061",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J062",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J063",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J064",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J065",
+"relevance": 1.0,
+"effectiveness": 1.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J066",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J067",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J068",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J069",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J070",
+"relevance": null,
+"effectiveness": null,
+"position": null,
+"comprehensive": 4.0
+},
+{
+"key": "J071",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J072",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.5,
+"comprehensive": 4.0
+},
+{
+"key": "J073",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J074",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J075",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J076",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J077",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.33,
+"comprehensive": 3.0
+},
+{
+"key": "J078",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J079",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 0.5,
+"comprehensive": 4.0
+},
+{
+"key": "J080",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J081",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J082",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.33,
+"comprehensive": 3.0
+},
+{
+"key": "J083",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J084",
+"relevance": null,
+"effectiveness": null,
+"position": null,
+"comprehensive": 4.0
+},
+{
+"key": "J085",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J086",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J087",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J088",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J089",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J090",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J091",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J092",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J093",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J094",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J095",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J096",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J097",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.5,
+"comprehensive": 2.0
+},
+{
+"key": "J098",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J099",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J100",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J101",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J102",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J103",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J104",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.67,
+"comprehensive": 3.0
+},
+{
+"key": "J105",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J106",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 1.0,
+"comprehensive": 2.0
+},
+{
+"key": "J107",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J108",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J109",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J110",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.67,
+"comprehensive": 3.0
+},
+{
+"key": "J111",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J112",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J113",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J114",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J115",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J116",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J117",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J118",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J119",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J120",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J121",
+"relevance": null,
+"effectiveness": null,
+"position": null,
+"comprehensive": 4.0
+},
+{
+"key": "J122",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J123",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J124",
+"relevance": null,
+"effectiveness": null,
+"position": null,
+"comprehensive": 4.0
+},
+{
+"key": "J125",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J126",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J127",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.33,
+"comprehensive": 2.0
+},
+{
+"key": "J128",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J129",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J130",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J131",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J132",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 0.75,
+"comprehensive": 4.0
+},
+{
+"key": "J133",
+"relevance": 1.0,
+"effectiveness": 1.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J134",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J135",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J136",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J137",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J138",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J139",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J140",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J141",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J142",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J143",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 5.0
+},
+{
+"key": "J144",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J145",
+"relevance": 2.0,
+"effectiveness": 1.0,
+"position": 0.33,
+"comprehensive": 2.0
+},
+{
+"key": "J146",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J147",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J148",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J149",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J150",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J151",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.33,
+"comprehensive": 2.0
+},
+{
+"key": "J152",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J153",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J154",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J155",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.67,
+"comprehensive": 3.0
+},
+{
+"key": "J156",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 5.0
+},
+{
+"key": "J157",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.33,
+"comprehensive": 2.0
+},
+{
+"key": "J158",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J159",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J160",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J161",
+"relevance": null,
+"effectiveness": null,
+"position": null,
+"comprehensive": 4.0
+},
+{
+"key": "J162",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J163",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.25,
+"comprehensive": 3.0
+},
+{
+"key": "J164",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J165",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J166",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J167",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J168",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J169",
+"relevance": 1.0,
+"effectiveness": 1.0,
+"position": 0.33,
+"comprehensive": 1.0
+},
+{
+"key": "J170",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J171",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J172",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.5,
+"comprehensive": 4.0
+},
+{
+"key": "J173",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J174",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J175",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J176",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J177",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J178",
+"relevance": null,
+"effectiveness": null,
+"position": null,
+"comprehensive": 4.0
+},
+{
+"key": "J179",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J180",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J181",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J182",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J183",
+"relevance": null,
+"effectiveness": null,
+"position": null,
+"comprehensive": 4.0
+},
+{
+"key": "J184",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.5,
+"comprehensive": 2.0
+},
+{
+"key": "J185",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J186",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J187",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J188",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.67,
+"comprehensive": 3.0
+},
+{
+"key": "J189",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J190",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J191",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J192",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J193",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J194",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J195",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J196",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J197",
+"relevance": 1.0,
+"effectiveness": 1.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J198",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 5.0
+},
+{
+"key": "J199",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 5.0
+},
+{
+"key": "J200",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J201",
+"relevance": 1.0,
+"effectiveness": 1.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J202",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 2.0
+},
+{
+"key": "J203",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J204",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J205",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J206",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J207",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 0.67,
+"comprehensive": 3.0
+},
+{
+"key": "J208",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J209",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J210",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J211",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J212",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J213",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J214",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J215",
+"relevance": 1.0,
+"effectiveness": 1.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J216",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J217",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J218",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J219",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.67,
+"comprehensive": 3.0
+},
+{
+"key": "J220",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J221",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J222",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J223",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J224",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J225",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J226",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J227",
+"relevance": 1.0,
+"effectiveness": 1.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J228",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J229",
+"relevance": 1.0,
+"effectiveness": 1.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J230",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.67,
+"comprehensive": 3.0
+},
+{
+"key": "J231",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J232",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J233",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J234",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J235",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 4.0
+},
+{
+"key": "J236",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 4.0
+},
+{
+"key": "J237",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J238",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J239",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J240",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J241",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J242",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J243",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J244",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J245",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J246",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J247",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.33,
+"comprehensive": 3.0
+},
+{
+"key": "J248",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J249",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J250",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J251",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J252",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J253",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J254",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J255",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J256",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 5.0
+},
+{
+"key": "J257",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J258",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J259",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J260",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 5.0
+},
+{
+"key": "J261",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J262",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 0.5,
+"comprehensive": 4.0
+},
+{
+"key": "J263",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J264",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.5,
+"comprehensive": 4.0
+},
+{
+"key": "J265",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J266",
+"relevance": 1.0,
+"effectiveness": 1.0,
+"position": 1.0,
+"comprehensive": 2.0
+},
+{
+"key": "J267",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J268",
+"relevance": null,
+"effectiveness": null,
+"position": null,
+"comprehensive": 3.0
+},
+{
+"key": "J269",
+"relevance": null,
+"effectiveness": null,
+"position": null,
+"comprehensive": 4.0
+},
+{
+"key": "J270",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J271",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J272",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.33,
+"comprehensive": 3.0
+},
+{
+"key": "J273",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J274",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.67,
+"comprehensive": 3.0
+},
+{
+"key": "J275",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 0.0,
+"comprehensive": 4.0
+},
+{
+"key": "J276",
+"relevance": null,
+"effectiveness": null,
+"position": null,
+"comprehensive": 3.0
+},
+{
+"key": "J277",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J278",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J279",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J280",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J281",
+"relevance": 1.0,
+"effectiveness": 1.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J282",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J283",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J284",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.33,
+"comprehensive": 3.0
+},
+{
+"key": "J285",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J286",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J287",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J288",
+"relevance": null,
+"effectiveness": null,
+"position": null,
+"comprehensive": 4.0
+},
+{
+"key": "J289",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J290",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.33,
+"comprehensive": 2.0
+},
+{
+"key": "J291",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J292",
+"relevance": null,
+"effectiveness": null,
+"position": null,
+"comprehensive": 4.0
+},
+{
+"key": "J293",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J294",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J295",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J296",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J297",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J298",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J299",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J300",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J301",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J302",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.33,
+"comprehensive": 3.0
+},
+{
+"key": "J303",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J304",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.33,
+"comprehensive": 3.0
+},
+{
+"key": "J305",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J306",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J307",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J308",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 5.0
+},
+{
+"key": "J309",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J310",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.33,
+"comprehensive": 2.0
+},
+{
+"key": "J311",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.67,
+"comprehensive": 3.0
+},
+{
+"key": "J312",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J313",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.75,
+"comprehensive": 3.0
+},
+{
+"key": "J314",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J315",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J316",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J317",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J318",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 5.0
+},
+{
+"key": "J319",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J320",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 0.67,
+"comprehensive": 3.0
+},
+{
+"key": "J321",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.33,
+"comprehensive": 3.0
+},
+{
+"key": "J322",
+"relevance": 1.0,
+"effectiveness": 1.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J323",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.33,
+"comprehensive": 2.0
+},
+{
+"key": "J324",
+"relevance": null,
+"effectiveness": null,
+"position": null,
+"comprehensive": 3.0
+},
+{
+"key": "J325",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 5.0
+},
+{
+"key": "J326",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J327",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J328",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J329",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J330",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J331",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J332",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J333",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J334",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J335",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J336",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J337",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J338",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J339",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 5.0
+},
+{
+"key": "J340",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.5,
+"comprehensive": 4.0
+},
+{
+"key": "J341",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J342",
+"relevance": 1.0,
+"effectiveness": 1.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J343",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J344",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J345",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J346",
+"relevance": 1.0,
+"effectiveness": 1.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J347",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J348",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J349",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J350",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J351",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J352",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 5.0
+},
+{
+"key": "J353",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J354",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 5.0
+},
+{
+"key": "J355",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J356",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J357",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J358",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J359",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 0.0,
+"comprehensive": 4.0
+},
+{
+"key": "J360",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J361",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J362",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J363",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 5.0
+},
+{
+"key": "J364",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J365",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 0.0,
+"comprehensive": 4.0
+},
+{
+"key": "J366",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J367",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J368",
+"relevance": 1.0,
+"effectiveness": 1.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J369",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J370",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J371",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J372",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J373",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J374",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J375",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J376",
+"relevance": 1.0,
+"effectiveness": 1.0,
+"position": 0.0,
+"comprehensive": 2.0
+},
+{
+"key": "J377",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J378",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 5.0
+},
+{
+"key": "J379",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J380",
+"relevance": 4.0,
+"effectiveness": 3.0,
+"position": 0.33,
+"comprehensive": 3.0
+},
+{
+"key": "J381",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J382",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.33,
+"comprehensive": 3.0
+},
+{
+"key": "J383",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J384",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 0.5,
+"comprehensive": 3.0
+},
+{
+"key": "J385",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J386",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J387",
+"relevance": 3.0,
+"effectiveness": 3.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J388",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J389",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 1.0,
+"comprehensive": 3.0
+},
+{
+"key": "J390",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J391",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J392",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J393",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J394",
+"relevance": 5.0,
+"effectiveness": 5.0,
+"position": 1.0,
+"comprehensive": 5.0
+},
+{
+"key": "J395",
+"relevance": 3.0,
+"effectiveness": 2.0,
+"position": 0.0,
+"comprehensive": 3.0
+},
+{
+"key": "J396",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J397",
+"relevance": 4.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J398",
+"relevance": 5.0,
+"effectiveness": 4.0,
+"position": 1.0,
+"comprehensive": 4.0
+},
+{
+"key": "J399",
+"relevance": 2.0,
+"effectiveness": 2.0,
+"position": 1.0,
+"comprehensive": 3.0
+}
+]

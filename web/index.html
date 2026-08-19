@@ -260,7 +260,7 @@
     <ul>
       <li><strong>Placement is separable from retrieval</strong>, cheap to measure, and decided at ingestion — the ground truth comes from the source typesetting, at zero annotation cost.</li>
       <li><strong>The anchor carries the signal.</strong> A 568M cross-encoder over anchor context tops every published system on MRAMG Academic selection; widen the window past the anchor and precision decays monotonically.</li>
-      <li><strong>Placement does not need the generator.</strong> Judged blind, a mechanical anchor join ties an LLM's own inline placement exactly (48 questions to 49) — while staying traceable to a source position.</li>
+      <li><strong>Placement does not need the generator.</strong> Judged blind by two independent vendors' models, a mechanical anchor join ties the LLM's own inline placement under one judge and beats it under the other — while staying traceable to a source position.</li>
       <li><strong>Absolute score floors do not transfer</strong> across corpora; any scale-free admission rule recovers 16 macro-F1 points. Pre-registered, then replicated out-of-sample.</li>
     </ul>
   </div>
@@ -331,7 +331,7 @@
     <tr class="us"><td>Admission: scale-free vs absolute floor, macro F1<span class="why">7 evaluation units; worst unit 49.7 vs 11.3; whole grid published</span></td><td class="n"><b>67.70</b></td><td class="n">51.45</td><td class="n">+16.25</td></tr>
     <tr class="us"><td>Figure selection vs deployed system, F1 (n=48)<span class="why">preliminary: one annotator, 19 positive links</span></td><td class="n"><b>0.605</b></td><td class="n">0.049</td><td class="n">+0.556</td></tr>
     <tr class="grp tie"><td colspan="4">Ties — each one is information</td></tr>
-    <tr><td>Judged placement (0–1), anchor join vs LLM inline<span class="why">blind, paired: −0.01, CI [−0.09, +0.06], 48 wins to 49 — placement does not need the generator</span></td><td class="n">0.729</td><td class="n">0.733</td><td class="n">tie</td></tr>
+    <tr><td>Judged placement (0–1), anchor join vs LLM inline<span class="why">blind, paired, two independent judges: a tie under one (48:49), a win for the join under the other (56:36, CI excludes zero) — under neither does the generator place better</span></td><td class="n">0.729</td><td class="n">0.733</td><td class="n">tie+</td></tr>
     <tr><td>MMDocRAG ranker vs BM25, IF1<span class="why">where descriptions are author-written the ranker earns nothing — the win is the representation</span></td><td class="n">63.38</td><td class="n">63.48</td><td class="n">tie</td></tr>
     <tr class="grp loss"><td colspan="4">Losses — reported, not hidden</td></tr>
     <tr><td>MRAMG Lifestyle, Image Precision<span class="why">most of the gap is the admission floor; some remains after fixing it</span></td><td class="n">55.00</td><td class="n"><b>62.23</b></td><td class="n">−7.23</td></tr>
