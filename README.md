@@ -7,6 +7,7 @@
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Paper](https://img.shields.io/badge/paper-IEEEtran-B31B1B.svg)](paper/)
 [![MRAMG Academic](https://img.shields.io/badge/MRAMG%20Academic-69.12%20IP-E4572E.svg)](#external-validation)
+[![Deployed](https://img.shields.io/badge/deployed-rantai--kb-2E7DE4.svg)](https://github.com/RantAI-dev/rantai-kb)
 
 </div>
 
@@ -273,6 +274,16 @@ Reported because they were run.
   gold-first 0.288 against 0.788 for the 2024 bge-reranker-v2-m3.
 - **On figure-only questions, nothing recovers the content.** Best completeness
   1.93/5, and the one system that beat text-only did so by losing faithfulness.
+
+## Where this runs
+
+The anchor join is in production in
+[rantai-kb](https://github.com/RantAI-dev/rantai-kb), the document ingest and
+retrieval service. Figure co-retrieval there admits candidates using the anchor
+keys of the text chunks that were actually retrieved — figures belonging to a
+retrieved passage come first, caption overlap fills the rest. That is the
+anchor-hybrid measured here, running against live traffic rather than a
+benchmark harness.
 
 ## Citing
 
